@@ -1,103 +1,300 @@
-import Image from "next/image";
+"use client";
+import { Row, Col, Card, Button } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { useRef } from "react";
 
-export default function Home() {
+const App = () => {
+  const scrollRef = useRef(null);
+  const { Meta } = Card;
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -320 : 320,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="items-center min-h-screen">
+      <div className="relative">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="fixed top-0 left-0 w-full items-center opacity-80 bg-[#8e95ff] header flex justify-between p-[20px] z-50">
+          <div> <img
+            className=" w-[90px]"
+            src="assets/images/logo.png"
+            alt="icon"
+          /></div>
+          <div className="flex gap-5 text-white">
+            <a>Home</a>
+            <a>Services</a>
+            <a>Vehicles</a>
+            <a>About Us</a>
+            <a>Contact Us</a>
+          </div>
+          <div>
+            <Button>Customer Support</Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+
+        <div className="secttion-one text-white mt-[70px]">
+          <div className="flex justify-center w-full ">
+            <div className="bg-[#e3e1e1] m-[50px]  w-[70%] flex rounded-tl-[50px] rounded-br-[50px] relative">
+              <img
+                className="w-[90px] h-[90px] -mt-[30px] ml-[30px]"
+                src="assets/images/Mask Group 2.png"
+                alt="icon"
+              />
+              <div className="flex w-full items-center gap-2 ml-[80px]">
+                <h1 className="text-[#000] font-bold text-[20px]">Caption Taxi Gift Card! </h1>
+                <img
+                  className=""
+                  src="assets/images/car icon.svg"
+                  alt="icon"
+                />
+              </div>
+              <Button className=" !bg-transparent mr-[20px] mt-[10px] !border-none !text-[15px] !font-medium !text-[#4109eb]">Find out more</Button>
+            </div>
+          </div>
+          <div className="pt-[80px] pl-[80px]">
+            <h1 className=" font-medium text-[25px]">WELCOME TO THE</h1>
+            <h1 className=" font-bold text-[25px] ml-[80px]">CAPTAIN TAXIS</h1>
+            <p>
+              Reliable and Inclusive: The Captain Taxis - Your Trusted
+              Transport!
+            </p>
+            <Button className=" !rounded-3xl mt-[30px] !text-[#851fea] !font-medium">
+              Book A Ride
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center mt-[40px] mb-[20px] w-full justify-center">
+          <h1 className="' font-bold text-[30px]">OUR SERVICES</h1>
+          <p>We are Always There at Your Services</p>
+        </div>
+
+
+        <div className="relative w-full overflow-hidden">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 px-4 py-6 overflow-x-auto pointer-events-none scroll-smooth no-scrollbar"
+          >
+            {[1, 2, 3,].map((item, index) => {
+
+              const content = [
+                {
+                  title: <h1 className="text-center text-[25px] font-bold ">
+                    Events & Weddings Service
+                  </h1>,
+
+                  description: <p className="flex items-center text-center "> Make your special events unforgettable with our premier taxi service!
+                    Arrive in style with our elegant, well-maintained vehicles and professional chauffeurs.
+                    From bridal party transport to guest shuttles, we ensureconvenience and sophistication.
+                    Let us handle the details while you enjoy your celebration!</p>,
+                },
+                {
+                  title: <h1 className="text-center text-[25px] font-bold ">Sydney Taxi Tourist Tour</h1>,
+
+                  description: <p className="flex items-center text-center ">Explore Sydney with our Tourist Taxi Service! Ride
+                    in comfort to iconic spots like the Opera House and Bondi Beach. Enjoy
+                    personalized tours, stunning views, and a seamless experience.
+                    Let us make your
+                    Sydney journey unforgettable!</p>,
+                },
+                {
+                  title: <h1 className="text-center text-[25px] font-bold ">Parcel Service</h1>,
+
+                  description: <p className="flex items-center text-center "> "Introducing our Taxi Parcel Delivery Service! Enjoy swift, secure, and
+                    reliable package transportation. Our trusted drivers ensure timely deliveries with
+                    real-time tracking. Say
+                    goodbye to delays—choose us for hassle-free courier solutions!</p>,
+                },
+
+              ];
+
+              const current = content[index] || {};
+
+              return (
+                <Card
+                  key={item}
+                  variant="borderless"
+                  className="w-[35%] flex-shrink-0 pointer-events-auto"
+                  cover={
+                    <img
+                      alt={`Card ${item}`}
+                      src={
+                        item === 1
+                          ? "/assets/images/wedding service.png"
+                          : item === 2
+                            ? "/assets/images/service.png"
+                            : item === 3
+                              ? "/assets/images/parcel.png"
+                              : `/assets/images/car${item}.jpg`
+                      }
+                      className="h-[200px] object-cover"
+                    />
+                  }
+                >
+                  <div className="flex flex-col space-y-2">
+                    <h2 className="text-lg font-bold text-[#4D2D7C]">{current.title}</h2>
+                    <h3 className="text-sm font-semibold text-gray-600">{current.subtitle}</h3>
+                    <p className="text-[10px] font-semibold text-[#706e6e]">{current.description}</p>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+
+
+
+          <div className="flex justify-center">
+            <Button
+              shape="circle"
+              icon={<LeftOutlined />}
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-10"
+            />
+            <Button
+              shape="circle"
+              icon={<RightOutlined />}
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 z-10"
+            />
+          </div>
+        </div>
+        <div className=" w-full justify-center items-center mt-[20px]">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="font-extrabold text-[40px]">GET OUR APP </h1>
+            <h1 className="font-bold text-[30px] text-[#4D2D7C]">GO YOUR WAY</h1>
+          </div>
+
+
+        </div>
+        <div className="flex justify-between w-full  mt-[50px] gap-20">
+
+          <div>
+            <img
+              className="  "
+              src="assets/images/Get our service.png"
+              alt="icon"
+            />
+          </div>
+          <div className="">
+            <p className="w-[70%] leading-8 font-medium text-[#727272]">The Captain Taxis is your go-to transportation
+              service offering a range of
+              specialized services tailored to meet your diverse
+              needs. We know how hectic it can be when you’re in a hurry
+              to reach your destination. That’s why we’ve chosen skilled
+              drivers who appreciate the importance of being punctual,
+              providing a comfortable ride, and driving responsibly. We take
+              pride in their outstanding professionalism, making your journey with
+              The Captain Taxis reliable and trustworthy. Choose The Captain Taxis
+              for more than just affordable rides – experience the reliability of a family.</p>
+            <div className=" flex items-center mt-[20px] ">
+              <img
+                className="w-[20%] h-[20%] "
+                src="assets/images/google play.png"
+                alt="icon"
+              />
+              <img
+                className="w-[20%] !h-[44px]  "
+                src="assets/images/app store.png"
+                alt="icon"
+              />
+            </div>
+          </div>
+
+        </div>
+        <div className=" flex flex-col justify-center items-center">
+          <div className="text-center mt-[70px]">
+            <h1 className="text-[#646464] font-bold text-[12px]">CATEGORY</h1>
+            <h1 className=" text-[26px] font-extrabold">The Caption Taxis 13Cabs Accepts <br></br>Cabcharge</h1>
+          </div>
+          <div className=" flex gap-[20px] mt-[40px]">
+            <div>
+              <Card className="!border-none"
+                hoverable
+                style={{ width: 180 }}
+
+              >
+                <div className=" p-[10px] flex justify-center">
+                  <img className="w-[50px]" alt="example" src="assets/images/gift card.svg" />
+
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1 className=" text-[#35344d] font-bold">Giftcard</h1>
+                  <p className="text-[#7c7c7c] text-[12px]">Giftcard: The perfect, flexible gift choice.</p>
+                </div>
+              </Card>
+            </div>
+            <div>
+              <Card className="!border-none"
+                hoverable
+                style={{ width: 180 }}
+
+              >
+                <div className=" p-[10px] flex justify-center">
+                  <img className="w-[50px]" alt="example" src="assets/images/fastcard.svg" />
+
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1 className=" text-[#35344d] font-bold">Fastcard</h1>
+                  <p className="text-[#7c7c7c] text-[12px]">Fastcard: Quick, secure, and seamless payments.</p>
+                </div>
+              </Card>
+            </div>
+            <div>
+              <Card className="!border-none"
+                hoverable
+                style={{ width: 180 }}
+
+              >
+                <div className=" p-[10px] flex justify-center">
+                  <img className="w-[50px]" alt="example" src="assets/images/digital. pass.png" />
+
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1 className=" text-[#35344d] font-bold">Digital Pass</h1>
+                  <p className="text-[#7c7c7c] text-[12px]">Digital Pass: Instant, secure access on your phone.</p>
+                </div>
+              </Card>
+            </div>
+            <div>
+              <Card className="!border-none"
+                hoverable
+                style={{ width: 180 }}
+
+              >
+                <div className=" p-[10px] flex justify-center">
+                  <img className="w-[50px]" alt="example" src="assets/images/e ticket.svg" />
+
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1 className=" text-[#35344d] font-bold">eTicket</h1>
+                  <p className="text-[#7c7c7c] text-[12px]">eTicket: Secure, digital access made easy.</p>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+        </div>
+        <div className="p-[20px] ">
+          <div className="bg-[#4D2D7C] text-[#fff] p-[40px] flex flex-col text-center rounded-tl-[70px] rounded-[10px] ">
+            <h1 className="font-bold text-[20px]">We’re here to help you.</h1>
+            <p className="text-[13px] mt-[10px]">We’re here to help you every step of the way. Whether you have questions, need assistance, or require support, our dedicated team is ready to provide the solutions you need. Your satisfaction is our priority, and we’re committed to ensuring you have a smooth and positive experience.”</p>
+          <ul className=" flex justify-center text-center gap-[40px] mt-[20px] font-bold">
+            <li className=" list-disc">24/7 customer </li>
+            <li className=" list-disc">Personalised service</li>
+            <li className=" list-disc">Trained Professionals</li>
+          </ul>
+          </div>
+
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default App;
