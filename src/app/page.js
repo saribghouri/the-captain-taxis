@@ -2,7 +2,11 @@
 import { Row, Col, Card, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { useRef } from "react";
-
+import {
+  FacebookFilled,
+  InstagramFilled,
+  LinkedinFilled,
+} from "@ant-design/icons";
 const App = () => {
   const scrollRef = useRef(null);
   const { Meta } = Card;
@@ -292,6 +296,65 @@ const App = () => {
           </div>
 
         </div>
+         <footer className="bg-[#ece7ff] text-black px-6 py-10 rounded-tl-[30px] rounded-tr-[30px]">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-2">
+      
+         <div>
+
+           <img
+                  className=" w-[800px]"
+                  src="assets/images/Logo1.png"
+                  alt="icon"
+                />
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
+          <ul className="space-y-2 text-sm">
+            <li><a href="#" className="hover:underline">Home</a></li>
+            <li><a href="#" className="hover:underline">Book a Ride</a></li>
+            <li><a href="#" className="hover:underline">Services</a></li>
+            <li><a href="#" className="hover:underline">Fare Estimator</a></li>
+            <li><a href="#" className="hover:underline">TTSS</a></li>
+            <li><a href="#" className="hover:underline">Join Fleet</a></li>
+          </ul>
+        </div>
+
+        {/* Company Info */}
+        <div>
+          <h2 className="text-lg font-semibold mb-4">About</h2>
+          <ul className="space-y-2 text-sm">
+            <li><a href="#" className="hover:underline">About Us</a></li>
+            <li><a href="#" className="hover:underline">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Legal</h2>
+          <ul className="space-y-2 text-sm">
+            <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
+            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" className="hover:underline">Accessibility</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Contact Info</h2>
+          <p className="text-sm mb-2">📞 Phone: 13 2227 (24/7)</p>
+          <p className="text-sm mb-4">📧 Email: <a href="mailto:support@thecaptaintaxis.com.au" className="underline">support@thecaptaintaxis.com.au</a></p>
+          <div className="flex space-x-4 mt-2 text-xl">
+            <a href="#" aria-label="Facebook" className="hover:text-[#4267B2]"><FacebookFilled /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-pink-500"><InstagramFilled /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-[#0077B5]"><LinkedinFilled /></a>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center mt-10 bg-[#4D2D7C] rounded-[50px] items-center text-sm border-t border-gray-700 p-[20px] text-gray-100">
+        &copy; {new Date().getFullYear()} The Captain Taxis. All rights reserved.
+      </div>
+    </footer>
       </div>
     </div>
   );
