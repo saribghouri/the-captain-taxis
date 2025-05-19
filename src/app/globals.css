@@ -119,3 +119,12 @@
 .hellow{
   font-weight: 700 !important;
 }
+.Consult {
+  background: linear-gradient(to right, #850ae9, #6029df 100%) !important;
+}
+
+.ant-modal-content{
+    background: rgba(234, 220, 255, 0.35) !important; 
+  z-index: 999 !important ;
+
+}

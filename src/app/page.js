@@ -1,6 +1,6 @@
 "use client";
 import { Row, Col, Card, Button, Drawer } from "antd";
-import { LeftOutlined, MenuOutlined, RightOutlined } from "@ant-design/icons";
+import { FacebookFilled, InstagramFilled, LeftOutlined, LinkedinFilled, MenuOutlined, RightOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -362,7 +362,7 @@ const App = () => {
           <Button
             type="primary"
             size="large"
-            className="w-full bg-gradient-to-r from-purple-800 to-black border-none text-white"
+            className="w-full bg-gradient-to-r !from-purple-800 Consult to-black border-none text-white"
             icon={<CarOutlined />}
           >
             Book A Ride
@@ -419,7 +419,7 @@ const App = () => {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
       {services.map((service, index) => (
         <div
           key={index}
@@ -611,6 +611,70 @@ const App = () => {
     </ul>
   </div>
 </div>
+<footer className="bg-[#ece7ff] text-black px-4 sm:px-6 py-10 rounded-tl-[30px] rounded-tr-[30px]">
+  <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    
+    {/* Logo */}
+    <div>
+      <img
+        className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[320px]"
+        src="assets/images/Logo1.png"
+        alt="icon"
+      />
+    </div>
+
+    {/* Quick Links */}
+    <div>
+      <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
+      <ul className="space-y-2 text-sm">
+        <li><a href="#" className="hover:underline">Home</a></li>
+        <li><a href="#" className="hover:underline">Book a Ride</a></li>
+        <li><a href="#" className="hover:underline">Services</a></li>
+        <li><a href="#" className="hover:underline">Fare Estimator</a></li>
+        <li><a href="#" className="hover:underline">TTSS</a></li>
+        <li><a href="#" className="hover:underline">Join Fleet</a></li>
+      </ul>
+    </div>
+
+    {/* About */}
+    <div>
+      <h2 className="text-lg font-semibold mb-4">About</h2>
+      <ul className="space-y-2 text-sm">
+        <li><a href="#" className="hover:underline">About Us</a></li>
+        <li><a href="#" className="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    {/* Legal */}
+    <div>
+      <h2 className="text-lg font-semibold mb-4">Legal</h2>
+      <ul className="space-y-2 text-sm">
+        <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
+        <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+        <li><a href="#" className="hover:underline">Accessibility</a></li>
+      </ul>
+    </div>
+
+    {/* Contact Info */}
+    <div>
+      <h2 className="text-lg font-semibold mb-4">Contact Info</h2>
+      <p className="text-sm mb-2">📞 Phone: 13 2227 (24/7)</p>
+      <p className="text-sm mb-4">
+        📧 Email: <a href="mailto:support@thecaptaintaxis.com.au" className="underline">support@thecaptaintaxis.com.au</a>
+      </p>
+      <div className="flex space-x-4 mt-2 text-xl justify-start sm:justify-start">
+        <a href="#" aria-label="Facebook" className="hover:text-[#4267B2]"><FacebookFilled /></a>
+        <a href="#" aria-label="Instagram" className="hover:text-pink-500"><InstagramFilled /></a>
+        <a href="#" aria-label="LinkedIn" className="hover:text-[#0077B5]"><LinkedinFilled /></a>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom copyright bar */}
+  <div className="text-center mt-10 bg-[#4D2D7C] rounded-[50px] text-sm text-gray-100 py-4 px-6">
+    &copy; {new Date().getFullYear()} The Captain Taxis. All rights reserved.
+  </div>
+</footer>
 
       </div>
     </div>
@@ -618,3 +682,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
