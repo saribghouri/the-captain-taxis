@@ -87,7 +87,7 @@
   display: grid;
   grid-auto-flow: column;
   gap: 16px;
-  background: white;
+
   padding: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 9999;

@@ -9,6 +9,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { Modal, Input,  } from "antd";
 import Slider from "react-slick";
 import { EnvironmentOutlined, AimOutlined, CarOutlined   , UserOutlined, AppstoreAddOutlined, DollarOutlined } from "@ant-design/icons";
+import Header from "./Header";
 const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -206,11 +207,11 @@ const App = () => {
 
       <div className="items-center ">
       <div className="relative">
-        <div className="header-container">
+        {/* <div className="header-container">
           <div className="top-bar flex justify-between items-center px-4 py-2">
             <img src="/assets/images/logo.png" alt="Logo" className="logo h-10" />
 
-            {/* Desktop Navigation */}
+
             <div className="nav-items hidden md:flex space-x-6">
               {navItems.map((item) => (
                 <div
@@ -243,7 +244,7 @@ const App = () => {
               ))}
             </div>
 
-            {/* Mobile Hamburger Icon */}
+        
             <div className="md:hidden block" onClick={showDrawer}>
               <MenuOutlined style={{ fontSize: "24px" }} />
             </div>
@@ -252,9 +253,8 @@ const App = () => {
               <a className="utility-link">Login / Sign Up</a>
             </div>
           </div>
-        </div>
-
-        {/* Drawer for Mobile Menu */}
+        </div> */}
+        <Header />
         <Drawer
           title={<img src="/assets/images/logo.png" alt="Logo" className="h-10" />}
           placement="right"
@@ -297,15 +297,15 @@ const App = () => {
     <div className="secttion-one text-white">
       {/* Top Banner */}
       <div className="flex justify-center w-full px-4">
-  <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] flex flex-col sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative p-4 sm:p-6 gap-4">
+  <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative  sm:p-6 gap-4">
     
     <img
-      className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-0"
+      className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-40px]"
       src="assets/images/Mask Group 2.png"
       alt="icon"
     />
     
-    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:ml-[20px] text-center sm:text-left">
+    <div className="flex flex-row sm:flex-row sm:items-center gap-2 sm:ml-[20px] text-center sm:text-left">
       <h1 className="text-[#000] font-bold text-[18px] sm:text-[20px]">Caption Taxi Gift Card!</h1>
       <img src="assets/images/car icon.svg" alt="icon" className="mx-auto sm:mx-0" />
     </div>
@@ -402,6 +402,7 @@ const App = () => {
               <p className="text-gray-700 text-sm">{item.description}</p>
             </div>
           ))}
+          {/* https://ridexpress.in/ */}
         </div>
         <div className="mt-10">
           <a
@@ -451,26 +452,26 @@ const App = () => {
     <p className="text-lg text-gray-600 mb-10">
       Earn more as a fully-professional taxi driver—no surge, no gimmicks.
     </p>
-    <ul className="text-left max-w-2xl mx-auto space-y-3 text-gray-700 text-base mb-10">
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> Steady, Guaranteed Earnings (fixed fares, no surge)
-      </li>
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> Premium, Well-Maintained Cars
-      </li>
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> Top-Tier Safety & Security (in-car cameras, 24/7 support)
-      </li>
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> Flexible Scheduling (full- or part-time)
-      </li>
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> NDIS & Corporate Partnerships (higher-value trips)
-      </li>
-      <li className="flex items-start">
-        <span className="text-purple-600 font-bold mr-2">•</span> Ongoing Training & Driver Support
-      </li>
-    </ul>
+<ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700 text-base text-left max-w-2xl mx-auto mb-10">
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> Steady, Guaranteed Earnings (fixed fares, no surge)
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> Premium, Well-Maintained Cars
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> Top-Tier Safety & Security (in-car cameras, 24/7 support)
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> Flexible Scheduling (full- or part-time)
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> NDIS & Corporate Partnerships (higher-value trips)
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-600 font-bold mr-2">•</span> Ongoing Training & Driver Support
+  </li>
+</ul>
     <a href="/apply-driver">
       <button className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300">
         Become a Driver
