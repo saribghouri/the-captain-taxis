@@ -1,19 +1,83 @@
 "use client";
-import { Row, Col, Card, Button, Drawer } from "antd";
-import { FacebookFilled, InstagramFilled, LeftOutlined, LinkedinFilled, MenuOutlined, RightOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Button, Drawer, AutoComplete } from "antd";
+import {
+  FacebookFilled,
+  InstagramFilled,
+  LeftOutlined,
+  LinkedinFilled,
+  MenuOutlined,
+  RightOutlined,
+} from "@ant-design/icons";
 import { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState } from 'react';
-import { DownOutlined } from '@ant-design/icons';
-import { Modal, Input, } from "antd";
+import React, { useState, useEffect } from "react";
+import { DownOutlined } from "@ant-design/icons";
+import { Modal, Input } from "antd";
 import Slider from "react-slick";
-import { EnvironmentOutlined, AimOutlined, CarOutlined, UserOutlined, AppstoreAddOutlined, DollarOutlined } from "@ant-design/icons";
+import {
+  EnvironmentOutlined,
+  AimOutlined,
+  CarOutlined,
+  UserOutlined,
+  AppstoreAddOutlined,
+  DollarOutlined,
+} from "@ant-design/icons";
 import Header from "./Header";
+import ServicesCarousel from "@/components/services-carousel";
+import HowItWorks from "@/components/how-it-works";
+import DriveWithUs from "@/components/drive-with-us";
+import Testimonials from "@/components/testimonials";
+import AppPromotion from "@/components/app-promotion";
+import Footer from "@/components/footer";
 const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [pickupLocation, setPickupLocation] = useState("");
+  const [dropOffLocation, setDropOffLocation] = useState("");
+  const [showPrices, setShowPrices] = useState(false);
+  const [prices, setPrices] = useState({ sedan: 0, suv: 0 });
 
+  // List of Australian cities for autocomplete
+  const australianCities = [
+    { value: "Sydney" },
+    { value: "Melbourne" },
+    { value: "Brisbane" },
+    { value: "Perth" },
+    { value: "Adelaide" },
+    { value: "Gold Coast" },
+    { value: "Newcastle" },
+    { value: "Canberra" },
+    { value: "Wollongong" },
+    { value: "Hobart" },
+    { value: "Geelong" },
+    { value: "Townsville" },
+    { value: "Cairns" },
+    { value: "Darwin" },
+    { value: "Toowoomba" },
+    { value: "Ballarat" },
+    { value: "Bendigo" },
+    { value: "Launceston" },
+    { value: "Mackay" },
+    { value: "Rockhampton" },
+  ];
 
+  // Calculate random prices when both locations are selected
+  const calculatePrices = () => {
+    if (pickupLocation && dropOffLocation) {
+      // Generate random prices between $30 and $120
+      const sedanPrice = Math.floor(Math.random() * 90) + 30;
+      const suvPrice = Math.floor(Math.random() * 90) + 60; // SUV is a bit more expensive
+
+      setPrices({ sedan: sedanPrice, suv: suvPrice });
+      setShowPrices(true);
+    }
+  };
+  // Calculate prices immediately when drop-off location is selected
+  useEffect(() => {
+    if (pickupLocation && dropOffLocation) {
+      calculatePrices();
+    }
+  }, [dropOffLocation]);
 
   const scrollRef = useRef(null);
   const { Meta } = Card;
@@ -49,122 +113,81 @@ const App = () => {
     },
   ];
   const navItems = [
-    { label: 'Home', direct: true },
-    { label: 'Book a Ride', direct: true },
-    { label: 'What We Offer', mega: true },
-    { label: 'Pricing', mega: true },
-    { label: 'Drivers', mega: true },
-    { label: 'Corporate Accounts', mega: true },
-    { label: 'Help & FAQs', mega: true },
-    { label: 'Contact', mega: true },
+    { label: "Home", direct: true },
+    { label: "Book a Ride", direct: true },
+    { label: "What We Offer", mega: true },
+    { label: "Pricing", mega: true },
+    { label: "Drivers", mega: true },
+    { label: "Corporate Accounts", mega: true },
+    { label: "Help & FAQs", mega: true },
+    { label: "Contact", mega: true },
   ];
 
   const megaMenuData = {
-    'What We Offer': [
+    "What We Offer": [
       {
-        heading: 'Vehicles',
-        links: ['Next Available', 'Sedan', 'SUV', 'Maxi', 'Cargo', 'NDIS Transport'],
+        heading: "Vehicles",
+        links: [
+          "Next Available",
+          "Sedan",
+          "SUV",
+          "Maxi",
+          "Cargo",
+          "NDIS Transport",
+        ],
       },
       {
-        heading: 'Special Services',
+        heading: "Special Services",
         links: [
-          'Airport Shuttle',
-          'NDIS Support Service',
-          'Parcel Delivery Service',
-          'Events & Weddings Service',
-          'Corporate Travel Service',
-          'Sydney Taxi Tourist Tour',
+          "Airport Shuttle",
+          "NDIS Support Service",
+          "Parcel Delivery Service",
+          "Events & Weddings Service",
+          "Corporate Travel Service",
+          "Sydney Taxi Tourist Tour",
         ],
       },
     ],
     Pricing: [
       {
-        heading: '',
-        links: ['Fare Estimator', 'TTSS Subsidy Scheme'],
+        heading: "",
+        links: ["Fare Estimator", "TTSS Subsidy Scheme"],
       },
     ],
     Drivers: [
       {
-        heading: '',
-        links: ['Why Drive with Us', 'Become a Driver'],
+        heading: "",
+        links: ["Why Drive with Us", "Become a Driver"],
       },
     ],
-    'Corporate Accounts': [
+    "Corporate Accounts": [
       {
-        heading: '',
-        links: ['Business Accounts', 'Event Transfers', 'Airport Shuttles'],
+        heading: "",
+        links: ["Business Accounts", "Event Transfers", "Airport Shuttles"],
       },
     ],
-    'Help & FAQs': [
+    "Help & FAQs": [
       {
-        heading: '',
-        links: ['Booking Help', 'Payment Questions', 'Accessibility Information'],
+        heading: "",
+        links: [
+          "Booking Help",
+          "Payment Questions",
+          "Accessibility Information",
+        ],
       },
     ],
     Contact: [
       {
-        heading: '',
-        links: ['Customer Support', 'Driver Support'],
+        heading: "",
+        links: ["Customer Support", "Driver Support"],
       },
     ],
   };
 
-  const steps = [
-    {
-      step: "Step 1: Estimate Your Fare",
-      description: "Enter pickup & drop-off; get an instant quote.",
-    },
-    {
-      step: "Step 2: Select Your Service",
-      description: "Next Available, Sedan, SUV, Maxi, Cargo or NDIS.",
-    },
-    {
-      step: "Step 3: Ride or Reserve",
-      description: "Book now or schedule later; pay in-app or in-taxi.",
-    },
-  ];
-  const services = [
-    {
-      title: "Next Available",
-      description: "Quickest possible pick-up.",
-      image: "/assets/images/next.png",
-    },
-    {
-      title: "Sedan",
-      description: "Comfort for 1–4 passengers.",
-      image: "/assets/images/3bdbc452ce1ae8e6cb763ecb5ae315eb.avif",
-    },
-    {
-      title: "SUV",
-      description: "Extra legroom & luggage space.",
-      image: "/assets/images/4629696636792d6a8674e7523516243_900_600-f.jpg",
-    },
-    {
-      title: "Maxi",
-      description: "Groups up to 11.",
-      image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
-    },
-    {
-      title: "Cargo",
-      description: "Door-to-door bulky item transport.",
-      image: "/assets/images/e881c42f-8760-5c9d-8c0b-fc851be50000.avif",
-    },
-    {
-      title: "NDIS Transport",
-      description: "Wheelchair-accessible trips with TTSS support.",
-      image: "/assets/images/man-using-disabled-parking-spot-1024x576.png",
-    },
-  ];
-
   const [drawerVisible, setDrawerVisible] = useState(false);
-
 
   const showDrawer = () => setDrawerVisible(true);
   const closeDrawer = () => setDrawerVisible(false);
-
-
-
-
 
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -203,13 +226,17 @@ const App = () => {
   return (
     <div className="items-center ">
       <div className="relative">
-
         <div className="items-center ">
           <div className="relative">
-
             <Header />
             <Drawer
-              title={<img src="/assets/images/logo.png" alt="Logo" className="h-10" />}
+              title={
+                <img
+                  src="/assets/images/logo.png"
+                  alt="Logo"
+                  className="h-10"
+                />
+              }
               placement="right"
               onClose={closeDrawer}
               open={drawerVisible}
@@ -219,19 +246,31 @@ const App = () => {
                   <div key={item.label}>
                     <div
                       className="flex justify-between items-center cursor-pointer"
-                      onClick={() => item.mega ? toggleMenu(item.label) : closeDrawer()}
+                      onClick={() =>
+                        item.mega ? toggleMenu(item.label) : closeDrawer()
+                      }
                     >
-                      <span className="text-base font-medium">{item.label}</span>
+                      <span className="text-base font-medium">
+                        {item.label}
+                      </span>
                       {item.mega && <DownOutlined />}
                     </div>
                     {item.mega && activeMenu === item.label && (
                       <div className="ml-4 mt-2 space-y-2">
                         {megaMenuData[item.label].map((col, idx) => (
                           <div key={idx}>
-                            {col.heading && <div className="text-sm font-semibold">{col.heading}</div>}
+                            {col.heading && (
+                              <div className="text-sm font-semibold">
+                                {col.heading}
+                              </div>
+                            )}
                             <div className="ml-2 space-y-1">
                               {col.links.map((link) => (
-                                <a key={link} href="#" className="block text-sm text-gray-600">
+                                <a
+                                  key={link}
+                                  href="#"
+                                  className="block text-sm text-gray-600"
+                                >
                                   {link}
                                 </a>
                               ))}
@@ -247,10 +286,9 @@ const App = () => {
           </div>
         </div>
 
-        <div className="secttion-one text-white mt-[90px]">
+        <div className="secttion-one text-white min-h-screen w-full overflow-hidden pt-[50px]">
           <div className="flex justify-center w-full px-4">
-            <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative  sm:p-6 gap-4">
-
+            <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative sm:p-6 gap-4">
               <img
                 className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-40px]"
                 src="assets/images/Mask Group 2.png"
@@ -258,314 +296,218 @@ const App = () => {
               />
 
               <div className="flex flex-row sm:flex-row sm:items-center gap-2 sm:ml-[20px] text-center sm:text-left">
-                <h1 className="text-[#000] font-bold text-[18px] sm:text-[20px]">Caption Taxi Gift Card!</h1>
-                <img src="assets/images/car icon.svg" alt="icon" className="mx-auto sm:mx-0" />
+                <h1 className="text-[#000] font-bold text-[18px] sm:text-[20px]">
+                  Caption Taxi Gift Card!
+                </h1>
+                <img
+                  src="assets/images/car icon.svg"
+                  alt="icon"
+                  className="mx-auto sm:mx-0"
+                />
               </div>
 
               <button className="text-[#4109eb] text-[14px] sm:text-[15px] font-medium mt-2 sm:mt-0">
                 Find out more
               </button>
-
             </div>
-          </div>
-
-          <div className="flex justify-between">
-
-            <div className="pt-[80px] pl-[80px]">
-              <h1 className="font-medium text-[25px]">Your ride, your way-anytime</h1>
-              <h1 className="font-bold text-[25px] ml-[80px]">Anywhere in Australia.</h1>
-              <p>Fast, reliable taxi bookings in Sydney today, expanding nationwide tomorrow.</p>
-
-            </div>
-            <div className="text-center Consults !m-[30px]">
-              <h2 className="text-2xl font-bold mb-6">Book A Taxi</h2>
-
-              <Input
-                size="large"
-                placeholder="Pickup Location"
-                prefix={<EnvironmentOutlined />}
-                className="mb-4 !w-[60%]"
-              />
-
-              <Input
-                size="large"
-                placeholder="Drop Off Location"
-                prefix={<AimOutlined />}
-                className="mb-6 !w-[60%]"
-              />
-
-              <Button
-                type="primary"
-                size="large"
-                className=" !w-[60%] bg-gradient-to-r !from-purple-800 Consult to-black border-none text-white"
-                icon={<CarOutlined />}
-              >
-                Book A Ride
-              </Button>
-            </div>
-          </div>
-
-
-        </div>
-          <div className="px-8 py-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-          Key Benefits
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {benefits.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 pt-32 rounded-3xl shadow-md relative overflow-hidden"
-            >
-              {/* Icon on yellow circle */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#582d7c] border-4 border-white text-white flex items-center justify-center shadow-md">
-                {item.icon}
+          </div>{" "}
+          <div className="flex flex-col lg:flex-row justify-between max-w-full px-4 items-center">
+            {/* This div will be hidden on mobile screens */}
+            <div className="hidden md:block pt-[80px] pl-[20px] lg:pl-[80px] md:w-1/2">
+              <div className="text-left animate-fade-in-up">
+                <h1 className="font-medium text-[28px] md:text-[32px] lg:text-[42px] leading-tight text-white drop-shadow-lg mb-2 tracking-wide">
+                  Your ride, your way
+                  <span className="text-yellow-400">-anytime</span>
+                </h1>
+                <h1 className="font-extrabold text-[30px] md:text-[34px] lg:text-[44px] text-white drop-shadow-lg ml-[20px] md:ml-[40px] lg:ml-[60px] mb-4 tracking-wide bg-gradient-to-r from-purple-600 to-indigo-800 bg-clip-text text-transparent">
+                  Anywhere in Australia.
+                </h1>
+                <p className="text-base md:text-lg lg:text-xl text-white italic drop-shadow-md font-light max-w-xl mt-4 leading-relaxed">
+                  Fast, reliable taxi bookings in Sydney today, expanding
+                  nationwide tomorrow.
+                </p>
               </div>
+            </div>
 
-              {/* Title */}
-              <h3 className="font-bold text-base text-gray-800 uppercase tracking-wide mb-4">
-                {item.title}
-              </h3>
+            <div className="text-center Consults !m-[15px] md:!m-[30px] w-full md:w-auto max-w-full overflow-visible">
+              <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
+                Book A Taxi
+              </h2>
+              <div className="w-full md:w-[300px] lg:w-[350px] mx-auto max-w-[95%]">
+                <div className="mb-4 w-full">
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                      <svg
+                        className="w-5 h-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        ></path>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      placeholder="Pickup Location"
+                      className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-purple-500"
+                    />
+                  </div>
+                </div>
 
-              {/* Message Box */}
-              <div className="bg-[#F3F4F6] text-black rounded-2xl p-5 space-y-4">
-                <p className="text-sm leading-relaxed">{item.description}</p>
-                <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full hover:bg-yellow-500 transition">
-                  KNOW MORE →
+                <div className="mb-6 w-full">
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                      <svg
+                        className="w-5 h-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        ></path>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      placeholder="Drop Off Location"
+                      className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-purple-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-6 text-left border rounded-md p-4 w-full mx-auto bg-gray-50">
+                  <h3 className="font-semibold text-purple-800 mb-2">
+                    Available Rides:
+                  </h3>
+                  <div className="flex justify-between items-center mb-2 border-b pb-2">
+                    <div className="flex items-center">
+                      <svg
+                        className="w-5 h-5 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                        ></path>
+                      </svg>
+                      <span>Sedan</span>
+                    </div>
+                    <div className="font-bold">$85</div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <svg
+                        className="w-5 h-5 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                        ></path>
+                      </svg>
+                      <span>SUV</span>
+                    </div>
+                    <div className="font-bold">$110</div>
+                  </div>
+                </div>
+
+                <button className="w-full py-3 font-bold text-white bg-gradient-to-r from-purple-800 to-purple-900 rounded-full hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+                  Book A Ride
                 </button>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
-
-        <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-12">How It Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {steps.map((item, index) => (
+        <div className="px-8 py-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+              Key Benefits
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              {benefits.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+                  className="bg-white p-6 pt-32 rounded-3xl shadow-md relative overflow-hidden"
                 >
-                  <h3 className="text-xl font-semibold text-purple-700 mb-2">
-                    {item.step}
+                  {/* Icon on yellow circle */}
+                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#582d7c] border-4 border-white text-white flex items-center justify-center shadow-md">
+                    {item.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-bold text-base text-gray-800 uppercase tracking-wide mb-4">
+                    {item.title}
                   </h3>
-                  <p className="text-gray-700 text-sm">{item.description}</p>
+
+                  {/* Message Box */}
+                  <div className="bg-[#F3F4F6] text-black rounded-2xl p-5 space-y-4">
+                    <p className="text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                    <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full hover:bg-yellow-500 transition">
+                      KNOW MORE →
+                    </button>
+                  </div>
                 </div>
               ))}
-              {/* https://ridexpress.in/ */}
-
-              {/* FTP Details 
-
-Username: 
-developer@thecaptaintaxis.com.au
-
-Password: 
-Taxi786
-
-
-FTP HOST: 
-154.26.154.93 */}
-            </div>
-            <div className="mt-10">
-              <a
-                href="/booking"
-                className="inline-block bg-purple-700 text-white font-medium px-6 py-3 rounded-full hover:bg-purple-800 transition"
-              >
-                Get Started
-              </a>
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center mt-[40px] mb-[20px] w-full justify-center">
-          <h1 className="' font-bold text-[30px]">OUR SERVICES</h1>
-          <p>We are Always There at Your Services</p>
-        </div>
 
+        <HowItWorks />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden"
-            >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="h-40 w-full md:w-48 object-cover"
-              />
-              <div className="p-4 flex flex-col justify-between">
-                <div>
-                  <h2 className="text-xl font-bold text-gray-800">{service.title}</h2>
-                  <p className="text-sm text-gray-600 mt-1">{service.description}</p>
-                </div>
-                <Button
-                  href="#"
-                  className="!text-white p-[12px] text-center !rounded-[50px] font-semibold mt-3 hover:underline text-sm !bg-[#4D2D7C] "
-                >
-                  Book Now →
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-16">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Drive with The Captain Taxis</h2>
-            <p className="text-lg text-gray-600 mb-10">
-              Earn more as a fully-professional taxi driver—no surge, no gimmicks.
-            </p>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700 text-base text-left max-w-2xl mx-auto mb-10">
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> Steady, Guaranteed Earnings (fixed fares, no surge)
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> Premium, Well-Maintained Cars
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> Top-Tier Safety & Security (in-car cameras, 24/7 support)
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> Flexible Scheduling (full- or part-time)
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> NDIS & Corporate Partnerships (higher-value trips)
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span> Ongoing Training & Driver Support
-              </li>
-            </ul>
-            <a href="/apply-driver">
-              <button className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300">
-                Become a Driver
-              </button>
-            </a>
-          </div>
-        </div>
-        <div className="bg-white py-16 px-4 sm:px-6 lg:px-16">
-          <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-10">What Our Riders Say</h2>
-          <Slider {...sliderSettings}>
-            {testimonials.map((t, index) => (
-              <div key={index} className="px-4">
-                <div className="bg-gray-50 p-8 rounded-xl shadow-md max-w-2xl mx-auto text-center">
-                  <p className="text-lg text-gray-700 italic mb-4">“{t.quote}”</p>
-                  <p className="text-sm font-semibold text-gray-600">– {t.name}</p>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <div className=" w-full justify-center items-center mt-[20px]">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="font-extrabold text-[40px]">GET OUR APP </h1>
-            <h1 className="font-bold text-[30px] text-[#4D2D7C]">GO YOUR WAY</h1>
-          </div>
+        <ServicesCarousel />
 
+        <DriveWithUs />
 
-        </div>
-        <div className="flex flex-col md:flex-row justify-between w-full mt-[50px] gap-10 md:gap-20 px-4">
-          <div className="w-full md:w-1/2 flex justify-center">
-            <img
-              className="max-w-full h-auto"
-              src="assets/images/Get our service.png"
-              alt="icon"
-            />
-          </div>
-          <div className="w-full md:w-1/2">
-            <p className="leading-7 md:leading-8 font-medium text-[#727272]">
-              The Captain Taxis is your go-to transportation service offering a range of
-              specialized services tailored to meet your diverse needs. We know how
-              hectic it can be when you’re in a hurry to reach your destination. That’s
-              why we’ve chosen skilled drivers who appreciate the importance of being
-              punctual, providing a comfortable ride, and driving responsibly. We take
-              pride in their outstanding professionalism, making your journey with The
-              Captain Taxis reliable and trustworthy. Choose The Captain Taxis for more
-              than just affordable rides – experience the reliability of a family.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-5 gap-3 sm:gap-5">
-              <img
-                className="w-[140px] h-auto"
-                src="assets/images/google play.png"
-                alt="Google Play"
-              />
-              <img
-                className="w-[140px] h-[44px]"
-                src="assets/images/app store.png"
-                alt="App Store"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col justify-center items-center px-4">
-          <div className="text-center mt-[70px]">
-            <h1 className="text-[#646464] font-bold text-[12px]">CATEGORY</h1>
-            <h1 className="text-[22px] md:text-[26px] font-extrabold">
-              The Captain Taxis 13Cabs Accepts <br className="hidden md:block" /> Cabcharge
-            </h1>
-          </div>
+        <Testimonials />
 
-          <div className="flex flex-wrap justify-center gap-5 mt-[40px]">
-            <div className="w-[160px] sm:w-[180px]">
-              <Card className="!border-none" hoverable>
-                <div className="p-[10px] flex justify-center">
-                  <img className="w-[50px]" alt="gift card" src="assets/images/gift card.svg" />
-                </div>
-                <div className="flex flex-col text-center">
-                  <h1 className="text-[#35344d] font-bold">Giftcard</h1>
-                  <p className="text-[#7c7c7c] text-[12px]">Giftcard: The perfect, flexible gift choice.</p>
-                </div>
-              </Card>
-            </div>
-
-            <div className="w-[160px] sm:w-[180px]">
-              <Card className="!border-none" hoverable>
-                <div className="p-[10px] flex justify-center">
-                  <img className="w-[50px]" alt="fastcard" src="assets/images/fastcard.svg" />
-                </div>
-                <div className="flex flex-col text-center">
-                  <h1 className="text-[#35344d] font-bold">Fastcard</h1>
-                  <p className="text-[#7c7c7c] text-[12px]">Fastcard: Quick, secure, and seamless payments.</p>
-                </div>
-              </Card>
-            </div>
-
-            <div className="w-[160px] sm:w-[180px]">
-              <Card className="!border-none" hoverable>
-                <div className="p-[10px] flex justify-center">
-                  <img className="w-[50px]" alt="digital pass" src="assets/images/digital. pass.png" />
-                </div>
-                <div className="flex flex-col text-center">
-                  <h1 className="text-[#35344d] font-bold">Digital Pass</h1>
-                  <p className="text-[#7c7c7c] text-[12px]">Digital Pass: Instant, secure access on your phone.</p>
-                </div>
-              </Card>
-            </div>
-
-            <div className="w-[160px] sm:w-[180px]">
-              <Card className="!border-none" hoverable>
-                <div className="p-[10px] flex justify-center">
-                  <img className="w-[50px]" alt="eTicket" src="assets/images/e ticket.svg" />
-                </div>
-                <div className="flex flex-col text-center">
-                  <h1 className="text-[#35344d] font-bold">eTicket</h1>
-                  <p className="text-[#7c7c7c] text-[12px]">eTicket: Secure, digital access made easy.</p>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
+        <AppPromotion />
 
         <div className="p-4">
           <div className="bg-[#4D2D7C] text-white p-6 md:p-10 flex flex-col text-center rounded-tl-[40px] md:rounded-tl-[70px] rounded-[10px]">
-            <h1 className="font-bold text-[18px] md:text-[20px]">We’re here to help you.</h1>
+            <h1 className="font-bold text-[18px] md:text-[20px]">
+              We’re here to help you.
+            </h1>
             <p className="text-[13px] md:text-[14px] mt-2 md:mt-4">
-              We’re here to help you every step of the way. Whether you have questions,
-              need assistance, or require support, our dedicated team is ready to provide
-              the solutions you need. Your satisfaction is our priority, and we’re committed
-              to ensuring you have a smooth and positive experience.
+              We’re here to help you every step of the way. Whether you have
+              questions, need assistance, or require support, our dedicated team
+              is ready to provide the solutions you need. Your satisfaction is
+              our priority, and we’re committed to ensuring you have a smooth
+              and positive experience.
             </p>
             <ul className="flex flex-col sm:flex-row justify-center items-center text-center gap-3 sm:gap-[40px] mt-4 font-bold">
               <li className="list-disc">24/7 Customer</li>
@@ -574,71 +516,11 @@ FTP HOST:
             </ul>
           </div>
         </div>
-        <footer className="bg-[#ece7ff] text-black px-4 sm:px-6 py-10 rounded-tl-[30px] rounded-tr-[30px]">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
 
-            <div>
-              <img
-                className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[320px]"
-                src="assets/images/Logo1.png"
-                alt="icon"
-              />
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Home</a></li>
-                <li><a href="#" className="hover:underline">Book a Ride</a></li>
-                <li><a href="#" className="hover:underline">Services</a></li>
-                <li><a href="#" className="hover:underline">Fare Estimator</a></li>
-                <li><a href="#" className="hover:underline">TTSS</a></li>
-                <li><a href="#" className="hover:underline">Join Fleet</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">About</h2>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">About Us</a></li>
-                <li><a href="#" className="hover:underline">Contact</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">Legal</h2>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
-                <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-                <li><a href="#" className="hover:underline">Accessibility</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">Contact Info</h2>
-              <p className="text-sm mb-2">📞 Phone: 13 2227 (24/7)</p>
-              <p className="text-sm mb-4">
-                📧 Email: <a href="mailto:support@thecaptaintaxis.com.au" className="underline">support@thecaptaintaxis.com.au</a>
-              </p>
-              <div className="flex space-x-4 mt-2 text-xl justify-start sm:justify-start">
-                <a href="#" aria-label="Facebook" className="hover:text-[#4267B2]"><FacebookFilled /></a>
-                <a href="#" aria-label="Instagram" className="hover:text-pink-500"><InstagramFilled /></a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-[#0077B5]"><LinkedinFilled /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-10 bg-[#4D2D7C] rounded-[50px] text-sm text-gray-100 py-4 px-6">
-            &copy; {new Date().getFullYear()} The Captain Taxis. All rights reserved.
-          </div>
-        </footer>
-
+        <Footer />
       </div>
     </div>
   );
 };
 
 export default App;
-
-
-

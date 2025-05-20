@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-
-.secttion-one{
-  background-image: url("/assets/images/backgroung main.png");
-  width:100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-size: cover;        
-  background-position: center;  
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+.secttion-one {
+  background-image: url("/assets/images/backgroung main.png");
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animation for dropdowns */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Mobile drawer styling */
+.mobile-drawer .ant-drawer-header {
+  border-bottom: 1px solid rgba(77, 45, 124, 0.1);
+  padding: 16px 24px;
+}
+
+.mobile-drawer .ant-drawer-body {
+  padding: 0 16px;
+}
+
+.mobile-drawer .ant-btn {
+  justify-content: flex-start;
+  height: auto;
+  padding: 10px 0;
+}
+
+/* Make drawer menu transitions smooth */
+.mobile-drawer .ant-collapse {
+  background-color: transparent;
+  border: none;
+}
+
+/* Add an overlay to improve text readability on the background */
+.secttion-one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Make sure content is above the overlay */
+.secttion-one > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile-specific background adjustments */
+@media (max-width: 768px) {
+  .secttion-one {
+    background-position: 70% center; /* Adjust focus point for mobile */
+    padding-bottom: 40px; /* Add some padding at the bottom for mobile */
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.header-container {
 
+.header-container {
   width: 100%;
-  background: rgba(234, 220, 255, 0.35); /* only background is transparent */
+  background: rgba(234, 220, 255, 0.35);
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   color: rgb(31, 30, 30) !important;
@@ -50,12 +119,12 @@
   color: #1d1c1c;
   font-size: 20px;
   cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-link:hover {
   text-decoration: underline;
-  color: #4D2D7C;
+  color: #4d2d7c;
 }
 
 .utility-links {
@@ -67,7 +136,6 @@
 .utility-link {
   color: #333;
   font-weight: 500;
-  
 }
 
 .download-links img {
@@ -87,7 +155,6 @@
   display: grid;
   grid-auto-flow: column;
   gap: 16px;
-
   padding: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 9999;
@@ -113,32 +180,118 @@
 }
 
 .mega-link:hover {
-  color: #4D2D7C;
+  color: #4d2d7c;
   text-decoration: underline;
 }
-.hellow{
+
+.hellow {
   font-weight: 700 !important;
 }
+
 .Consult {
   color: aliceblue !important;
   background: linear-gradient(to right, #850ae9, #6029df 100%) !important;
 }
+
 .Consults {
   color: aliceblue !important;
-  
-    background: rgba(70, 70, 71, 0.35) !important  ; 
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
-    border-radius: 20px !important;
-
+  background: rgba(70, 70, 71, 0.75) !important;
+  padding: 20px !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(5px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.ant-modal-content{
-    background: rgba(234, 220, 255, 0.35) !important; 
-  z-index: 999 !important ;
-
+.ant-modal-content {
+  background: rgba(234, 220, 255, 0.35) !important;
+  z-index: 999 !important;
 }
-:where(.css-dev-only-do-not-override-1m2bkf9).ant-dropdown{
+
+:where(.css-dev-only-do-not-override-1m2bkf9).ant-dropdown {
   border-radius: 20px !important;
   width: 50% !important;
+}
+
+
+/* Add these styles to your CSS file */
+.services-carousel .slick-track {
+  display: flex !important;
+}
+
+.services-carousel .slick-slide {
+  height: inherit !important;
+  display: flex !important;
+}
+
+.services-carousel .slick-slide > div {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+/* Override Ant Design carousel dots */
+.ant-carousel .slick-dots li button {
+  background: #4d2d7c !important;
+  opacity: 0.4;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  opacity: 1;
+  background: #4d2d7c !important;
+}
+
+/* Add these styles to your CSS file if needed */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(77, 45, 124, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(77, 45, 124, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 45, 124, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Add these styles to your CSS file if needed */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+}
+
+.floating-badge {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Add these styles to your CSS file if needed */
+.testimonial-carousel .slick-track {
+  display: flex !important;
+}
+
+.testimonial-carousel .slick-slide {
+  height: inherit !important;
+  display: flex !important;
+}
+
+.testimonial-carousel .slick-slide > div {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+/* Remove any existing carousel dots styles */
+.ant-carousel .slick-dots {
+  display: none !important;
 }
