@@ -209,7 +209,7 @@ const Header = () => {
         <img
           onClick={() => router.push("/")}
           className="w-[150px] cursor-pointer"
-          src="/assets/images/logo1.png"
+          src="/assets/images/Logo1.png"
           alt="Logo"
         />
         <div className="flex items-center gap-4">
