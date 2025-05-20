@@ -67,7 +67,9 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-16 overflow-hidden">
+    <div className="testomonial-shadow">
+
+    <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-16 overflow-hidden ">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-5 pointer-events-none">
         <div className="absolute -top-10 -left-10 w-40 h-40 text-[#4D2D7C] transform rotate-12">
@@ -188,6 +190,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

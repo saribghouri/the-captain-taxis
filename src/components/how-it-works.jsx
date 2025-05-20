@@ -32,7 +32,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-[#f2effb] py-20 px-4 sm:px-6 lg:px-8 testomonial-shadow overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-16">

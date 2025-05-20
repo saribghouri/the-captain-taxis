@@ -37,8 +37,9 @@ const DriveWithUs = () => {
   ]
 
   return (
-    <div className="relative bg-gradient-to-b from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-16 overflow-hidden">
-      {/* Decorative Elements */}
+    <div className=" p-[20px]  ">
+  <div className="relative bg-gradient-to-b from-gray-50 testomonial-shadow to-white py-20 px-4 sm:px-6 lg:px-16 overflow-hidden shadow-xl">
+   
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#4D2D7C] opacity-5 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#4D2D7C] opacity-5 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
 
@@ -50,7 +51,10 @@ const DriveWithUs = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-12 border border-gray-100">
+        <div
+          className="bg-white rounded-2xl p-8 mb-12 border border-gray-100"
+          style={{ boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start group">
@@ -84,6 +88,8 @@ const DriveWithUs = () => {
         </div>
       </div>
     </div>
+    </div>
+  
   )
 }
 

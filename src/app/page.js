@@ -166,6 +166,7 @@ const App = () => {
         links: ["Business Accounts", "Event Transfers", "Airport Shuttles"],
       },
     ],
+    
     "Help & FAQs": [
       {
         heading: "",
@@ -314,10 +315,10 @@ const App = () => {
           <div className="flex flex-col lg:flex-row justify-between max-w-full px-4 items-center">
             {/* This div will be hidden on mobile screens */}
             <div className="hidden md:block pt-[80px] pl-[20px] lg:pl-[80px] md:w-1/2">
-              <div className="text-left animate-fade-in-up">
+              <div className="text-left animate-fade-in-up mt-[-150px]">
                 <h1 className="font-medium text-[28px] md:text-[32px] lg:text-[42px] leading-tight text-white drop-shadow-lg mb-2 tracking-wide">
                   Your ride, your way
-                  <span className="text-yellow-400">-anytime</span>
+                  <span className="text-[#a8a8a8]">-anytime</span>
                 </h1>
                 <h1 className="font-extrabold text-[30px] md:text-[34px] lg:text-[44px] text-white drop-shadow-lg ml-[20px] md:ml-[40px] lg:ml-[60px] mb-4 tracking-wide bg-gradient-to-r from-purple-600 to-indigo-800 bg-clip-text text-transparent">
                   Anywhere in Australia.
@@ -398,7 +399,7 @@ const App = () => {
                   </div>
                 </div>
 
-                <div className="mb-6 text-left border rounded-md p-4 w-full mx-auto bg-gray-50">
+                {/* <div className="mb-6 text-left border rounded-md p-4 w-full mx-auto bg-gray-50">
                   <h3 className="font-semibold text-purple-800 mb-2">
                     Available Rides:
                   </h3>
@@ -442,7 +443,7 @@ const App = () => {
                     </div>
                     <div className="font-bold">$110</div>
                   </div>
-                </div>
+                </div> */}
 
                 <button className="w-full py-3 font-bold text-white bg-gradient-to-r from-purple-800 to-purple-900 rounded-full hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
                   Book A Ride
@@ -477,7 +478,7 @@ const App = () => {
                     <p className="text-sm leading-relaxed">
                       {item.description}
                     </p>
-                    <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full hover:bg-yellow-500 transition">
+                    <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full  transition">
                       KNOW MORE →
                     </button>
                   </div>

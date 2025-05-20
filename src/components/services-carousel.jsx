@@ -11,10 +11,10 @@ import {
 import { useRef } from "react";
 
 const ServicesCarousel = () => {
-  // Sample services data - you can replace with your actual data
+
   const services = [
     {
-      title: "NEXT AVAILABLE",
+      title: "Airport Shuttle",
       description: "Quickest possible pick-up.",
       image: "/assets/images/next.png",
       rate: "250 kms/day",
@@ -24,54 +24,40 @@ const ServicesCarousel = () => {
       gpsNavigation: "Yes",
     },
     {
-      title: "SEDAN",
+      title: "NDIS Support Service",
       description: "Comfort for 1–4 passengers.",
       image: "/assets/images/3bdbc452ce1ae8e6cb763ecb5ae315eb.avif",
       rate: "280 kms/day",
-      passengers: "4/5",
-      luggage: "3/5",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+    
     },
     {
-      title: "SUV",
+      title: "Parcel Delivery Service",
       description: "Extra legroom & luggage space.",
-      image: "/assets/images/4629696636792d6a8674e7523516243_900_600-f.jpg",
+            image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
+
       rate: "300 kms/day",
-      passengers: "5/6",
-      luggage: "5/6",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+   
     },
     {
-      title: "MAXI",
+      title: "Events & Weddings Service",
       description: "Groups up to 11.",
       image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
       rate: "350 kms/day",
-      passengers: "11/11",
-      luggage: "6/6",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+   
     },
     {
-      title: "CARGO",
+      title: "Corporate Travel Service",
       description: "Door-to-door bulky item transport.",
-      image: "/assets/images/e881c42f-8760-5c9d-8c0b-fc851be50000.avif",
+      image: "/assets/images/4629696636792d6a8674e7523516243_900_600-f.jpg",
       rate: "320 kms/day",
-      passengers: "2/3",
-      luggage: "6/6",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+    
     },
     {
-      title: "NDIS TRANSPORT",
+      title: "Sydney Taxi Tourist Tour",
       description: "Wheelchair-accessible trips with TTSS support.",
       image: "/assets/images/man-using-disabled-parking-spot-1024x576.png",
       rate: "300 kms/day",
-      passengers: "4/5",
-      luggage: "4/5",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+     
     },
   ];
 
@@ -185,47 +171,7 @@ const ServiceCard = ({ service }) => {
           <div className="w-16 h-1 bg-[#4D2D7C] rounded"></div>
         </div>
 
-        <div className="space-y-3 mt-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-[#4D2D7C] flex items-center justify-center mr-3">
-                <UserOutlined style={{ color: "white" }} />
-              </div>
-              <span className="text-gray-700">Passengers:</span>
-            </div>
-            <span className="font-medium">{service.passengers}</span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-[#4D2D7C] flex items-center justify-center mr-3">
-                <InboxOutlined style={{ color: "white" }} />
-              </div>
-              <span className="text-gray-700">Luggage Carry:</span>
-            </div>
-            <span className="font-medium">{service.luggage}</span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-[#4D2D7C] flex items-center justify-center mr-3">
-                <ThunderboltOutlined style={{ color: "white" }} />
-              </div>
-              <span className="text-gray-700">Air Condition:</span>
-            </div>
-            <span className="font-medium">{service.airCondition}</span>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-[#4D2D7C] flex items-center justify-center mr-3">
-                <CompassOutlined style={{ color: "white" }} />
-              </div>
-              <span className="text-gray-700">GPS Navigation:</span>
-            </div>
-            <span className="font-medium">{service.gpsNavigation}</span>
-          </div>
-        </div>
+     
 
         <div className="mt-6">
           <button className="w-full bg-[#4D2D7C] hover:bg-[#804ac7] text-white py-3 px-4 rounded-full flex items-center justify-center transition-all">

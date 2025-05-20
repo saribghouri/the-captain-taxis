@@ -195,7 +195,7 @@ html {
 
 .Consults {
   color: aliceblue !important;
-  background: rgba(70, 70, 71, 0.75) !important;
+    background: rgba(65, 76, 63, 0.25);
   padding: 20px !important;
   border-radius: 20px !important;
   backdrop-filter: blur(5px);
@@ -295,3 +295,7 @@ html {
 .ant-carousel .slick-dots {
   display: none !important;
 }
+
+
+.testomonial-shadow{
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
