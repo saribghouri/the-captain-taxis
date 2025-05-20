@@ -357,7 +357,7 @@ const Header = () => {
       <Drawer
         title={
           <div className="flex items-center justify-end">
-            <img src="/assets/images/logo1.png" alt="Logo" className="h-8" />
+            <img src="/assets/images/Logo1.png" alt="Logo" className="h-8" />
           </div>
         }
         placement="right"
