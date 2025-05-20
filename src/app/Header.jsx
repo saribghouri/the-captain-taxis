@@ -348,7 +348,7 @@ const Header = () => {
         />
         <Button
           type="text"
-          icon={<MenuOutlined className="text-white text-xl" />}
+          icon={<MenuOutlined className="!text-white text-xl" />}
           onClick={showDrawer}
           className="text-white border-none shadow-none"
         />
