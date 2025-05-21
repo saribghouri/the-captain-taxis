@@ -117,26 +117,30 @@ const menuData = [
 ];
 
 const MegaMenu = ({ columns, onItemClick }) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 bg-white shadow-lg rounded-lg min-w-[300px] sm:min-w-[600px] border-t-4 border-purple-600 animate-fadeIn">
-    {columns.map((col, i) => (
-      <div key={i}>
-        <h4 className="font-bold text-purple-700 mb-3 pb-2 border-b border-gray-200">
-          {col.heading}
-        </h4>
-        <Menu>
-          {col.items.map((item, idx) => (
-            <Menu.Item
-              key={idx}
-              onClick={() => onItemClick(item.path)}
-              className="cursor-pointer py-2 text-gray-700 hover:text-purple-600 transition-colors duration-200 flex items-center group"
-            >
-              <span className="w-1 h-1 bg-purple-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-              {item.label}
-            </Menu.Item>
-          ))}
-        </Menu>
+  <div className="absolute left-0 right-0 w-full">
+    <div className="container mx-auto p-6 bg-white shadow-lg rounded-b-lg border-t-4 border-purple-600 animate-fadeIn">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {columns.map((col, i) => (
+          <div key={i}>
+            <h4 className="font-bold text-purple-700 mb-3 pb-2 border-b border-gray-200">
+              {col.heading}
+            </h4>
+            <Menu>
+              {col.items.map((item, idx) => (
+                <Menu.Item
+                  key={idx}
+                  onClick={() => onItemClick(item.path)}
+                  className="cursor-pointer py-2 text-gray-700 hover:text-purple-600 transition-colors duration-200 flex items-center group"
+                >
+                  <span className="w-1 h-1 bg-purple-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                  {item.label}
+                </Menu.Item>
+              ))}
+            </Menu>
+          </div>
+        ))}
       </div>
-    ))}
+    </div>
   </div>
 );
 
@@ -213,13 +217,13 @@ const Header = () => {
           alt="Logo"
         />
         <div className="flex items-center gap-4">
-          <Button
+          <button
             type="text"
             onClick={() => router.push("/download")}
-            className="font-medium bg-[#e8d1ff]"
+            className="font-medium bg-[#000000] p-[6px] pl-[10px] pr-[10px] rounded-xl text-white"
           >
             Download App
-          </Button>
+          </button>
           <Button
             icon={<GlobalOutlined />}
             type="text"
@@ -238,8 +242,8 @@ const Header = () => {
       </div>
       {/* Nav bar - Hidden on mobile */}
       <div className="hidden md:block bg-gradient-to-r from-[#4D2D7C] to-[#3a2160] text-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-2">
-          <div className="flex items-center justify-between">
+        <div className=" mx-auto  md:px-6 lg:px-8 py-2">
+          <div className="flex w-full px-10  justify-between">
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <Button
@@ -267,7 +271,8 @@ const Header = () => {
                     />
                   }
                   trigger={["hover"]}
-                  placement="bottomLeft"
+                  placement="bottomCenter"
+                  overlayClassName="w-full"
                 >
                   <button className="px-3 py-1.5 rounded-md hover:bg-[#5d3d8c] transition-colors duration-200 flex items-center gap-1">
                     {menu.label} <DownOutlined className="text-xs opacity-70" />

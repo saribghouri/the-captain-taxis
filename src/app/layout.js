@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./dropdown.css"; // Import custom dropdown styling
 import { ConfigProvider } from "antd";
 
 const geistSans = Geist({

@@ -1,0 +1,122 @@
+/* Full Width Dropdown Styling */
+
+/* Fix for z-index stacking */
+.fixed {
+  z-index: 50;
+}
+
+/* Position the dropdown to cover the full width */
+.mega-dropdown {
+  position: absolute !important;
+  top: 104px !important; /* Accounts for the header height */
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  padding: 0 !important;
+  z-index: 40 !important;
+  margin-top: -1px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Handle dropdown container */
+.dropdown-container {
+  position: static;
+}
+
+/* Add padding to the mega menu content */
+.mega-menu-wrapper .container {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  max-width: 1400px !important;
+}
+
+/* Enhance menu styling */
+.mega-menu-wrapper {
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* Beautiful hover effect for menu items */
+.mega-menu-column .ant-menu-item:hover span:first-child {
+  transform: scale(1.5);
+  transition: transform 0.2s ease;
+}
+
+/* Enhance heading styling */
+.mega-menu-column h4 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.mega-menu-column h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #4D2D7C, #6b4199);
+  border-radius: 3px;
+}
+
+/* Hide the dropdown arrow that Ant Design adds */
+.mega-dropdown .ant-dropdown-arrow {
+  display: none !important;
+}
+
+/* Remove padding and border from the dropdown menu */
+.mega-dropdown .ant-dropdown-menu {
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* Style for the mega menu wrapper */
+.mega-menu-wrapper {
+  width: 100%;
+}
+
+/* Style for each menu column */
+.mega-menu-column .ant-menu {
+  background: transparent !important;
+}
+
+/* Override Ant Design's default menu styles */
+.mega-menu-column .ant-menu-item {
+  margin: 0 !important;
+  padding: 8px 0 !important;
+}
+
+.mega-menu-column .ant-menu-item:hover {
+  background: transparent !important;
+}
+
+/* Animation for dropdown menu */
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure Ant Design menu has no borders */
+.ant-menu {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Make the menu items not change background on hover */
+.ant-dropdown-menu-item:hover,
+.ant-menu-item:hover {
+  background-color: transparent !important;
+}

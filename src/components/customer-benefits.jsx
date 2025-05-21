@@ -1,71 +1,77 @@
-"use client"
-import { DollarOutlined, UserOutlined, AppstoreAddOutlined, CarOutlined } from "@ant-design/icons"
+"use client";
+import {
+  DollarOutlined,
+  UserOutlined,
+  AppstoreAddOutlined,
+  CarOutlined,
+} from "@ant-design/icons";
 
 const CustomerBenefits = () => {
   const benefits = [
     {
-      icon: <DollarOutlined className="text-3xl text-[#4D2D7C]" />,
+      icon: <DollarOutlined className="text-3xl text-purple-700" />,
       title: "Fixed Fares. No Surge.",
-      description: "Always know what you'll pay—no surprises.",
+      description: "Always know what you’ll pay—no surprises.",
     },
     {
-      icon: <UserOutlined className="text-3xl text-[#4D2D7C]" />,
+      icon: <UserOutlined className="text-3xl text-purple-700" />,
       title: "Professional Drivers.",
       description: "Fully trained, uniformed & NDIS-accredited.",
     },
     {
-      icon: <AppstoreAddOutlined className="text-3xl text-[#4D2D7C]" />,
+      icon: <AppstoreAddOutlined className="text-3xl text-purple-700" />,
       title: "Any Vehicle, Any Need.",
       description: "Sedan, SUV, Maxi, Cargo or Wheelchair-Accessible.",
     },
     {
-      icon: <CarOutlined className="text-3xl text-[#4D2D7C]" />,
+      icon: <CarOutlined className="text-3xl text-purple-700" />,
       title: "TTSS Subsidy.",
       description: "NSW residents save 50% (up to $60 per trip).",
     },
-  ]
-
+  ];
   return (
-    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose The Captain Taxis</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Experience the difference with our premium taxi service designed with your comfort and convenience in mind.
-          </p>
-        </div>
+    <section className="md:px-8 md:py-16 px-5 py-12">
+      <div className="section">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center mb-12 w-full justify-center">
+            <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">
+              Key Benefits
+            </h1>
+            <p className="text-gray-600 text-xl">
+              We are Always for Your Benefits
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 transition-all duration-300 hover:shadow-xl border border-gray-100 group hover:-translate-y-1"
-            >
-              <div className="mb-4 relative">
-                <div className="w-16 h-16 rounded-full bg-[#4D2D7C] bg-opacity-10 flex items-center justify-center mb-4 group-hover:bg-[#4D2D7C] transition-all duration-300">
-                  <div className="text-[#4D2D7C] group-hover:text-white transition-all duration-300">
-                    {benefit.icon}
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {benefits.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 pt-32 rounded-3xl shadow-md relative overflow-hidden"
+              >
+                {/* Icon on yellow circle */}
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#582d7c] border-4 border-white text-white flex items-center justify-center shadow-md">
+                  {item.icon}
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#DFBA3F] opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
 
-        <div className="mt-16 text-center">
-          <a
-            href="/booking"
-            className="inline-block bg-[#4D2D7C] text-white font-medium px-8 py-4 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg"
-          >
-            Book Your Ride Now
-          </a>
+                {/* Title */}
+                <h3 className="font-bold text-base text-gray-800 uppercase tracking-wide mb-4">
+                  {item.title}
+                </h3>
+
+                {/* Message Box */}
+                <div className="bg-[#F3F4F6] text-black rounded-2xl p-5 space-y-4">
+                  <p className="text-sm leading-relaxed">{item.description}</p>
+                  <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full  transition">
+                    KNOW MORE →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default CustomerBenefits
+export default CustomerBenefits;

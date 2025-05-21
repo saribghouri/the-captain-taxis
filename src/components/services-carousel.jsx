@@ -11,7 +11,6 @@ import {
 import { useRef } from "react";
 
 const ServicesCarousel = () => {
-
   const services = [
     {
       title: "Airport Shuttle",
@@ -28,36 +27,31 @@ const ServicesCarousel = () => {
       description: "Comfort for 1–4 passengers.",
       image: "/assets/images/3bdbc452ce1ae8e6cb763ecb5ae315eb.avif",
       rate: "280 kms/day",
-    
     },
     {
       title: "Parcel Delivery Service",
       description: "Extra legroom & luggage space.",
-            image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
+      image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
 
       rate: "300 kms/day",
-   
     },
     {
       title: "Events & Weddings Service",
       description: "Groups up to 11.",
       image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
       rate: "350 kms/day",
-   
     },
     {
       title: "Corporate Travel Service",
       description: "Door-to-door bulky item transport.",
       image: "/assets/images/4629696636792d6a8674e7523516243_900_600-f.jpg",
       rate: "320 kms/day",
-    
     },
     {
       title: "Sydney Taxi Tourist Tour",
       description: "Wheelchair-accessible trips with TTSS support.",
       image: "/assets/images/man-using-disabled-parking-spot-1024x576.png",
       rate: "300 kms/day",
-     
     },
   ];
 
@@ -103,38 +97,40 @@ const ServicesCarousel = () => {
   };
 
   return (
-    <section className="py-12 px-4">
-      <div className="flex flex-col items-center mb-12 w-full justify-center">
-        <h1 className="font-bold text-[30px] text-[#4D2D7C]">OUR SERVICES</h1>
-        <p className="text-gray-600">We are Always There at Your Services</p>
-      </div>
+    <section className="md:px-8 md:py-16 px-5 py-12">
+      <div className="section">
+        <div className="flex flex-col items-center mb-12 w-full justify-center">
+          <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">Our Services</h1>
+          <p className="text-gray-600 text-xl">We are Always There at Your Services</p>
+        </div>
 
-      <div className="carousel-container relative">
-        <Carousel
-          ref={carouselRef}
-          {...carouselSettings}
-          className="services-carousel"
-        >
-          {services.map((service, index) => (
-            <div key={index} className="px-2">
-              <ServiceCard service={service} />
-            </div>
-          ))}
-        </Carousel>
+        <div className="carousel-container relative">
+          <Carousel
+            ref={carouselRef}
+            {...carouselSettings}
+            className="services-carousel"
+          >
+            {services.map((service, index) => (
+              <div key={index} className="px-2">
+                <ServiceCard service={service} />
+              </div>
+            ))}
+          </Carousel>
 
-        <div className="carousel-arrows flex justify-center mt-8">
-          <button
-            onClick={goToPrev}
-            className="carousel-arrow prev-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
-          >
-            <LeftOutlined />
-          </button>
-          <button
-            onClick={goToNext}
-            className="carousel-arrow next-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
-          >
-            <RightOutlined />
-          </button>
+          <div className="carousel-arrows flex justify-center mt-8">
+            <button
+              onClick={goToPrev}
+              className="carousel-arrow prev-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
+            >
+              <LeftOutlined />
+            </button>
+            <button
+              onClick={goToNext}
+              className="carousel-arrow next-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
+            >
+              <RightOutlined />
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -170,8 +166,6 @@ const ServiceCard = ({ service }) => {
         <div className="flex justify-center my-2">
           <div className="w-16 h-1 bg-[#4D2D7C] rounded"></div>
         </div>
-
-     
 
         <div className="mt-6">
           <button className="w-full bg-[#4D2D7C] hover:bg-[#804ac7] text-white py-3 px-4 rounded-full flex items-center justify-center transition-all">

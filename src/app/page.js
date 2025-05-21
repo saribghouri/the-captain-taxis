@@ -30,6 +30,7 @@ import DriveWithUs from "@/components/drive-with-us";
 import Testimonials from "@/components/testimonials";
 import AppPromotion from "@/components/app-promotion";
 import Footer from "@/components/footer";
+import CustomerBenefits from "@/components/customer-benefits";
 const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pickupLocation, setPickupLocation] = useState("");
@@ -452,42 +453,8 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="px-8 py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-              Key Benefits
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              {benefits.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 pt-32 rounded-3xl shadow-md relative overflow-hidden"
-                >
-                  {/* Icon on yellow circle */}
-                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#582d7c] border-4 border-white text-white flex items-center justify-center shadow-md">
-                    {item.icon}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-bold text-base text-gray-800 uppercase tracking-wide mb-4">
-                    {item.title}
-                  </h3>
-
-                  {/* Message Box */}
-                  <div className="bg-[#F3F4F6] text-black rounded-2xl p-5 space-y-4">
-                    <p className="text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                    <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full  transition">
-                      KNOW MORE →
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+  
+<CustomerBenefits/>
         <HowItWorks />
 
         <ServicesCarousel />

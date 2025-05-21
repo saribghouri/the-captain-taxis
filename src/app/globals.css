@@ -8,6 +8,15 @@ html {
   padding: 0;
 }
 
+/* Full-width dropdown support */
+.full-width-nav-container {
+  position: relative;
+}
+
+:root {
+  --header-height: 104px;
+}
+
 .secttion-one {
   background-image: url("/assets/images/backgroung main.png");
   width: 100%;
@@ -22,8 +31,14 @@ html {
 
 /* Animation for dropdowns */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fadeIn {
@@ -195,7 +210,7 @@ html {
 
 .Consults {
   color: aliceblue !important;
-    background: rgba(65, 76, 63, 0.25);
+  background: rgba(65, 76, 63, 0.25);
   padding: 20px !important;
   border-radius: 20px !important;
   backdrop-filter: blur(5px);
@@ -212,7 +227,6 @@ html {
   border-radius: 20px !important;
   width: 50% !important;
 }
-
 
 /* Add these styles to your CSS file */
 .services-carousel .slick-track {
@@ -296,6 +310,15 @@ html {
   display: none !important;
 }
 
+.testomonial-shadow {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
-.testomonial-shadow{
-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
+.section {
+  border-radius: 20px;
+  padding: 50px;
+  border: 1px solid rgba(77, 45, 124, 0.1);
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
