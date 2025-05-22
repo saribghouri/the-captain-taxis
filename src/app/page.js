@@ -38,7 +38,6 @@ const App = () => {
   const [showPrices, setShowPrices] = useState(false);
   const [prices, setPrices] = useState({ sedan: 0, suv: 0 });
 
-  // List of Australian cities for autocomplete
   const australianCities = [
     { value: "Sydney" },
     { value: "Melbourne" },
@@ -290,7 +289,7 @@ const App = () => {
 
         <div className="secttion-one text-white min-h-screen w-full overflow-hidden pt-[50px]">
           <div className="flex justify-center w-full px-4">
-            <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative sm:p-6 gap-4">
+            <div className="bg-[#ffffff] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative sm:p-6 gap-4">
               <img
                 className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-40px]"
                 src="assets/images/Mask Group 2.png"

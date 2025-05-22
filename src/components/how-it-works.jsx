@@ -34,7 +34,7 @@ const HowItWorks = () => {
 
   return (
     <div className="overflow-hidden md:px-8 md:py-16 px-5 py-12">
-      <div className="section bg-[#f2effb]">
+      <div className="section bg-[#fefefe]">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex flex-col items-center mb-12 w-full justify-center">
             <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">
@@ -73,8 +73,8 @@ const HowItWorks = () => {
 
                   <div
                     className={`
-                    absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center
-                    bg-[#818181] text-white font-bold
+                    absolute -top-3 -left-3 w-12 h-12 rounded-full flex items-center justify-center
+                    bg-[#9f9e9e] text-white font-bold
                     ${hoveredStep === index ? "scale-110" : ""}
                     transition-all duration-300
                   `}

@@ -78,7 +78,7 @@ const DriveWithUs = () => {
 
           <div className="text-center">
             <div className="inline-block relative">
-              <div className="absolute inset-0 bg-[#DFBA3F] rounded-lg transform rotate-1 scale-105 opacity-30"></div>
+              <div className="absolute inset-0 bg-[#8e63ed] rounded-lg transform rotate-1 scale-105 opacity-30"></div>
               <a
                 href="/apply-driver"
                 className="relative inline-block bg-[#4D2D7C] hover:bg-[#3a2160] text-white font-semibold px-8 py-4 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1"

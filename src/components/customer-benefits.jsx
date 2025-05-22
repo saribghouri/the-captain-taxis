@@ -49,7 +49,7 @@ const CustomerBenefits = () => {
                 className="bg-white p-6 pt-32 rounded-3xl shadow-md relative overflow-hidden"
               >
                 {/* Icon on yellow circle */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#582d7c] border-4 border-white text-white flex items-center justify-center shadow-md">
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-[#4D2D7C] border-4 border-white text-white flex items-center justify-center shadow-md">
                   {item.icon}
                 </div>
 

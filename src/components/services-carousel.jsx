@@ -15,7 +15,7 @@ const ServicesCarousel = () => {
     {
       title: "Airport Shuttle",
       description: "Quickest possible pick-up.",
-      image: "/assets/images/next.png",
+      image: "/assets/images/istockphoto-175539191-612x612.jpg",
       rate: "250 kms/day",
       passengers: "4/5",
       luggage: "3/5",
@@ -25,7 +25,7 @@ const ServicesCarousel = () => {
     {
       title: "NDIS Support Service",
       description: "Comfort for 1–4 passengers.",
-      image: "/assets/images/3bdbc452ce1ae8e6cb763ecb5ae315eb.avif",
+      image: "/assets/images/man-wheelchair-lift-specialized-vehicle-people-with-disabilities-1-1024x684.jpg",
       rate: "280 kms/day",
     },
     {
@@ -38,7 +38,7 @@ const ServicesCarousel = () => {
     {
       title: "Events & Weddings Service",
       description: "Groups up to 11.",
-      image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
+      image: "/assets/images/20e7d7b5d5a826e79bc9d196a1be10f1.jpg",
       rate: "350 kms/day",
     },
     {
@@ -144,7 +144,7 @@ const ServiceCard = ({ service }) => {
         <img
           src={service.image || "/placeholder.svg"}
           alt={service.title}
-          className="h-48 object-contain"
+          className="h-48 object-contain rounded-[40px]"
         />
       </div>
 

@@ -1,13 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import { Button, Drawer, Dropdown, Menu } from "antd";
-import {
-  MenuOutlined,
-  DownOutlined,
-  PhoneOutlined,
-  GlobalOutlined,
-} from "@ant-design/icons";
-import { useRouter } from "next/navigation";
+"use client"
+import { useState } from "react"
+import { Button, Drawer, Dropdown, Menu } from "antd"
+import { MenuOutlined, DownOutlined, PhoneOutlined, GlobalOutlined, DownloadOutlined } from "@ant-design/icons"
+import { useRouter } from "next/navigation"
 
 const menuData = [
   {
@@ -114,7 +109,7 @@ const menuData = [
       },
     ],
   },
-];
+]
 
 const MegaMenu = ({ columns, onItemClick }) => (
   <div className="absolute left-0 right-0 w-full">
@@ -122,9 +117,7 @@ const MegaMenu = ({ columns, onItemClick }) => (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {columns.map((col, i) => (
           <div key={i}>
-            <h4 className="font-bold text-purple-700 mb-3 pb-2 border-b border-gray-200">
-              {col.heading}
-            </h4>
+            <h4 className="font-bold text-purple-700 mb-3 pb-2 border-b border-gray-200">{col.heading}</h4>
             <Menu>
               {col.items.map((item, idx) => (
                 <Menu.Item
@@ -134,6 +127,9 @@ const MegaMenu = ({ columns, onItemClick }) => (
                 >
                   <span className="w-1 h-1 bg-purple-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                   {item.label}
+                  <span className="ml-auto text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    →
+                  </span>
                 </Menu.Item>
               ))}
             </Menu>
@@ -142,7 +138,7 @@ const MegaMenu = ({ columns, onItemClick }) => (
       </div>
     </div>
   </div>
-);
+)
 
 const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
   <div className="mb-1">
@@ -154,19 +150,13 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
         <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
         <span className="font-medium">{menu.label}</span>
       </div>
-      <DownOutlined
-        className={`text-xs transition-transform duration-300 ${
-          isActive ? "rotate-180" : ""
-        }`}
-      />
+      <DownOutlined className={`text-xs transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
     </div>
     {isActive && (
       <div className="pl-6 pr-2 py-2 bg-gray-50 rounded-md mb-2 border-l-4 border-purple-600 animate-fadeIn">
         {menu.columns.map((col, i) => (
           <div key={i} className="mb-3">
-            <h5 className="font-semibold text-purple-700 mb-2 border-b border-gray-200 pb-1">
-              {col.heading}
-            </h5>
+            <h5 className="font-semibold text-purple-700 mb-2 border-b border-gray-200 pb-1">{col.heading}</h5>
             <div className="space-y-1">
               {col.items.map((item, idx) => (
                 <div
@@ -184,31 +174,30 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
       </div>
     )}
   </div>
-);
+)
 
 const Header = () => {
-  const [visible, setVisible] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const router = useRouter();
+  const [visible, setVisible] = useState(false)
+  const [activeMenu, setActiveMenu] = useState(null)
+  const router = useRouter()
 
-  const showDrawer = () => setVisible(true);
+  const showDrawer = () => setVisible(true)
   const onClose = () => {
-    setVisible(false);
-    setActiveMenu(null);
-  };
+    setVisible(false)
+    setActiveMenu(null)
+  }
 
   const handleItemClick = (path) => {
-    router.push(path);
-    onClose();
-  };
+    router.push(path)
+    onClose()
+  }
 
   const toggleMobileMenu = (menuKey) => {
-    setActiveMenu(activeMenu === menuKey ? null : menuKey);
-  };
+    setActiveMenu(activeMenu === menuKey ? null : menuKey)
+  }
 
   return (
     <div className="fixed w-full top-0 left-0 z-50">
-      {/* Top bar - Hidden on mobile */}
       <div className="hidden md:flex bg-white shadow-sm justify-between items-center px-2 md:px-16 py-2">
         <img
           onClick={() => router.push("/")}
@@ -216,14 +205,25 @@ const Header = () => {
           src="/assets/images/Logo1.png"
           alt="Logo"
         />
+
         <div className="flex items-center gap-4">
-          <button
-            type="text"
-            onClick={() => router.push("/download")}
-            className="font-medium bg-[#000000] p-[6px] pl-[10px] pr-[10px] rounded-xl text-white"
-          >
-            Download App
-          </button>
+           <button
+      type="button"
+      onClick={() => router.push("/download")}
+      className="group relative flex items-center overflow-hidden rounded-md font-medium text-white shadow-md transition-all hover:brightness-110 active:brightness-90"
+    >
+      <span className="flex h-full items-center bg-gradient-to-r from-[#3a2160] to-[#4D2D7C] px-4 py-2.5 text-sm font-bold">
+        DOWNLOAD
+      </span>
+
+      <span className="flex h-full items-center justify-center bg-[#000000] p-2.5 transition-all group-hover:brightness-105">
+        <DownloadOutlined className="h-5 w-5 text-white" />
+      </span>
+
+      <span className="absolute inset-x-0 top-0 h-[40%] w-full bg-white/20" />
+
+      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/20" />
+    </button>
           <Button
             icon={<GlobalOutlined />}
             type="text"
@@ -240,11 +240,9 @@ const Header = () => {
           </Button>
         </div>
       </div>
-      {/* Nav bar - Hidden on mobile */}
       <div className="hidden md:block bg-gradient-to-r from-[#4D2D7C] to-[#3a2160] text-white shadow-md">
         <div className=" mx-auto  md:px-6 lg:px-8 py-2">
           <div className="flex w-full px-10  justify-between">
-            {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <Button
                 type="text"
@@ -264,12 +262,7 @@ const Header = () => {
               {menuData.map((menu) => (
                 <Dropdown
                   key={menu.key}
-                  overlay={
-                    <MegaMenu
-                      columns={menu.columns}
-                      onItemClick={handleItemClick}
-                    />
-                  }
+                  overlay={<MegaMenu columns={menu.columns} onItemClick={handleItemClick} />}
                   trigger={["hover"]}
                   placement="bottomCenter"
                   overlayClassName="w-full"
@@ -281,12 +274,10 @@ const Header = () => {
               ))}
             </div>
 
-            {/* Right side contact and social */}
             <div className="flex items-center space-x-4">
-              {/* Phone number */}
               <a
                 href="tel:132227"
-                className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors duration-200"
+                className="flex items-center gap-1.5 hover:text-white-200 transition-colors duration-200"
               >
                 <div className="w-7 h-7 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
                   <PhoneOutlined className="text-sm" />
@@ -294,13 +285,12 @@ const Header = () => {
                 <span className="font-medium">13 2227</span>
               </a>
 
-              {/* Social media icons */}
               <div className="flex items-center space-x-3">
                 <a
                   href="/"
                   onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
+                    e.preventDefault()
+                    router.push("/")
                   }}
                   className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
                 >
@@ -313,8 +303,8 @@ const Header = () => {
                 <a
                   href="/"
                   onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
+                    e.preventDefault()
+                    router.push("/")
                   }}
                   className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
                 >
@@ -327,8 +317,8 @@ const Header = () => {
                 <a
                   href="/"
                   onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
+                    e.preventDefault()
+                    router.push("/")
                   }}
                   className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
                 >
@@ -441,7 +431,7 @@ const Header = () => {
         </div>
       </Drawer>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

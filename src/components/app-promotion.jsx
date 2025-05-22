@@ -30,10 +30,10 @@ const AppPromotion = () => {
                     </span>
                   </div>
                 </div>
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2 leading-tight">
+                <h2 className="font-bold text-[50px] text-[#4D2D7C] capitalize">
                   GET OUR APP
                 </h2>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#4D2D7C] mb-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#676767] mb-6">
                   GO YOUR WAY
                 </h3>
               </div>
@@ -68,7 +68,7 @@ const AppPromotion = () => {
                   href="#download-android"
                   className="group transform transition-all duration-300 hover:scale-105"
                 >
-                  <div className="bg-black text-white rounded-xl px-6 py-3 flex items-center shadow-md group-hover:shadow-lg">
+                  <div className="bg-black text-white rounded-xl px-6 py-3 flex items-center  group-hover:shadow-lg">
                     <div className="mr-3">
                       <svg
                         width="24"
@@ -118,7 +118,7 @@ const AppPromotion = () => {
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#DFBA3F] opacity-10 rounded-full"></div>
                   <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#DFBA3F] opacity-10 rounded-full"></div>
                   <img
-                    className="max-w-full h-auto rounded-2xl shadow-2xl transform rotate-1"
+                    className="max-w-full h-auto rounded-2xl transform rotate-1"
                     src="assets/images/Get our service.png"
                     alt="The Captain Taxis Mobile App"
                   />

@@ -15,7 +15,7 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       location: "Sydney CBD",
       rating: 5,
-      image: "/placeholder.svg?height=80&width=80", // Replace with actual image
+      image: "/assets/images/women.jpg",
     },
     {
       quote:
@@ -23,7 +23,7 @@ const Testimonials = () => {
       name: "Michael Thompson",
       location: "Parramatta",
       rating: 5,
-      image: "/placeholder.svg?height=80&width=80", // Replace with actual image
+      image: "/assets/images/women.jpg",
     },
     {
       quote:
@@ -31,7 +31,7 @@ const Testimonials = () => {
       name: "Jennifer Lee",
       location: "North Sydney",
       rating: 5,
-      image: "/placeholder.svg?height=80&width=80", // Replace with actual image
+      image: "/assets/images/women.jpg",
     },
     {
       quote:
@@ -39,7 +39,7 @@ const Testimonials = () => {
       name: "Robert Williams",
       location: "Bondi",
       rating: 5,
-      image: "/placeholder.svg?height=80&width=80", // Replace with actual image
+      image: "/assets/images/women.jpg",
     },
   ];
 
@@ -95,7 +95,7 @@ const Testimonials = () => {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+            <h2 className="font-bold text-[30px] text-[#4D2D7C] capitalize">
               What Our Riders Say
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
