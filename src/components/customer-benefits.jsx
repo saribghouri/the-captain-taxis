@@ -61,7 +61,7 @@ const CustomerBenefits = () => {
                 {/* Message Box */}
                 <div className="bg-[#F3F4F6] text-black rounded-2xl p-5 space-y-4">
                   <p className="text-sm leading-relaxed">{item.description}</p>
-                  <button className="w-full bg-[#4D2D7C] text-white font-semibold py-2 rounded-full  transition">
+                  <button className="w-full cursor-pointer bg-[#4D2D7C] text-white font-semibold py-2 rounded-full  transition">
                     KNOW MORE →
                   </button>
                 </div>

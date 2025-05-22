@@ -154,7 +154,7 @@ const HowItWorks = () => {
             <a
               href="/booking"
               className="
-              inline-block bg-[#4D2D7C] text-white font-medium px-8 py-4 rounded-full
+              inline-block cursor-pointer bg-[#4D2D7C] text-white font-medium px-8 py-4 rounded-full
               hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1
               shadow-md hover:shadow-lg
             "

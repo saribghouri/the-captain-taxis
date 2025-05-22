@@ -198,40 +198,28 @@ const Header = () => {
 
   return (
     <div className="fixed w-full top-0 left-0 z-50">
-      <div className="hidden md:flex bg-white shadow-sm justify-between items-center px-2 md:px-16 py-2">
-        <img
-          onClick={() => router.push("/")}
-          className="w-[150px] cursor-pointer"
-          src="/assets/images/Logo1.png"
-          alt="Logo"
-        />
+      <div className="hidden md:flex bg-white shadow-sm justify-between items-center px-2 md:px-5 py-2">
+<div className="flex gap-6">
+ <h1>71-34646-466-3363</h1>
+        <h1>sarib.ghouri92@gmail.com</h1>
+</div>
+       
 
-        <div className="flex items-center gap-4">
-           <button
-      type="button"
-      onClick={() => router.push("/download")}
-      className="group relative flex items-center overflow-hidden rounded-md font-medium text-white shadow-md transition-all hover:brightness-110 active:brightness-90"
-    >
-      <span className="flex h-full items-center bg-gradient-to-r from-[#3a2160] to-[#4D2D7C] px-4 py-2.5 text-sm font-bold">
-        DOWNLOAD
-      </span>
-
-      <span className="flex h-full items-center justify-center bg-[#000000] p-2.5 transition-all group-hover:brightness-105">
-        <DownloadOutlined className="h-5 w-5 text-white" />
-      </span>
-
-      <span className="absolute inset-x-0 top-0 h-[40%] w-full bg-white/20" />
-
-      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/20" />
-    </button>
-          <Button
-            icon={<GlobalOutlined />}
-            type="text"
-            className="text-gray-700"
-            onClick={() => alert("Country selector")}
+        <div className="flex  gap-4 justify-between">
+          <button
+            type="button"
+            onClick={() => router.push("/download")}
+            className="group relative flex items-center gap-[5px] overflow-hidden rounded-md font-medium text-white shadow-md transition-all hover:brightness-110 active:brightness-90"
           >
-            AU
-          </Button>
+            <span className="flex h-full cursor-pointer items-center bg-gradient-to-r from-[#3a2160] to-[#4D2D7C] px-4 text-sm font-bold">
+              DOWNLOAD  
+               <DownloadOutlined className="h-3 w-5 ml-[5px] text-black" />
+            </span>
+
+
+            <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/20" />
+          </button>
+
           <Button type="default" onClick={() => router.push("/login")}>
             Login
           </Button>
@@ -240,9 +228,15 @@ const Header = () => {
           </Button>
         </div>
       </div>
-      <div className="hidden md:block bg-gradient-to-r from-[#4D2D7C] to-[#3a2160] text-white shadow-md">
-        <div className=" mx-auto  md:px-6 lg:px-8 py-2">
-          <div className="flex w-full px-10  justify-between">
+      <div className="hidden md:block bg-gradient-to-r from-[#181035] via-[#4d2d7c] to-[#181035] text-white shadow-md p-4 rounded-lg">
+        <div className=" mx-auto  md:px-4 lg:px-0 py-2">
+          <div className="flex w-full px-10  gap-[80px]">
+            <img
+              onClick={() => router.push("/")}
+              className="w-[120px] cursor-pointer"
+              src="/assets/images/logo.png"
+              alt="Logo"
+            />
             <div className="flex items-center space-x-1">
               <Button
                 type="text"
@@ -254,7 +248,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white hover:!text-white hover:!bg-[#5d3d8c] !rounded-md !px-3 !h-9 !font-medium transition-colors duration-200"
-                onClick={() => router.push("/book-ride")}
+                onClick={() => router.push("/book-a-ride")}
               >
                 Book a Ride
               </Button>
@@ -274,7 +268,7 @@ const Header = () => {
               ))}
             </div>
 
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <a
                 href="tel:132227"
                 className="flex items-center gap-1.5 hover:text-white-200 transition-colors duration-200"
@@ -329,7 +323,7 @@ const Header = () => {
                   />
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

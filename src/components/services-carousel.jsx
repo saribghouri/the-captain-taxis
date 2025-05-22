@@ -111,7 +111,7 @@ const ServicesCarousel = () => {
             className="services-carousel"
           >
             {services.map((service, index) => (
-              <div key={index} className="px-2">
+              <div key={index} className="px-2 my-4">
                 <ServiceCard service={service} />
               </div>
             ))}
@@ -120,13 +120,13 @@ const ServicesCarousel = () => {
           <div className="carousel-arrows flex justify-center mt-8">
             <button
               onClick={goToPrev}
-              className="carousel-arrow prev-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
+              className="carousel-arrow cursor-pointer prev-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
             >
               <LeftOutlined />
             </button>
             <button
               onClick={goToNext}
-              className="carousel-arrow next-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
+              className="carousel-arrow  cursor-pointer next-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
             >
               <RightOutlined />
             </button>
@@ -168,7 +168,7 @@ const ServiceCard = ({ service }) => {
         </div>
 
         <div className="mt-6">
-          <button className="w-full bg-[#4D2D7C] hover:bg-[#804ac7] text-white py-3 px-4 rounded-full flex items-center justify-center transition-all">
+          <button className="w-full cursor-pointer bg-[#4D2D7C] hover:bg-[#804ac7] text-white py-3 px-4 rounded-full flex items-center justify-center transition-all">
             BOOK RIDE NOW <RightOutlined className="ml-2" />
           </button>
         </div>

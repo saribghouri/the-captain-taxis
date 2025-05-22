@@ -162,7 +162,7 @@ const Testimonials = () => {
             <div className="flex justify-center mt-8 gap-4">
               <button
                 onClick={goToPrev}
-                className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
+                className="w-12 h-12 cursor-pointer rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
               >
                 <LeftOutlined />
               </button>
@@ -183,7 +183,7 @@ const Testimonials = () => {
 
               <button
                 onClick={goToNext}
-                className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
+                className="w-12 h-12 cursor-pointer rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
               >
                 <RightOutlined />
               </button>

@@ -1,6 +1,7 @@
 "use client";
 import { Row, Col, Card, Button, Drawer, AutoComplete } from "antd";
 import {
+  ArrowRightOutlined,
   FacebookFilled,
   InstagramFilled,
   LeftOutlined,
@@ -31,6 +32,7 @@ import Testimonials from "@/components/testimonials";
 import AppPromotion from "@/components/app-promotion";
 import Footer from "@/components/footer";
 import CustomerBenefits from "@/components/customer-benefits";
+import { useRouter } from "next/navigation";
 const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pickupLocation, setPickupLocation] = useState("");
@@ -61,10 +63,8 @@ const App = () => {
     { value: "Rockhampton" },
   ];
 
-  // Calculate random prices when both locations are selected
   const calculatePrices = () => {
     if (pickupLocation && dropOffLocation) {
-      // Generate random prices between $30 and $120
       const sedanPrice = Math.floor(Math.random() * 90) + 30;
       const suvPrice = Math.floor(Math.random() * 90) + 60; // SUV is a bit more expensive
 
@@ -72,49 +72,23 @@ const App = () => {
       setShowPrices(true);
     }
   };
-  // Calculate prices immediately when drop-off location is selected
   useEffect(() => {
     if (pickupLocation && dropOffLocation) {
       calculatePrices();
     }
   }, [dropOffLocation]);
 
-  const scrollRef = useRef(null);
-  const { Meta } = Card;
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -320 : 320,
-        behavior: "smooth",
-      });
-    }
-  };
+  const router = useRouter();
 
-  const benefits = [
-    {
-      icon: <DollarOutlined className="text-3xl text-purple-700" />,
-      title: "Fixed Fares. No Surge.",
-      description: "Always know what you’ll pay—no surprises.",
-    },
-    {
-      icon: <UserOutlined className="text-3xl text-purple-700" />,
-      title: "Professional Drivers.",
-      description: "Fully trained, uniformed & NDIS-accredited.",
-    },
-    {
-      icon: <AppstoreAddOutlined className="text-3xl text-purple-700" />,
-      title: "Any Vehicle, Any Need.",
-      description: "Sedan, SUV, Maxi, Cargo or Wheelchair-Accessible.",
-    },
-    {
-      icon: <CarOutlined className="text-3xl text-purple-700" />,
-      title: "TTSS Subsidy.",
-      description: "NSW residents save 50% (up to $60 per trip).",
-    },
-  ];
+const handleClick = (path) => {
+  router.push(path);
+};
+
+
+
   const navItems = [
     { label: "Home", direct: true },
-    { label: "Book a Ride", direct: true },
+    { label: "Book a Ride",  direct: "/book-a-ride"},
     { label: "What We Offer", mega: true },
     { label: "Pricing", mega: true },
     { label: "Drivers", mega: true },
@@ -166,7 +140,7 @@ const App = () => {
         links: ["Business Accounts", "Event Transfers", "Airport Shuttles"],
       },
     ],
-    
+
     "Help & FAQs": [
       {
         heading: "",
@@ -187,43 +161,13 @@ const App = () => {
 
   const [drawerVisible, setDrawerVisible] = useState(false);
 
-  const showDrawer = () => setDrawerVisible(true);
   const closeDrawer = () => setDrawerVisible(false);
 
   const [activeMenu, setActiveMenu] = useState(null);
 
-  const toggleMenus = (item) => {
-    setActiveMenu(activeMenu === item ? null : item);
-  };
-  const testimonials = [
-    {
-      quote: "Booked in seconds, arrived on time—no hidden fees!",
-      name: "Emma, Sydney",
-    },
-    {
-      quote: "My go-to taxi for reliable rides.",
-      name: "Liam, Melbourne",
-    },
-    {
-      quote: "Excellent service with professional drivers.",
-      name: "Olivia, Brisbane",
-    },
-    {
-      quote: "Comfortable ride and great customer support.",
-      name: "Noah, Adelaide",
-    },
-  ];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    swipe: true,
-    arrows: false,
-  };
+
+
   return (
     <div className="items-center ">
       <div className="relative">
@@ -244,7 +188,8 @@ const App = () => {
             >
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <div key={item.label}>
+                  <div key={item.label} onClick={() => handleClick(item.direct)}>
+                    {item.label}
                     <div
                       className="flex justify-between items-center cursor-pointer"
                       onClick={() =>
@@ -298,7 +243,7 @@ const App = () => {
 
               <div className="flex flex-row sm:flex-row sm:items-center gap-2 sm:ml-[20px] text-center sm:text-left">
                 <h1 className="text-[#000] font-bold text-[18px] sm:text-[20px]">
-                  Caption Taxi Gift Card!
+                  Captain Taxi Gift Card!
                 </h1>
                 <img
                   src="assets/images/car icon.svg"
@@ -328,6 +273,7 @@ const App = () => {
                   nationwide tomorrow.
                 </p>
               </div>
+
             </div>
 
             <div className="text-center Consults !m-[15px] md:!m-[30px] w-full md:w-auto max-w-full overflow-visible">
@@ -399,61 +345,47 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* <div className="mb-6 text-left border rounded-md p-4 w-full mx-auto bg-gray-50">
-                  <h3 className="font-semibold text-purple-800 mb-2">
-                    Available Rides:
-                  </h3>
-                  <div className="flex justify-between items-center mb-2 border-b pb-2">
-                    <div className="flex items-center">
-                      <svg
-                        className="w-5 h-5 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                        ></path>
-                      </svg>
-                      <span>Sedan</span>
-                    </div>
-                    <div className="font-bold">$85</div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <svg
-                        className="w-5 h-5 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                        ></path>
-                      </svg>
-                      <span>SUV</span>
-                    </div>
-                    <div className="font-bold">$110</div>
-                  </div>
-                </div> */}
 
                 <button className="w-full py-3 font-bold text-white bg-gradient-to-r from-purple-800 to-purple-900 rounded-full hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
                   Book A Ride
                 </button>
               </div>
             </div>
+
+          </div>
+          <div className=" flex item-center justify-center p-[20px]   ">
+
+            <div className=" justify-between flex  items-center w-[70%] gradient bg-white rounded-2xl p-[20px]">
+              <p className="text-white font-bold text-[30px] ml-[30px]">Start your journey</p>
+             <div className="flex gap-[10px]">
+              
+              <button
+
+                className="relative cursor-pointer flex items-center justify-between bg-[#4d2d7c] text-black font-bold py-3 px-6 rounded-full overflow-hidden " >
+                <div className="absolute left-0 top-0 bottom-0 w-8 bg-[#4d2d7c] rounded-l-full"></div>
+                <span className="mx-auto pl-4 text-white">Book Now</span>
+                <div className="flex items-center justify-center bg-white rounded-full w-7 h-7 ml-4">
+                  <ArrowRightOutlined className="w-4 h-4 text-[#1e2b69]" />
+                </div>
+              </button>
+              <button
+
+                className={`relative cursor-pointer flex items-center justify-between   py-3 px-6 border-2 border-purple-900  text-black font-bold  rounded-full overflow-hidden `} >
+
+                <span className="mx-auto pl-4 text-[#4d2d7c]">Drive with us</span>
+                <div className="flex items-center justify-center bg-[#4d2d7c] rounded-full w-7 h-7 ml-4">
+                  <ArrowRightOutlined className="w-4 h-4 !text-[#fff]" />
+                </div>
+              </button>
+             </div>
+
+            </div>
+
+
           </div>
         </div>
-  
-<CustomerBenefits/>
+
+        <CustomerBenefits />
         <HowItWorks />
 
         <ServicesCarousel />
