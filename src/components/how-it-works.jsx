@@ -1,171 +1,116 @@
 "use client";
-import { useState } from "react";
 import {
   CarOutlined,
   CalendarOutlined,
-  ArrowRightOutlined,
   DollarOutlined,
+  ArrowRightOutlined,
 } from "@ant-design/icons";
-import { Card } from "antd";
 
-const HowItWorks = () => {
-  const [hoveredStep, setHoveredStep] = useState(null);
-
+export default function HowItWorks() {
   const steps = [
     {
       step: "Step 1: Estimate Your Fare",
       description: "Enter pickup & drop-off; get an instant quote.",
-      icon: <DollarOutlined className="text-3xl" />,
-      color: "#4D2D7C",
+      icon: <DollarOutlined className="text-2xl" />,
     },
     {
       step: "Step 2: Select Your Service",
       description: "Next Available, Sedan, SUV, Maxi, Cargo or NDIS.",
-      icon: <CarOutlined className="text-3xl" />,
-      color: "#4D2D7C",
+      icon: <CarOutlined className="text-2xl" />,
     },
     {
       step: "Step 3: Ride or Reserve",
       description: "Book now or schedule later; pay in-app or in-taxi.",
-      icon: <CalendarOutlined className="text-3xl" />,
-      color: "#4D2D7C",
+      icon: <CalendarOutlined className="text-2xl" />,
     },
   ];
 
   return (
-    <div className="overflow-hidden md:px-8 md:py-16 px-5 py-12">
-      <div className="section bg-[#f2effb]">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex flex-col items-center mb-12 w-full justify-center">
-            <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">
-              How It Works
-            </h1>
-            <p className="text-gray-600 text-xl">
-              Experience a seamless journey with our simple three-step process
-            </p>
+    <div className="w-full bg-gradient-to-r from-[#24123f] via-[#4d2d7c] to-[#24123f] text-white py-16 px-4 md:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto text-center">
+        <div className="flex flex-col items-center mb-16 w-full justify-center">
+          <h1 className="text-4xl md:text-5xl mb-4">How It Works</h1>
+          <p className="text-gray-300 text-lg">
+            Experience a seamless journey with our simple three-step process
+          </p>
+        </div>
+
+        {/* Desktop Process Steps */}
+        <div className="hidden md:flex justify-between mb-20 relative">
+          {steps.map((item, index) => (
+            <div key={index} className="w-[32%] relative">
+               <div className="flex flex-col items-center h-full ">
+        <div className="bg-gradient-to-br  p-8 rounded-2xl flex flex-col items-center text-center h-full border border-[#6b5c9b] shadow-lg">
+          {/* Icon Circle */}
+          <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 bg-white/10 backdrop-blur-sm">
+            <div className="text-white text-2xl">{item.icon}</div>
           </div>
+          
+          {/* Title */}
+          <h3 className="text-xl  text-white mb-4 leading-tight">
+            {item.step}
+          </h3>
+          
+          {/* Description */}
+          <p className="text-[#ebebeb] text-md leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      </div>
+            </div>
+          ))}
 
-          {/* Desktop Process Steps with Connecting Lines */}
-          <div className="hidden md:block relative mb-16">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2 z-0"></div>
-
-            <div className="grid grid-cols-3 gap-8 relative z-10">
-              {steps.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative"
-                  onMouseEnter={() => setHoveredStep(index)}
-                  onMouseLeave={() => setHoveredStep(null)}
-                >
-                  <div
-                    className={`
-                    w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center
-                    transition-all duration-300 ease-in-out
-                    ${
-                      hoveredStep === index
-                        ? "bg-[#4D2D7C] text-white scale-110"
-                        : "bg-white text-[#4D2D7C] border-2 border-[#4D2D7C]"
-                    }
-                  `}
-                  >
-                    <div className="text-current">{item.icon}</div>
-                  </div>
-
-                  <div
-                    className={`
-                    absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center
-                    bg-[#818181] text-white font-bold
-                    ${hoveredStep === index ? "scale-110" : ""}
-                    transition-all duration-300
-                  `}
-                  >
-                    {index + 1}
-                  </div>
-
-                  <div
-                    className={`
-                    bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300
-                    ${hoveredStep === index ? "transform -translate-y-2" : ""}
-                    border border-gray-100 h-full
-                  `}
-                  >
-                    <h3 className="text-xl font-semibold text-[#4D2D7C] mb-3">
-                      {item.step}
-                    </h3>
-                    <p className="text-gray-700">{item.description}</p>
-                  </div>
-
-                  {index < steps.length - 1 && (
-                    <div className="absolute top-10 -right-4 text-[#e6e3db] text-2xl z-20">
-                      <ArrowRightOutlined />
-                    </div>
-                  )}
-                </div>
-              ))}
+          {/* Connecting Line with Number Circles */}
+          <div className="absolute bottom-[-50px] left-[10%] right-[10%] h-[1px] bg-gray-500 ">
+            <div className="absolute left-0 -top-4 w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146]">
+              <span className="text-white">1</span>
+            </div>
+            <div className="absolute left-1/2 -translate-x-1/2 -top-4 w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146]">
+              <span className="text-white">2</span>
+            </div>
+            <div className="absolute right-0 -top-4 w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146]">
+              <span className="text-white">3</span>
             </div>
           </div>
+        </div>
 
-          {/* Mobile Process Steps */}
-          <div className="md:hidden space-y-8">
-            {steps.map((item, index) => (
-              <div key={index} className="relative">
-                <div className="flex items-center mb-4">
-                  <div
-                    className="
-                    w-12 h-12 rounded-full flex items-center justify-center
-                    bg-[#4D2D7C] text-white mr-4
-                  "
-                  >
-                    <div className="text-current">{item.icon}</div>
-                  </div>
+        {/* Mobile Process Steps */}
+        <div className="md:hidden space-y-8">
+          {steps.map((item, index) => (
+            <div key={index} className="relative">
+              <div className="flex flex-col items-center">
+                {/* Icon Circle */}
+                <div className="w-16 h-16 rounded-full border border-gray-500 flex items-center justify-center mb-4">
+                  <div className="text-white">{item.icon}</div>
+                </div>
 
-                  <div
-                    className="
-                    w-6 h-6 rounded-full flex items-center justify-center
-                    bg-[#818181] text-black font-bold absolute -top-1 -left-1
-                  "
-                  >
-                    {index + 1}
-                  </div>
-
-                  <h3 className="text-lg font-semibold text-[#4D2D7C]">
+                {/* Card */}
+                <div className="bg-[#2a1d5a] !p-[40px] rounded-xl w-full border border-[#3d2d70] text-center">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     {item.step}
                   </h3>
+                  <p className="text-gray-300 text-sm">{item.description}</p>
                 </div>
 
-                <div
-                  className="
-                  bg-white p-6 rounded-xl shadow-sm border border-gray-100
-                  ml-6 relative
-                "
-                >
-                  <div className="absolute top-4 -left-3 w-6 h-6 bg-white transform rotate-45 border-l border-t border-gray-100"></div>
-                  <p className="text-gray-700">{item.description}</p>
-                </div>
-
+                {/* Number Circle */}
                 {index < steps.length - 1 && (
-                  <div className="w-0.5 h-8 bg-gray-200 absolute left-6 -bottom-8"></div>
+                  <>
+                    <div className="h-8 w-[1px] bg-gray-500 my-2"></div>
+                    <div className="w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146]">
+                      <span className="text-white">{index + 1}</span>
+                    </div>
+                  </>
+                )}
+                {index === steps.length - 1 && (
+                  <div className="w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146] mt-2">
+                    <span className="text-white">{index + 1}</span>
+                  </div>
                 )}
               </div>
-            ))}
-          </div>
-
-          <div className="mt-16 relative z-10">
-            <a
-              href="/booking"
-              className="
-              inline-block bg-[#4D2D7C] text-white font-medium px-8 py-4 rounded-full
-              hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1
-              shadow-md hover:shadow-lg
-            "
-            >
-              Get Started Now <ArrowRightOutlined className="ml-2" />
-            </a>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default HowItWorks;
+}

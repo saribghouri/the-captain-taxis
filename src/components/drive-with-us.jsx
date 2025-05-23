@@ -1,101 +1,83 @@
-"use client";
-import {
-  DollarCircleOutlined,
-  CarOutlined,
-  SafetyOutlined,
-  ScheduleOutlined,
-  TeamOutlined,
-  TrophyOutlined,
-} from "@ant-design/icons";
+"use client"
 
-const DriveWithUs = () => {
+import { DollarSign, Car, Shield, Calendar, Users, Award } from "lucide-react"
+import Image from "next/image"
+
+export default function DriveWithUs() {
   const benefits = [
     {
       text: "Steady, Guaranteed Earnings (fixed fares, no surge)",
-      icon: <DollarCircleOutlined className="text-xl" />,
+      icon: <DollarSign className="h-5 w-5" />,
     },
     {
       text: "Premium, Well-Maintained Cars",
-      icon: <CarOutlined className="text-xl" />,
+      icon: <Car className="h-5 w-5" />,
     },
     {
       text: "Top-Tier Safety & Security (in-car cameras, 24/7 support)",
-      icon: <SafetyOutlined className="text-xl" />,
+      icon: <Shield className="h-5 w-5" />,
     },
     {
       text: "Flexible Scheduling (full- or part-time)",
-      icon: <ScheduleOutlined className="text-xl" />,
+      icon: <Calendar className="h-5 w-5" />,
     },
     {
       text: "NDIS & Corporate Partnerships (higher-value trips)",
-      icon: <TeamOutlined className="text-xl" />,
+      icon: <Users className="h-5 w-5" />,
     },
     {
       text: "Ongoing Training & Driver Support",
-      icon: <TrophyOutlined className="text-xl" />,
+      icon: <Award className="h-5 w-5" />,
     },
-  ];
+  ]
 
   return (
-    <div className="md:px-8 md:py-16 px-5 py-12">
-      <div className="relative bg-gradient-to-b from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-16 overflow-hidden section">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#4D2D7C] opacity-5 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#4D2D7C] opacity-5 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="flex flex-col items-center mb-12 w-full justify-center">
-            <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">
-              Drive with The Captain Taxis
-            </h1>
-            <p className="text-gray-600 text-xl">
-              Earn more as a fully-professional taxi driver—no surge, no
-              gimmicks.
-            </p>
+    <div className="w-full bg-gray-50 py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Left side - Car Image */}
+          <div className="w-full md:w-1/2">
+            <Image
+              src="/assets/images/car.png"
+              alt="Captain Taxis Car"
+              width={600}
+              height={400}
+              className="w-full h-auto"
+              priority
+            />
           </div>
 
-          <div
-            className="bg-white rounded-2xl p-8 mb-12 border border-gray-100"
-            style={{
-              boxShadow:
-                "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-            }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Right side - Content */}
+          <div className="w-full md:w-1/2 flex flex-col">
+            <h1 className="text-[#4D2D7C] text-3xl md:text-4xl font-bold mb-2">Drive with The Captain Taxis</h1>
+            <p className="text-gray-600 text-lg mb-8">
+              Earn more as a fully-professional taxi driver—no surge, no gimmicks.
+            </p>
+
+            {/* Benefits List */}
+            <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#4D2D7C] bg-opacity-10 flex items-center justify-center mr-4 group-hover:bg-[#4D2D7C] transition-all duration-300">
-                    <span className="text-[#a7a7a7] group-hover:text-white transition-all duration-300">
-                      {benefit.icon}
-                    </span>
+                <div key={index} className="flex items-center gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#4D2D7C]/10 flex items-center justify-center">
+                    <span className="text-[#4D2D7C]">{benefit.icon}</span>
                   </div>
-                  <div className="pt-1">
-                    <p className="text-gray-700 font-medium">{benefit.text}</p>
-                  </div>
+                  <p className="text-gray-700">{benefit.text}</p>
                 </div>
               ))}
             </div>
-          </div>
 
-          <div className="text-center">
-            <div className="inline-block relative">
-              <div className="absolute inset-0 bg-[#DFBA3F] rounded-lg transform rotate-1 scale-105 opacity-30"></div>
+            {/* CTA Button */}
+            <div className="mt-8 text-center flex justify-center">
               <a
                 href="/apply-driver"
-                className="relative inline-block bg-[#4D2D7C] hover:bg-[#3a2160] text-white font-semibold px-8 py-4 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1"
+                className="inline-block bg-[#4D2D7C] hover:bg-[#3a2160] text-white font-semibold px-6 py-3 rounded-4xl transition duration-300"
               >
                 Become a Driver
               </a>
             </div>
-
-            <p className="mt-6 text-gray-500 text-sm">
-              Join our team of professional drivers today and experience the
-              difference
-            </p>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default DriveWithUs;
+  )
+}

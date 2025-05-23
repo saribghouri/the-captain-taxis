@@ -1,180 +1,112 @@
-"use client";
-import { Carousel } from "antd";
-import {
-  RightOutlined,
-  LeftOutlined,
-  UserOutlined,
-  InboxOutlined,
-  ThunderboltOutlined,
-  CompassOutlined,
-} from "@ant-design/icons";
-import { useRef } from "react";
+"use client"
 
-const ServicesCarousel = () => {
+
+const ServicesSection = () => {
   const services = [
     {
       title: "Airport Shuttle",
-      description: "Quickest possible pick-up.",
-      image: "/assets/images/next.png",
-      rate: "250 kms/day",
-      passengers: "4/5",
-      luggage: "3/5",
-      airCondition: "Yes",
-      gpsNavigation: "Yes",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
     {
-      title: "NDIS Support Service",
-      description: "Comfort for 1–4 passengers.",
-      image: "/assets/images/3bdbc452ce1ae8e6cb763ecb5ae315eb.avif",
-      rate: "280 kms/day",
+      title: "Airport Shuttle",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
     {
-      title: "Parcel Delivery Service",
-      description: "Extra legroom & luggage space.",
-      image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
-
-      rate: "300 kms/day",
+      title: "Airport Shuttle",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
     {
-      title: "Events & Weddings Service",
-      description: "Groups up to 11.",
-      image: "/assets/images/mercedes-sprinter-mini-bus.jpg",
-      rate: "350 kms/day",
+      title: "Airport Shuttle",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
     {
-      title: "Corporate Travel Service",
-      description: "Door-to-door bulky item transport.",
-      image: "/assets/images/4629696636792d6a8674e7523516243_900_600-f.jpg",
-      rate: "320 kms/day",
+      title: "Airport Shuttle",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
     {
-      title: "Sydney Taxi Tourist Tour",
-      description: "Wheelchair-accessible trips with TTSS support.",
-      image: "/assets/images/man-using-disabled-parking-spot-1024x576.png",
-      rate: "300 kms/day",
+      title: "Airport Shuttle",
+      description: "We are Always There at Your Services",
+      image: "assets/images/images.png",
+      rate: "300 Kms/day",
     },
-  ];
-
-  const carouselRef = useRef(null);
-
-  const carouselSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false, // Hide default arrows, we'll add custom ones
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const goToPrev = () => {
-    if (carouselRef.current) {
-      carouselRef.current.prev();
-    }
-  };
-
-  const goToNext = () => {
-    if (carouselRef.current) {
-      carouselRef.current.next();
-    }
-  };
+  ]
 
   return (
-    <section className="md:px-8 md:py-16 px-5 py-12">
-      <div className="section">
-        <div className="flex flex-col items-center mb-12 w-full justify-center">
-          <h1 className="font-bold text-[30px] text-[#4D2D7C] capitalize">Our Services</h1>
-          <p className="text-gray-600 text-xl">We are Always There at Your Services</p>
-        </div>
+    <section className="relative min-h-screen">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/assets/images/backdound 3.png')",
+        }}
+      >
+       
+      </div>
 
-        <div className="carousel-container relative">
-          <Carousel
-            ref={carouselRef}
-            {...carouselSettings}
-            className="services-carousel"
-          >
+      {/* Content */}
+      <div className="relative z-10 px-6 py-16 md:px-12 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl  text-white mb-4">Our Services</h1>
+            <p className="text-xl text-white/90">We are Always There at Your Services</p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8  mx-auto">
             {services.map((service, index) => (
-              <div key={index} className="px-2">
-                <ServiceCard service={service} />
-              </div>
+              <ServiceCard key={index} service={service} />
             ))}
-          </Carousel>
-
-          <div className="carousel-arrows flex justify-center mt-8">
-            <button
-              onClick={goToPrev}
-              className="carousel-arrow prev-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
-            >
-              <LeftOutlined />
-            </button>
-            <button
-              onClick={goToNext}
-              className="carousel-arrow next-arrow mx-2 bg-[#4D2D7C] hover:bg-[#3a2160] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all"
-            >
-              <RightOutlined />
-            </button>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
-      <div className="p-4 bg-gray-50 flex justify-center">
-        <img
-          src={service.image || "/placeholder.svg"}
-          alt={service.title}
-          className="h-48 object-contain"
-        />
-      </div>
+    <div className="rounded-2xl overflow-hidden shadow-xl group transition-all duration-300 hover:scale-105">
+      {/* Card with hover effect */}
+      <div className="relative p-6 h-full  ant-modal-contents backdrop-blur-sm transition-all duration-300">
+        <div className="flex items-center gap-6">
+          {/* Car Image */}
+          <div className="">
+            <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-52 h-30 object-contain" />
+          </div>
 
-      <div className="p-6 flex flex-col flex-grow">
-        <h2 className="text-xl font-bold text-center text-gray-800">
-          {service.title}
-        </h2>
+          {/* Content */}
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 mb-2">
+              {service.title}
+            </h3>
+            <p className="text-gray-600 group-hover:text-white/80 transition-colors duration-300 text-sm mb-3 leading-relaxed">
+              {service.description}
+            </p>
+            <p className="text-lg font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">
+              {service.rate}
+            </p>
 
-        {service.description && (
-          <p className="text-center text-gray-600 mt-1 mb-2">
-            {service.description}
-          </p>
-        )}
-
-        <div className="flex justify-center my-2">
-          <p className="text-[#4D2D7C] font-medium">{service.rate}</p>
-        </div>
-
-        <div className="flex justify-center my-2">
-          <div className="w-16 h-1 bg-[#4D2D7C] rounded"></div>
-        </div>
-
-        <div className="mt-6">
-          <button className="w-full bg-[#4D2D7C] hover:bg-[#804ac7] text-white py-3 px-4 rounded-full flex items-center justify-center transition-all">
-            BOOK RIDE NOW <RightOutlined className="ml-2" />
-          </button>
+            {/* Book Button */}
+            <button className="bg-[#2D1A4A]  text-[#ffffff] group-hover:text-[#2D1A4A] group-hover:bg-white border border-[#2D1A4A] group-hover:border-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-medium transition-all duration-300">
+              Book Ride Now
+              {/* <Carout className="w-4 h-4" /> */}
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ServicesCarousel;
+export default ServicesSection

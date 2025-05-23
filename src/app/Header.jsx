@@ -8,6 +8,7 @@ import {
   GlobalOutlined,
 } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import { Download, Mail, Phone } from "lucide-react";
 
 const menuData = [
   {
@@ -44,6 +45,10 @@ const menuData = [
           },
           { label: "Sydney Taxi Tourist Tour", path: "/services/tourist-tour" },
         ],
+      },
+      {
+        heading: "Last arrivals",
+        items: [], // Empty items to trigger special content
       },
     ],
   },
@@ -118,25 +123,60 @@ const menuData = [
 
 const MegaMenu = ({ columns, onItemClick }) => (
   <div className="absolute left-0 right-0 w-full">
-    <div className="container mx-auto p-6 bg-white shadow-lg rounded-b-lg border-t-4 border-purple-600 animate-fadeIn">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="max-w-3xl mx-auto mt-6 p-3 bg-white rounded-2xl">
+      <div
+        className={`grid gap-6 ${
+          columns.length === 1
+            ? "grid-cols-1"
+            : columns.length === 2
+            ? "grid-cols-1 md:grid-cols-2"
+            : columns.length === 3
+            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            : columns.length === 4
+            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            : "grid-cols-1"
+        }`}
+      >
         {columns.map((col, i) => (
-          <div key={i}>
-            <h4 className="font-bold text-purple-700 mb-3 pb-2 border-b border-gray-200">
+          <div
+            key={i}
+            className={`${
+              col.items.length === 0 ? "bg-[#3a2160]" : "bg-transparent"
+            } p-4 rounded-md`}
+          >
+            <h4
+              className={`font-bold text-lg pb-2 ${
+                col.items.length === 0 ? "text-white" : "text-black"
+              }`}
+            >
               {col.heading}
             </h4>
-            <Menu>
-              {col.items.map((item, idx) => (
-                <Menu.Item
-                  key={idx}
-                  onClick={() => onItemClick(item.path)}
-                  className="cursor-pointer py-2 text-gray-700 hover:text-purple-600 transition-colors duration-200 flex items-center group"
+            {col.items.length === 0 ? (
+              <div className="flex flex-col items-start justify-between h-[70%]">
+                <p className="text-white text-sm mb-4">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content
+                </p>
+                <button
+                  onClick={() => onItemClick("/last-arrivals")}
+                  className="bg-white text-[#6B46C1] px-4 py-1.5 rounded-md font-semibold"
                 >
-                  <span className="w-1 h-1 bg-purple-600 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
-                  {item.label}
-                </Menu.Item>
-              ))}
-            </Menu>
+                  Read article
+                </button>
+              </div>
+            ) : (
+              <Menu className="!shadow-none">
+                {col.items.map((item, idx) => (
+                  <Menu.Item
+                    key={idx}
+                    onClick={() => onItemClick(item.path)}
+                    className="cursor-pointer !text-[#a09a9a] !p-0 !py-[5px] !text-xs"
+                  >
+                    <span className="text-left"> {item.label}</span>
+                  </Menu.Item>
+                ))}
+              </Menu>
+            )}
           </div>
         ))}
       </div>
@@ -209,41 +249,55 @@ const Header = () => {
   return (
     <div className="fixed w-full top-0 left-0 z-50">
       {/* Top bar - Hidden on mobile */}
-      <div className="hidden md:flex bg-white shadow-sm justify-between items-center px-2 md:px-16 py-2">
-        <img
-          onClick={() => router.push("/")}
-          className="w-[150px] cursor-pointer"
-          src="/assets/images/Logo1.png"
-          alt="Logo"
-        />
-        <div className="flex items-center gap-4">
-          <button
-            type="text"
-            onClick={() => router.push("/download")}
-            className="font-medium bg-[#000000] p-[6px] pl-[10px] pr-[10px] rounded-xl text-white"
-          >
-            Download App
+ <div className="bg-[#D8C7E8] text-gray-800 py-2 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
+        {/* Contact Information */}
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            <span className="font-bold">0420 966 387</span>
+          </div>
+
+          <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
+
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            <span className="font-bold">info@thecaptaintaxis.com.au</span>
+          </div>
+        </div>
+
+        <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
+
+        {/* Promotional Text */}
+        <div className="flex-1 text-center lg:text-left">
+          <span className="font-bold">
+            Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+          </span>
+        </div>
+
+        {/* Download Section */}
+        <div className="flex items-center gap-3">
+          <button className="bg-[#4D2D7C] text-white px-4 py-1.5 rounded-md hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2 text-sm font-medium">
+            <Download className="w-4 h-4" />
+            Download
           </button>
-          <Button
-            icon={<GlobalOutlined />}
-            type="text"
-            className="text-gray-700"
-            onClick={() => alert("Country selector")}
-          >
-            AU
-          </Button>
-          <Button type="default" onClick={() => router.push("/login")}>
-            Login
-          </Button>
-          <Button type="primary" onClick={() => router.push("/signup")}>
-            Sign Up
-          </Button>
+
+          <div className="flex items-center gap-2">
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src="assets/images/google-play-store-icon-logo-symbol-free-png.webp" alt="Google Play" className="w-6 h-6 rounded" />
+            </a>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src="assets/images/logo-apple-icon-information-png-favpng-LgLa8kMeALfAyE0iKbRnAJtnE-removebg-preview.png" alt="App Store" className="w-6 h-6 rounded" />
+            </a>
+          </div>
         </div>
       </div>
+    </div>
       {/* Nav bar - Hidden on mobile */}
       <div className="hidden md:block bg-gradient-to-r from-[#4D2D7C] to-[#3a2160] text-white shadow-md">
-        <div className=" mx-auto  md:px-6 lg:px-8 py-2">
+        <div className=" mx-auto  md:px-8 lg:px-8 py-4">
           <div className="flex w-full px-10  justify-between">
+            <img className="w-[100px]" src="assets/images/logo.png" alt="" />
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <Button
@@ -270,7 +324,7 @@ const Header = () => {
                       onItemClick={handleItemClick}
                     />
                   }
-                  trigger={["hover"]}
+                  trigger={["click"]}
                   placement="bottomCenter"
                   overlayClassName="w-full"
                 >
@@ -282,64 +336,7 @@ const Header = () => {
             </div>
 
             {/* Right side contact and social */}
-            <div className="flex items-center space-x-4">
-              {/* Phone number */}
-              <a
-                href="tel:132227"
-                className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors duration-200"
-              >
-                <div className="w-7 h-7 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
-                  <PhoneOutlined className="text-sm" />
-                </div>
-                <span className="font-medium">13 2227</span>
-              </a>
-
-              {/* Social media icons */}
-              <div className="flex items-center space-x-3">
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
-                  }}
-                  className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
-                >
-                  <img
-                    className="w-4 h-4 object-contain"
-                    src="/assets/images/Instagram-Logo.wine.svg"
-                    alt="Instagram"
-                  />
-                </a>
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
-                  }}
-                  className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
-                >
-                  <img
-                    className="w-4 h-4 object-contain"
-                    src="/assets/images/YouTube_full-color_icon_(2017).svg.webp"
-                    alt="YouTube"
-                  />
-                </a>
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
-                  }}
-                  className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-200"
-                >
-                  <img
-                    className="w-4 h-4 object-contain"
-                    src="/assets/images/Facebook-f_Logo-Blue-Logo.wine.svg"
-                    alt="Facebook"
-                  />
-                </a>
-              </div>
-            </div>
+        <Button className="bg-white !text-[#4D2D7C] !font-bold !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
           </div>
         </div>
       </div>
