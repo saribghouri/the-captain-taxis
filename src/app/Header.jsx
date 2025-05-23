@@ -119,7 +119,7 @@ const menuData = [
       },
     ],
   },
-];
+]
 
 const MegaMenu = ({ columns, onItemClick }) => (
   <div className="absolute left-0 right-0 w-full">
@@ -182,7 +182,7 @@ const MegaMenu = ({ columns, onItemClick }) => (
       </div>
     </div>
   </div>
-);
+)
 
 const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
   <div className="mb-1">
@@ -194,19 +194,13 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
         <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
         <span className="font-medium">{menu.label}</span>
       </div>
-      <DownOutlined
-        className={`text-xs transition-transform duration-300 ${
-          isActive ? "rotate-180" : ""
-        }`}
-      />
+      <DownOutlined className={`text-xs transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
     </div>
     {isActive && (
       <div className="pl-6 pr-2 py-2 bg-gray-50 rounded-md mb-2 border-l-4 border-purple-600 animate-fadeIn">
         {menu.columns.map((col, i) => (
           <div key={i} className="mb-3">
-            <h5 className="font-semibold text-purple-700 mb-2 border-b border-gray-200 pb-1">
-              {col.heading}
-            </h5>
+            <h5 className="font-semibold text-purple-700 mb-2 border-b border-gray-200 pb-1">{col.heading}</h5>
             <div className="space-y-1">
               {col.items.map((item, idx) => (
                 <div
@@ -224,27 +218,27 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
       </div>
     )}
   </div>
-);
+)
 
 const Header = () => {
-  const [visible, setVisible] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const router = useRouter();
+  const [visible, setVisible] = useState(false)
+  const [activeMenu, setActiveMenu] = useState(null)
+  const router = useRouter()
 
-  const showDrawer = () => setVisible(true);
+  const showDrawer = () => setVisible(true)
   const onClose = () => {
-    setVisible(false);
-    setActiveMenu(null);
-  };
+    setVisible(false)
+    setActiveMenu(null)
+  }
 
   const handleItemClick = (path) => {
-    router.push(path);
-    onClose();
-  };
+    router.push(path)
+    onClose()
+  }
 
   const toggleMobileMenu = (menuKey) => {
-    setActiveMenu(activeMenu === menuKey ? null : menuKey);
-  };
+    setActiveMenu(activeMenu === menuKey ? null : menuKey)
+  }
 
   return (
     <div className="fixed w-full top-0 left-0 z-50">
@@ -310,7 +304,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white hover:!text-white hover:!bg-[#5d3d8c] !rounded-md !px-3 !h-9 !font-medium transition-colors duration-200"
-                onClick={() => router.push("/book-ride")}
+                onClick={() => router.push("/book-a-ride")}
               >
                 Book a Ride
               </Button>
@@ -324,7 +318,7 @@ const Header = () => {
                       onItemClick={handleItemClick}
                     />
                   }
-                  trigger={["click"]}
+                  trigger={["hover"]}
                   placement="bottomCenter"
                   overlayClassName="w-full"
                 >
@@ -438,7 +432,7 @@ const Header = () => {
         </div>
       </Drawer>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

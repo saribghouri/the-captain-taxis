@@ -11,6 +11,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+ 
 }
 
 /* Full-width dropdown support */
@@ -334,13 +335,4 @@ html {
   border: 1px solid rgba(77, 45, 124, 0.1);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.1); /* Transparent white */
-  backdrop-filter: blur(10px);          /* Background blur */
-  -webkit-backdrop-filter: blur(10px);  /* Safari support */
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
