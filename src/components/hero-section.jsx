@@ -46,51 +46,52 @@ const HeroSection = () => {
   };
 
   return (
-        
-    <div className="secttion-one text-white min-h-screen w-full overflow-hidden pt-[50px]">
-       <div className="flex justify-center w-full px-4">
-      <div className="hero my-10 w-full max-w-[700px] mt-[110px] h-[60px] flex items-center rounded-tl-[30px] rounded-br-[30px] relative px-6 shadow-sm">
-        {/* Profile Image */}
-         <img
+
+    <div className="secttion-one mt-[50x] text-white min-h-screen w-full overflow-hidden pt-[50px]">
+      
+      <div className="flex justify-center w-full px-4">
+        <div className="hero my-10 w-full max-w-[700px] mt-[110px] h-[60px] flex items-center rounded-tl-[30px] rounded-br-[30px] relative px-6 shadow-sm">
+          {/* Profile Image */}
+          <img
             className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-34px]"
             src="assets/images/Mask Group 2.png"
             alt="icon"
           />
 
-        {/* Content Container */}
-        <div className="flex items-center justify-between w-full ml-[110px]">
-          {/* Left Content */}
-          <div className="flex items-center gap-4">
-            {/* NEW Badge */}
-            <button className="bg-transparent border-2 font-bold border-purple-900 text-[#6b46c1] text-xs px-3 py-1 rounded-md">NEW</button>
+          {/* Content Container */}
+          <div className="flex items-center justify-between w-full ml-[110px]">
+            {/* Left Content */}
+            <div className="flex items-center gap-4">
+              {/* NEW Badge */}
+              <button className="bg-transparent border-2 font-bold border-purple-900 text-[#6b46c1] text-xs px-3 py-1 rounded-md">NEW</button>
 
-            {/* Title and Icon */}
-            <div className="flex items-center gap-2">
-              <h1 className="text-black font-bold text-[18px]">Caption Taxi Gift Card!</h1>
-             <img
-              src="assets/images/car icon.svg"
-              alt="icon"
-              className="h-[40px] w-[40px]"
-            />
+              {/* Title and Icon */}
+              <div className="flex items-center gap-2">
+                <h1 className="text-black font-bold text-[18px]">Caption Taxi Gift Card!</h1>
+                <img
+                  src="assets/images/car icon.svg"
+                  alt="icon"
+                  className="h-[40px] w-[40px]"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Right Content */}
-          <button className="text-[#6b46c1] text-[14px] font-medium flex items-center gap-1 hover:text-[#553c9a] transition-colors">
-            Find out more
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+            {/* Right Content */}
+            <button className="text-[#412a7e] text-[15px] font-medium flex items-center gap-1 hover:text-[#553c9a] transition-colors">
+              Find out more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
       <div className="flex flex-col lg:flex-row justify-between max-w-full px-4 items-center">
         {/* This div will be hidden on mobile screens */}
         <div className="hidden md:block pt-[80px] pl-[20px] lg:pl-[80px] md:w-1/2">
@@ -113,7 +114,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative w-full max-w-md rounded-2xl bg-purple-700/10 backdrop-blur-lg shadow-2xl mb-[20px] px-[20px] p-6 text-white">
+        <div className="relative w-full max-w-md rounded-2xl bg-purple-700/10 backdrop-blur-lg shadow-2xl mb-[50px] px-[20px] p-6 text-white">
           <h2 className="mb-6 text-2xl font-bold text-center">Book A Taxi</h2>
 
           <div className="space-y-4 mb-4">
@@ -121,7 +122,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
                 <svg
-                  className="w-5 h-5 text-purple-300"
+                  className="w-5 h-5 text-purple-900"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -140,7 +141,7 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder="Pickup Location"
-                className="w-full py-3 pl-12 pr-4 rounded-full text-purple-900 placeholder-purple-900 bg-white bg-opacity-90 focus:outline-none"
+                className="w-full py-1.5 pl-12 pr-4 rounded-[10px] text-purple-900 placeholder-purple-900 bg-white bg-opacity-90 focus:outline-none"
               />
             </div>
 
@@ -148,7 +149,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
                 <svg
-                  className="w-5 h-5 text-purple-300"
+                  className="w-5 h-5 text-purple-900"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -167,7 +168,7 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder="Drop Off Location"
-                className="w-full py-3 pl-12 pr-4 rounded-full text-purple-900 placeholder-purple-900 bg-white bg-opacity-90 focus:outline-none"
+                className="w-full py-1.5 pl-12 pr-4 rounded-[10px] text-purple-900 placeholder-purple-900 bg-white bg-opacity-90 focus:outline-none"
               />
             </div>
 
@@ -187,9 +188,9 @@ const HeroSection = () => {
           <div className="relative w-full">
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full"
+              className="absolute left-0 top-2/4 transform -translate-y-1/2 z-10 p-2   rounded-full"
             >
-              <ChevronLeft className="w-6 h-6 text-white" />
+              <ChevronLeft className="w-10 h-10 text-white" />
             </button>
 
             <div className="overflow-hidden">
@@ -220,9 +221,9 @@ const HeroSection = () => {
 
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full"
+              className="absolute right-0 top-2/4 transform -translate-y-1/2 z-10 p-2  rounded-full"
             >
-              <ChevronRight className="w-6 h-6 text-white" />
+              <ChevronRight className="w-10 h-10 text-white" />
             </button>
           </div>
         </div>

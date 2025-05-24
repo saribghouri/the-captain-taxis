@@ -243,8 +243,8 @@ const Header = () => {
   return (
     <div className="fixed w-full top-0 left-0 z-50">
       {/* Top bar - Hidden on mobile */}
- <div className="bg-[#D8C7E8] text-gray-800 py-2 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
+ <div className="bg-[#D8C7E8] text-gray-800  bg-gradient-to-r from-[#c8a8e5] to-[#D8C7E8] py-2.5 ">
+      <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
         {/* Contact Information */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="flex items-center gap-2">
