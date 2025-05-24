@@ -5,7 +5,7 @@ export default function CustomerBenefits() {
     <div className="max-w-7xl mx-auto px-4 py-16">
       {/* Key Benefits Section */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#4b2e83] mb-3">Key Benefits</h2>
+        <h2 className="text-4xl md:text-5xl  text-[#4b2e83] mb-3">Key Benefits</h2>
         <p className="text-lg text-gray-700">We are Always for Your Benefits</p>
       </div>
 
