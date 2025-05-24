@@ -26,18 +26,18 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-gray-800 mb-6 capitalize tracking-wide">CONTACTS</h3>
             <div className="space-y-4">
               <div>
-                <p className="text-gray-600 font-bold">541a Burwood Road,</p>
-                <p className="text-gray-700 font-bold">Belmore NSW 2192</p>
+                <p className="text-gray-600 font-bold  transition-colors text-[15px]">541a Burwood Road,</p>
+                <p className="text-gray-600  font-bold  transition-colors text-[15px]">Belmore NSW 2192</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#4D2D7C]" />
-                <span className="text-gray-700 font-bold">0420 966 387</span>
+                <span className="text-gray-700 font-extrabold">0420 966 387</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#4D2D7C]" />
                 <a
                   href="mailto:info@thecaptaintaxis.com.au"
-                  className="text-gray-700 font-bold hover:text-[#4D2D7C] transition-colors"
+                  className="text-gray-700 font-extrabold hover:text-[#4D2D7C] transition-colors"
                 >
                   info@thecaptaintaxis.com.au
                 </a>
@@ -51,7 +51,7 @@ const Footer = () => {
             <ul className="space-y-3 font-bold">
               {["Home", "Join as a Driver", "Vehicle", "Services"].map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-600 hover:text-[#4D2D7C] transition-colors duration-300">
+                  <a href="#" className="text-gray-800 text-[15px] hover:text-[#4D2D7C] transition-colors duration-300">
                     {link}
                   </a>
                 </li>
@@ -65,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-3 font-bold">
               {["Legal Policy/Terms", "Contact Us", "About Us", "Additional Links"].map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-600 hover:text-[#4D2D7C] transition-colors duration-300">
+                  <a href="#" className="text-gray-800 text-[15px] hover:text-[#4D2D7C] transition-colors duration-300">
                     {link}
                   </a>
                 </li>
@@ -101,12 +101,12 @@ const Footer = () => {
 
             <div>
               <h4 className="text-lg font-semibold text-[#4D2D7C] mb-3">Discover our app</h4>
-              <div className="space-y-2">
+              <div className="space-y-2 flex items-center">
                 <a href="#" className="block">
-                  <img src="/placeholder.svg?height=40&width=120" alt="Get it on Google Play" className="h-10 w-auto" />
+                  <img src="assets/images/app store.png" alt="Get it on Google Play" className="h-6  w-auto" />
                 </a>
-                <a href="#" className="block">
-                  <img src="/placeholder.svg?height=40&width=120" alt="Download on App Store" className="h-10 w-auto" />
+                <a href="#" className="block mt-[-8px]">
+                  <img src="assets/images/google play.png" alt="Download on App Store" className="h-8.5 rounded-[50px] w-auto" />
                 </a>
               </div>
             </div>

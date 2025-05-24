@@ -46,50 +46,74 @@ const HeroSection = () => {
   };
 
   return (
+        
     <div className="secttion-one text-white min-h-screen w-full overflow-hidden pt-[50px]">
-      <div className="flex justify-center w-full px-4">
-        <div className="bg-[#e3e1e1] my-10 w-full max-w-[800px] mt-[110px] h-[75px] flex flex-row sm:flex-row items-center sm:items-start sm:justify-between rounded-tl-[30px] sm:rounded-tl-[50px] rounded-br-[30px] sm:rounded-br-[50px] relative sm:p-6 gap-4">
-          <img
-            className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-40px]"
+       <div className="flex justify-center w-full px-4">
+      <div className="hero my-10 w-full max-w-[700px] mt-[110px] h-[60px] flex items-center rounded-tl-[30px] rounded-br-[30px] relative px-6 shadow-sm">
+        {/* Profile Image */}
+         <img
+            className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-34px]"
             src="assets/images/Mask Group 2.png"
             alt="icon"
           />
 
-          <div className="flex flex-row sm:flex-row sm:items-center gap-2 sm:ml-[20px] text-center sm:text-left">
-            <h1 className="text-[#000] font-bold text-[18px] sm:text-[20px]">
-              Caption Taxi Gift Card!
-            </h1>
-            <img
+        {/* Content Container */}
+        <div className="flex items-center justify-between w-full ml-[110px]">
+          {/* Left Content */}
+          <div className="flex items-center gap-4">
+            {/* NEW Badge */}
+            <button className="bg-transparent border-2 font-bold border-purple-900 text-[#6b46c1] text-xs px-3 py-1 rounded-md">NEW</button>
+
+            {/* Title and Icon */}
+            <div className="flex items-center gap-2">
+              <h1 className="text-black font-bold text-[18px]">Caption Taxi Gift Card!</h1>
+             <img
               src="assets/images/car icon.svg"
               alt="icon"
-              className="mx-auto sm:mx-0"
+              className="h-[40px] w-[40px]"
             />
+            </div>
           </div>
 
-          <button className="text-[#4109eb] text-[14px] sm:text-[15px] font-medium mt-2 sm:mt-0">
+          {/* Right Content */}
+          <button className="text-[#6b46c1] text-[14px] font-medium flex items-center gap-1 hover:text-[#553c9a] transition-colors">
             Find out more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
-      </div>{" "}
+      </div>
+    </div>
       <div className="flex flex-col lg:flex-row justify-between max-w-full px-4 items-center">
         {/* This div will be hidden on mobile screens */}
         <div className="hidden md:block pt-[80px] pl-[20px] lg:pl-[80px] md:w-1/2">
           <div className="text-left animate-fade-in-up mt-[-150px]">
-            <h1 className="font-medium text-[28px] md:text-[32px] lg:text-[42px] leading-tight text-white drop-shadow-lg mb-2 tracking-wide">
-              Your ride, your way
-              <span className="text-[#a8a8a8]">-anytime</span>
+            <h1 className="font-medium text-[28px] md:text-[32px] ml lg:text-[20px] leading-2.5 uppercase text-white drop-shadow-lg mb-2 ">
+              Your ride, your way -anytime
             </h1>
-            <h1 className="font-extrabold text-[30px] md:text-[34px] lg:text-[44px] text-white drop-shadow-lg ml-[20px] md:ml-[40px] lg:ml-[60px] mb-4 tracking-wide bg-gradient-to-r from-purple-600 to-indigo-800 bg-clip-text text-transparent">
-              Anywhere in Australia.
+            <h1 className="font-bold text-[24px] md:text-[26px] lg:text-[30px] uppercase text-white drop-shadow-lg ml-[20px] md:ml-[50px] lg:ml-[90px] mb-4 tracking-wide bg-gradient-to-r from-purple-600 to-indigo-800 bg-clip-text text-transparent">
+              Anywhere in sydney.
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-white italic drop-shadow-md font-light max-w-xl mt-4 leading-relaxed">
-              Fast, reliable taxi bookings in Sydney today, expanding nationwide
+            <p className=" md:text-sm lg:text-[19px] font-extralight text-white  drop-shadow-md  max-w-xl mt-4">
+              Fast, reliable taxi bookings in Sydney today, expanding <br></br>nationwide
               tomorrow.
             </p>
           </div>
+          <div className="flex gap-[10px] mt-[40px]">
+
+            <button className=" capitalize bg-white text-[#5f3e91] px-[12px] rounded-[6px] py-[5px]  text-[15px]">join as driver</button>
+            <button className="capitalize bg-transparent border border-white text-[#f9f9f9] px-[12px]  rounded-[6px] py-[3px]">book A ride</button>
+          </div>
         </div>
 
-        <div className="relative w-full max-w-md rounded-2xl bg-purple-700/10 backdrop-blur-lg shadow-2xl p-6 text-white">
+        <div className="relative w-full max-w-md rounded-2xl bg-purple-700/10 backdrop-blur-lg shadow-2xl mb-[20px] px-[20px] p-6 text-white">
           <h2 className="mb-6 text-2xl font-bold text-center">Book A Taxi</h2>
 
           <div className="space-y-4 mb-4">
@@ -148,8 +172,8 @@ const HeroSection = () => {
             </div>
 
             <div className="flex justify-center mt-4">
-              <button className="bg-[#4D2D7C] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-3 font-medium shadow-lg hover:shadow-xl transform hover:scale-105">
-                <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+              <button className="bg-[#4D2D7C] text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-3 font-medium shadow-lg hover:shadow-xl transform hover:scale-105">
+                <div className="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-[#4D2D7C] " />
                 </div>
                 Book A Ride
@@ -172,9 +196,8 @@ const HeroSection = () => {
               <div
                 className="flex transition-transform duration-300"
                 style={{
-                  transform: `translateX(-${
-                    currentIndex * (100 / visibleCars)
-                  }%)`,
+                  transform: `translateX(-${currentIndex * (100 / visibleCars)
+                    }%)`,
                 }}
               >
                 {cars.map((car) => (

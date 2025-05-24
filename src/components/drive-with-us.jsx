@@ -7,15 +7,15 @@ export default function DriveWithUs() {
   const benefits = [
     {
       text: "Steady, Guaranteed Earnings (fixed fares, no surge)",
-      icon: <DollarSign className="h-5 w-5" />,
+      icon: <img className="w-[20px]" src="assets/images/Steady, Guaranteed.svg" alt="" />,
     },
     {
       text: "Premium, Well-Maintained Cars",
-      icon: <Car className="h-5 w-5" />,
+      icon: <img className="w-[20px]" src="assets/images/Premium, Well.svg" alt="" />,
     },
     {
       text: "Top-Tier Safety & Security (in-car cameras, 24/7 support)",
-      icon: <Shield className="h-5 w-5" />,
+      icon: <img className="w-[20px]" src="assets/images/Top-Tier Safety.svg" alt="" />,
     },
     {
       text: "Flexible Scheduling (full- or part-time)",
@@ -23,11 +23,11 @@ export default function DriveWithUs() {
     },
     {
       text: "NDIS & Corporate Partnerships (higher-value trips)",
-      icon: <Users className="h-5 w-5" />,
+      icon: <img className="w-[20px]" src="assets/images/NDIS & Corporate.svg" alt="" />,
     },
     {
       text: "Ongoing Training & Driver Support",
-      icon: <Award className="h-5 w-5" />,
+      icon: <img className="w-[20px]" src="assets/images/Ongoing Training.svg" alt="" />,
     },
   ]
 
@@ -49,7 +49,7 @@ export default function DriveWithUs() {
 
           {/* Right side - Content */}
           <div className="w-full md:w-1/2 flex flex-col">
-            <h1 className="text-[#4D2D7C] text-3xl md:text-4xl font-bold mb-2">Drive with The Captain Taxis</h1>
+            <h1 className="text-[#4D2D7C] text-3xl md:text-4xl  mb-2">Drive with The Captain Taxis</h1>
             <p className="text-gray-600 text-lg mb-8">
               Earn more as a fully-professional taxi driver—no surge, no gimmicks.
             </p>

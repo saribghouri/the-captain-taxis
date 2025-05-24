@@ -264,20 +264,20 @@ const Header = () => {
 
         {/* Promotional Text */}
         <div className="flex-1 text-center lg:text-left">
-          <span className="font-bold">
+          <span className="">
             Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
           </span>
         </div>
 
         {/* Download Section */}
         <div className="flex items-center gap-3">
-          <button className="bg-[#4D2D7C] text-white px-4 py-1.5 rounded-md hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2 text-sm font-medium">
+          <button className="bg-[#4D2D7C] text-white px-4 py-1.5 rounded-[50px] hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2 text-sm font-medium">
             <Download className="w-4 h-4" />
             Download
           </button>
 
-          <div className="flex items-center gap-2">
-            <a href="#" className="hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-3">
+            <a href="#" className="hover:opacity-80  transition-opacity">
               <img src="assets/images/google-play-store-icon-logo-symbol-free-png.webp" alt="Google Play" className="w-6 h-6 rounded" />
             </a>
             <a href="#" className="hover:opacity-80 transition-opacity">
@@ -288,7 +288,7 @@ const Header = () => {
       </div>
     </div>
       {/* Nav bar - Hidden on mobile */}
-      <div className="hidden md:block bg-gradient-to-r from-[#4D2D7C] to-[#3a2160] text-white shadow-md">
+      <div className="hidden md:block bg-gradient-to-r from-[#181035] via-[#4d2d7c] to-[#181035] text-white shadow-md">
         <div className=" mx-auto  md:px-8 lg:px-8 py-4">
           <div className="flex w-full px-10  justify-between">
             <img className="w-[100px]" src="assets/images/logo.png" alt="" />

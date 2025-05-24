@@ -54,15 +54,15 @@ const AppPromotion = () => {
           {/* Text Content Column */}
           <div className="w-full lg:w-1/2">
             <div className="mb-8">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl text-[#4d2d7c] mb-2 leading-tight drop-shadow-sm">
+              <h2 className="text-6xl sm:text-4xl lg:text-4xl text-[#4d2d7c] mb-2 leading-tight drop-shadow-sm">
                 Get Our App
               </h2>
-              <h3 className="text-2xl sm:text-3xl font-semibold text-[#4d2d7c] mb-6">
+              <h3 className="text-2xl sm:text-[18px] text-[#4d2d7c] mb-6">
                 Go Your Way
               </h3>
             </div>
 
-            <p className="text-gray-600 text-base leading-relaxed mb-8 backdrop-blur-sm">
+            <p className="text-[#3b2065] text-[14px]  mb-8 backdrop-blur-sm">
               The Captain Taxis Is Your Go-To Transportation Service Offering A
               Range Of Specialized Services Tailored To Meet Your Diverse Needs.
               We Know How Hectic It Can Be When You're In A Hurry To Reach Your
@@ -72,14 +72,14 @@ const AppPromotion = () => {
             </p>
 
             <div className="mb-8">
-              <h4 className="text-lg font-semibold text-gray-800 mb-6">
+              <h4 className="text-lg font-semibold text-[#271347] mb-6">
                 With Our App, You Can:
               </h4>
               <ul className="space-y-4">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <div className="w-2 h-2 rounded-full bg-[#4d2d7c] mr-4 flex-shrink-0 shadow-sm"></div>
-                    <span className="text-gray-700 font-medium">{feature}</span>
+                    <span className="text-[#3b2065] font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>

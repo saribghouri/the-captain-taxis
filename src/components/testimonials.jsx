@@ -77,7 +77,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#4D2D7C] mb-4">
+          <h2 className="text-4xl  text-[#4D2D7C] mb-4">
             What Our Riders Say
           </h2>
           <p className="text-gray-600 text-lg">

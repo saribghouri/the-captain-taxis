@@ -26,12 +26,7 @@ export default function CustomerBenefits() {
           {/* Benefit 1 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b2e83" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8" />
-                <path d="M12 6v2" />
-                <path d="M12 16v2" />
-              </svg>
+              <img src="assets/images/Fixed.svg" alt="" />
             </div>
             <h3 className="text-xl font-bold mb-3">Fixed Fares. No Surge</h3>
             <p className="text-center text-gray-500 mb-6">
@@ -51,12 +46,8 @@ export default function CustomerBenefits() {
           {/* Benefit 2 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b2e83" strokeWidth="2">
-                <path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4z" />
-                <path d="M16 10v2a4 4 0 0 1-4 4h0a4 4 0 0 1-4-4v-2" />
-                <path d="M12 18v4" />
-                <path d="M8 18h8" />
-              </svg>
+                           <img src="assets/images/Professional Drivers..svg" alt="" />
+
             </div>
             <h3 className="text-xl font-bold mb-3">Professional Drivers.</h3>
             <p className="text-center text-gray-500 mb-6">
@@ -75,10 +66,8 @@ export default function CustomerBenefits() {
           {/* Benefit 3 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b2e83" strokeWidth="2">
-                <path d="M12 5v14" />
-                <path d="M5 12h14" />
-              </svg>
+                           <img src="assets/images/Any Need.svg" alt="" />
+
             </div>
             <h3 className="text-xl font-bold mb-3">Any Vehicle, Any Need.</h3>
             <p className="text-center text-gray-500 mb-6">
@@ -98,12 +87,8 @@ export default function CustomerBenefits() {
           {/* Benefit 4 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b2e83" strokeWidth="2">
-                <rect x="4" y="8" width="16" height="12" rx="2" />
-                <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                <path d="M12 14v2" />
-                <path d="M12 11v.01" />
-              </svg>
+                           <img src="assets/images/TTSS Subsidy..svg" alt="" />
+
             </div>
             <h3 className="text-xl font-bold mb-3">TTSS Subsidy.</h3>
             <p className="text-center text-gray-500 mb-6">

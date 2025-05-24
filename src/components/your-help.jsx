@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react"
 const YourHelp = () => {
   return (
     <div className="p-4">
-      <div className="bg-gradient-to-r from-[#24123f] via-[#4d2d7c] to-[#24123f] text-white p-6 md:p-10 flex flex-col text-center rounded-tl-[40px] md:rounded-tl-[70px] rounded-[10px] relative">
+      <div className="bg-gradient-to-r from-[#1c0d33] via-[#371f5c] to-[#1c0d33] text-white p-6 md:p-10 flex flex-col text-center rounded-tl-[40px] md:rounded-tl-[70px] rounded-[10px] relative">
         <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white rounded-full p-1.5">
           <ChevronRight className="h-4 w-4 text-[#4D2D7C]" />
         </div>
