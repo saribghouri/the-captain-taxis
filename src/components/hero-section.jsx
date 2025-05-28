@@ -51,21 +51,16 @@ const HeroSection = () => {
       
       <div className="flex justify-center w-full px-4">
         <div className="hero my-10 w-full max-w-[700px] mt-[110px] h-[60px] flex items-center rounded-tl-[30px] rounded-br-[30px] relative px-6 shadow-sm">
-          {/* Profile Image */}
           <img
             className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] -mt-[30px] sm:mt-[-34px]"
             src="assets/images/Mask Group 2.png"
             alt="icon"
           />
 
-          {/* Content Container */}
           <div className="flex items-center justify-between w-full ml-[110px]">
-            {/* Left Content */}
             <div className="flex items-center gap-4">
-              {/* NEW Badge */}
               <button className="bg-transparent border-2 font-bold border-purple-900 text-[#6b46c1] text-xs px-3 py-1 rounded-md">NEW</button>
 
-              {/* Title and Icon */}
               <div className="flex items-center gap-2">
                 <h1 className="text-black font-bold text-[18px]">Caption Taxi Gift Card!</h1>
                 <img
@@ -76,7 +71,6 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right Content */}
             <button className="text-[#412a7e] text-[15px] font-medium flex items-center gap-1 hover:text-[#553c9a] transition-colors">
               Find out more
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -93,7 +87,6 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row justify-between max-w-full px-4 items-center">
-        {/* This div will be hidden on mobile screens */}
         <div className="hidden md:block pt-[80px] pl-[20px] lg:pl-[80px] md:w-1/2">
           <div className="text-left animate-fade-in-up mt-[-150px]">
             <h1 className="font-medium text-[28px] md:text-[32px] ml lg:text-[20px] leading-2.5 uppercase text-white drop-shadow-lg mb-2 ">
@@ -118,7 +111,6 @@ const HeroSection = () => {
           <h2 className="mb-6 text-2xl font-bold text-center">Book A Taxi</h2>
 
           <div className="space-y-4 mb-4">
-            {/* Pickup Input */}
             <div className="relative">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
                 <svg
@@ -145,7 +137,6 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Drop Off Input */}
             <div className="relative">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
                 <svg
@@ -184,7 +175,6 @@ const HeroSection = () => {
 
           <hr className="border-white/20 my-4" />
 
-          {/* Carousel */}
           <div className="relative w-full">
             <button
               onClick={prevSlide}

@@ -7,39 +7,37 @@ const Testimonials = () => {
   const [autoplay, setAutoplay] = useState(false);
   const autoplayRef = useRef(null);
 
-  // Using the testimonial data you provided
   const testimonials = [
     {
       quote:
         "The Captain Taxis provides the most reliable service I've experienced. Their drivers are always professional and punctual. I never worry about getting to my appointments on time Their drivers are always professional and punctual. I never worry about getting to my appointments on time.",
       name: "Sarah Johnson",
       location: "North Sydney",
-      image: "assets/images/men.jpg", // Replace with actual image
+      image: "assets/images/men.jpg", 
     },
     {
       quote:
         "As someone who uses NDIS services, I appreciate how accommodating and understanding the drivers are. The vehicles are always clean and well-maintained. Highly recommended! The vehicles are always clean and well-maintained. Highly recommended!",
       name: "Michael Thompson",
       location: "Parramatta",
-      image: "assets/images/men.jpg", // Replace with actual image
+      image: "assets/images/men.jpg", 
     },
     {
       quote:
         "I've been using The Captain Taxis for my business trips for over a year now. The fixed fares make expense reporting so much easier, and the service is consistently excellent. and the service is consistently excellent",
       name: "Jennifer Lee",
       location: "North Sydney",
-      image: "assets/images/men.jpg", // Replace with actual image
+      image: "assets/images/men.jpg", 
     },
     {
       quote:
         "The app is so easy to use, and I love that I can track my driver's arrival. The TTSS subsidy integration is seamless, saving me both time and money on every trip.  saving me both time and money on every trip.",
       name: "Robert Williams",
       location: "Bondi",
-      image: "assets/images/men.jpg", // Replace with actual image
+      image: "assets/images/men.jpg", 
     },
   ];
 
-  // Autoplay functionality
   useEffect(() => {
     if (autoplay) {
       autoplayRef.current = setInterval(() => {
@@ -68,14 +66,12 @@ const Testimonials = () => {
     setActiveSlide(index);
   };
 
-  // Pause autoplay on hover
   const handleMouseEnter = () => setAutoplay(false);
   const handleMouseLeave = () => setAutoplay(true);
 
   return (
     <div className="bg-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl  text-[#4D2D7C] mb-4">
             What Our Riders Say
@@ -85,7 +81,6 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
         <div
           className="relative"
           onMouseEnter={handleMouseEnter}
@@ -106,7 +101,6 @@ const Testimonials = () => {
                         : "translateX(-100%)",
                   }}
                 >
-                  {/* Pixel-perfect card matching the image */}
                   <div className="bg-white rounded-3xl shadow-md max-w-5xl h-full mx-auto overflow-hidden">
                     <div className="flex flex-col md:flex-row w-full h-full items-center">
                       <div className="w-full h-full  overflow-hidden md:w-[40%] flex items-center justify-center">
@@ -135,7 +129,6 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Navigation */}
           <div className="flex justify-center mt-10 gap-4">
             <button
               onClick={goToPrev}
@@ -145,7 +138,6 @@ const Testimonials = () => {
               <ChevronLeft size={20} />
             </button>
 
-            {/* Dots Indicator */}
             <div className="flex items-center gap-2">
               {testimonials.map((_, index) => (
                 <button

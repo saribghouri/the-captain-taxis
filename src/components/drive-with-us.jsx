@@ -35,7 +35,6 @@ export default function DriveWithUs() {
     <div className="w-full bg-gray-50 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          {/* Left side - Car Image */}
           <div className="w-full md:w-1/2">
             <Image
               src="/assets/images/car.png"
@@ -47,14 +46,12 @@ export default function DriveWithUs() {
             />
           </div>
 
-          {/* Right side - Content */}
           <div className="w-full md:w-1/2 flex flex-col">
             <h1 className="text-[#4D2D7C] text-3xl md:text-4xl  mb-2">Drive with The Captain Taxis</h1>
             <p className="text-gray-600 text-lg mb-8">
               Earn more as a fully-professional taxi driver—no surge, no gimmicks.
             </p>
 
-            {/* Benefits List */}
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-4">
@@ -66,7 +63,6 @@ export default function DriveWithUs() {
               ))}
             </div>
 
-            {/* CTA Button */}
             <div className="mt-8 text-center flex justify-center">
               <a
                 href="/apply-driver"

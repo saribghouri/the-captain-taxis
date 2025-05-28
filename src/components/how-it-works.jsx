@@ -35,23 +35,19 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Desktop Process Steps */}
         <div className="hidden md:flex justify-between mb-20 relative">
           {steps.map((item, index) => (
             <div key={index} className="w-[32%] relative">
                <div className="flex flex-col items-center h-full ">
         <div className="bg-gradient-to-br  p-8 rounded-2xl flex flex-col items-center text-center h-full border border-[#6b5c9b] shadow-lg">
-          {/* Icon Circle */}
           <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 bg-white/10 backdrop-blur-sm">
             <div className="text-white text-2xl">{item.icon}</div>
           </div>
           
-          {/* Title */}
           <h3 className="text-xl  text-white mb-4 leading-tight">
             {item.step}
           </h3>
           
-          {/* Description */}
           <p className="text-[#ebebeb] text-md leading-relaxed">
             {item.description}
           </p>
@@ -60,7 +56,6 @@ export default function HowItWorks() {
             </div>
           ))}
 
-          {/* Connecting Line with Number Circles */}
           <div className="absolute bottom-[-50px] left-[10%] right-[10%] h-[1px] bg-gray-500 ">
             <div className="absolute left-0 -top-4 w-8 h-8 rounded-full border border-gray-500 flex items-center justify-center bg-[#1a1146]">
               <span className="text-white">1</span>
@@ -74,17 +69,14 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Mobile Process Steps */}
         <div className="md:hidden space-y-8">
           {steps.map((item, index) => (
             <div key={index} className="relative">
               <div className="flex flex-col items-center">
-                {/* Icon Circle */}
                 <div className="w-16 h-16 rounded-full border border-gray-500 flex items-center justify-center mb-4">
                   <div className="text-white">{item.icon}</div>
                 </div>
 
-                {/* Card */}
                 <div className="bg-[#2a1d5a] !p-[40px] rounded-xl w-full border border-[#3d2d70] text-center">
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {item.step}
@@ -92,7 +84,6 @@ export default function HowItWorks() {
                   <p className="text-gray-300 text-sm">{item.description}</p>
                 </div>
 
-                {/* Number Circle */}
                 {index < steps.length - 1 && (
                   <>
                     <div className="h-8 w-[1px] bg-gray-500 my-2"></div>

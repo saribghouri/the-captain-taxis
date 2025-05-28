@@ -6,7 +6,6 @@ const Footer = () => {
     <footer className="bg-white text-gray-700 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-          {/* Logo and Description */}
           <div className="lg:col-span-3">
             <div className="mb-6">
               <img
@@ -21,7 +20,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Contacts */}
           <div className="lg:col-span-3">
             <h3 className="text-lg font-bold text-gray-800 mb-6 capitalize tracking-wide">CONTACTS</h3>
             <div className="space-y-4">
@@ -45,7 +43,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="lg:col-span-2">
             <h3 className="text-lg font-bold text-gray-900 mb-6 capitalize tracking-wide">Quick Links</h3>
             <ul className="space-y-3 font-bold">

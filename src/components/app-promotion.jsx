@@ -11,18 +11,15 @@ const AppPromotion = () => {
 
   return (
     <div className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Blurred Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="assets/images/background 4.svg"
           alt="Background"
           className="w-full h-full object-cover opacity-30"
         />
-        {/* Optional gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-purple-50/20"></div>
       </div>
 
-      {/* Decorative Circles and Patterns */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-200 opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-300 opacity-15 rounded-full transform translate-x-1/3"></div>
@@ -33,10 +30,8 @@ const AppPromotion = () => {
         <div className="absolute bottom-1/3 right-1/3 w-24 h-24 border border-purple-300 opacity-15 rounded-full"></div>
       </div>
 
-      {/* Foreground Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Mobile Images Column */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-purple-400 opacity-5 rounded-3xl blur-3xl transform scale-110"></div>
@@ -51,7 +46,6 @@ const AppPromotion = () => {
             </div>
           </div>
 
-          {/* Text Content Column */}
           <div className="w-full lg:w-1/2">
             <div className="mb-8">
               <h2 className="text-6xl sm:text-4xl lg:text-4xl text-[#4d2d7c] mb-2 leading-tight drop-shadow-sm">
@@ -98,7 +92,6 @@ const AppPromotion = () => {
               >
                 <div className="bg-black text-white rounded-lg px-4 py-3 flex items-center shadow-lg group-hover:shadow-xl min-w-[160px] backdrop-blur-sm">
                   <div className="mr-3">
-                    {/* Google Play Icon */}
                     <svg
                       width="24"
                       height="24"
@@ -121,7 +114,6 @@ const AppPromotion = () => {
               >
                 <div className="bg-black text-white rounded-lg px-4 py-3 flex items-center shadow-lg group-hover:shadow-xl min-w-[160px] backdrop-blur-sm">
                   <div className="mr-3">
-                    {/* Apple Store Icon */}
                     <svg
                       width="24"
                       height="24"

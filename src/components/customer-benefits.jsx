@@ -3,14 +3,12 @@ import Image from "next/image"
 export default function CustomerBenefits() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
-      {/* Key Benefits Section */}
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl  text-[#4b2e83] mb-3">Key Benefits</h2>
         <p className="text-lg text-gray-700">We are Always for Your Benefits</p>
       </div>
 
       <div className="relative mb-16">
-        {/* Wavy line connecting icons */}
         <div className="absolute top-24 left-0 right-0 hidden md:block">
           <svg viewBox="0 0 1200 100" className="w-full h-12">
             <path
@@ -23,7 +21,6 @@ export default function CustomerBenefits() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-          {/* Benefit 1 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
               <img src="assets/images/Fixed.svg" alt="" />
@@ -43,7 +40,6 @@ export default function CustomerBenefits() {
             </button>
           </div>
 
-          {/* Benefit 2 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
                            <img src="assets/images/Professional Drivers..svg" alt="" />
@@ -63,7 +59,6 @@ export default function CustomerBenefits() {
             </button>
           </div>
 
-          {/* Benefit 3 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
                            <img src="assets/images/Any Need.svg" alt="" />
@@ -84,7 +79,6 @@ export default function CustomerBenefits() {
             </button>
           </div>
 
-          {/* Benefit 4 */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
                            <img src="assets/images/TTSS Subsidy..svg" alt="" />
@@ -107,7 +101,6 @@ export default function CustomerBenefits() {
         </div>
       </div>
 
-      {/* Sydney Skyline Image */}
       <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
         <img src="/assets/images/sydney-skyline.png" alt="Sydney skyline at sunset" fill className="object-cover" />
       </div>
