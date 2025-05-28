@@ -2,108 +2,76 @@ import Image from "next/image"
 
 export default function CustomerBenefits() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl  text-[#4b2e83] mb-3">Key Benefits</h2>
-        <p className="text-lg text-gray-700">We are Always for Your Benefits</p>
-      </div>
+    <div className="max-w-[100%] mx-auto ">
+    
 
-      <div className="relative mb-16">
-        <div className="absolute top-24 left-0 right-0 hidden md:block">
-          <svg viewBox="0 0 1200 100" className="w-full h-12">
-            <path
-              d="M0,50 C300,10 600,90 900,50 C1200,10 1500,90 1800,50"
-              fill="none"
-              stroke="#F3F4F6"
-              strokeWidth="2"
-            />
-          </svg>
+     <section className="py-16 px-8 bg-gray-50">
+      <div className="max-w-[90%] mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-7xl font-bold mb-6 leading-tight">
+            <span className="text-black">Book Ride With </span>
+            <span className="text-[#4b2e83]">The Captain Taxi</span>
+          </h2>
+
+          {/* Description */}
+          <p className="text-gray-600 text-[25px] leading-relaxed max-w-7xl mx-auto">
+            Need A Ride ? The Captain Taxis App Is Here To Get You Moving. With Just A Few Taps, You Can Book A Reliable
+            Ride, - Track Your Driver, And Reach Your Destination Safely. Whether You're Heading To The Airport Or
+            Across Town, Count On Us For A Smooth And Comfortable Journey.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-              <img src="assets/images/Fixed.svg" alt="" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Fixed Fares. No Surge</h3>
-            <p className="text-center text-gray-500 mb-6">
-              Always know what you'll pay
-              <br />
-              no surprises.
-            </p>
-            <button className="bg-[#4b2e83] text-white px-6 py-2 rounded-full flex items-center">
-              Know More
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="ml-2">
-                <circle cx="12" cy="12" r="12" fill="white" />
-                <path d="M10 8L14 12L10 16" stroke="#4b2e83" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
+        {/* Image Grid */}
+        <div className="flex  h-[500px]">
+          {/* Left Large Image */}
+          <div className="flex-1">
+            <div
+              className="w-[90%] h-full bg-cover bg-center rounded-2xl"
+              style={{
+                backgroundImage: "url(assets/images/1.png)",
+              }}
+            ></div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-                           <img src="assets/images/Professional Drivers..svg" alt="" />
+          {/* Right Grid - 2x2 */}
+          <div className="flex-2 grid grid-cols-2 gap-6">
+            {/* Top Left */}
+            <div
+              className="bg-cover bg-center rounded-2xl"
+              style={{
+                backgroundImage: "url(assets/images/2.png)",
+              }}
+            ></div>
 
-            </div>
-            <h3 className="text-xl font-bold mb-3">Professional Drivers.</h3>
-            <p className="text-center text-gray-500 mb-6">
-              Fully trained, uniformed &<br />
-              NDIS-accredited.
-            </p>
-            <button className="bg-[#4b2e83] text-white px-6 py-2 rounded-full flex items-center">
-              Know More
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="ml-2">
-                <circle cx="12" cy="12" r="12" fill="white" />
-                <path d="M10 8L14 12L10 16" stroke="#4b2e83" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
+            {/* Top Right */}
+            <div
+              className="bg-cover bg-center rounded-2xl"
+              style={{
+                backgroundImage: "url(assets/images/3.png)",
+              }}
+            ></div>
 
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-                           <img src="assets/images/Any Need.svg" alt="" />
+            {/* Bottom Left */}
+            <div
+              className="bg-cover bg-center rounded-2xl"
+              style={{
+                backgroundImage: "url(assets/images/4.png)",
+              }}
+            ></div>
 
-            </div>
-            <h3 className="text-xl font-bold mb-3">Any Vehicle, Any Need.</h3>
-            <p className="text-center text-gray-500 mb-6">
-              Sedan, SUV, Maxi, Cargo
-              <br />
-              or Wheelchair-Accessible.
-            </p>
-            <button className="bg-[#4b2e83] text-white px-6 py-2 rounded-full flex items-center">
-              Know More
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="ml-2">
-                <circle cx="12" cy="12" r="12" fill="white" />
-                <path d="M10 8L14 12L10 16" stroke="#4b2e83" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-24 rounded-full border-2 border-[#4b2e83] flex items-center justify-center mb-6">
-                           <img src="assets/images/TTSS Subsidy..svg" alt="" />
-
-            </div>
-            <h3 className="text-xl font-bold mb-3">TTSS Subsidy.</h3>
-            <p className="text-center text-gray-500 mb-6">
-              NSW residents save 50%
-              <br />
-              (up to $60 per trip).
-            </p>
-            <button className="bg-[#4b2e83] text-white px-6 py-2 rounded-full flex items-center">
-              Know More
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="ml-2">
-                <circle cx="12" cy="12" r="12" fill="white" />
-                <path d="M10 8L14 12L10 16" stroke="#4b2e83" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
+            {/* Bottom Right */}
+            <div
+              className="bg-cover bg-center rounded-2xl"
+              style={{
+                backgroundImage: "url(assets/images/5.png)",
+              }}
+            ></div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-        <img src="/assets/images/sydney-skyline.png" alt="Sydney skyline at sunset" fill className="object-cover" />
-      </div>
     </div>
   )
 }

@@ -14,7 +14,6 @@ html {
  
 }
 
-/* Full-width dropdown support */
 .full-width-nav-container {
   position: relative;
 }
@@ -34,6 +33,28 @@ html {
   position: relative;
   overflow-x: hidden;
 }
+.bg{
+  background-image: url("/assets/images/lClkfk.png");
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  position: relative;
+  overflow-x: hidden;
+}
+.bgr{
+  background-image: url("/assets/images/NoLTTG.png");
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  position: relative;
+  overflow-x: hidden;
+}
+
 
 /* Animation for dropdowns */
 @keyframes fadeIn {
@@ -138,14 +159,7 @@ html {
   position: relative;
 }
 
-.nav-link {
-  position: relative;
-  font-weight: 500;
-  color: #1d1c1c;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+
 
 .nav-link:hover {
   text-decoration: underline;
@@ -340,3 +354,4 @@ html {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
+

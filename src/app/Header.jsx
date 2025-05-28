@@ -48,23 +48,11 @@ const menuData = [
       },
       {
         heading: "Last arrivals",
-        items: [], // Empty items to trigger special content
+        items: [],
       },
     ],
   },
-  {
-    key: "pricing",
-    label: "Pricing",
-    columns: [
-      {
-        heading: "Pricing",
-        items: [
-          { label: "Fare Estimator", path: "/pricing/fare-estimator" },
-          { label: "TTSS Subsidy Scheme", path: "/pricing/ttss-subsidy" },
-        ],
-      },
-    ],
-  },
+
   {
     key: "drivers",
     label: "Drivers",
@@ -78,20 +66,20 @@ const menuData = [
       },
     ],
   },
-  {
-    key: "corporate",
-    label: "Corporate Accounts",
-    columns: [
-      {
-        heading: "Corporate Accounts",
-        items: [
-          { label: "Business Accounts", path: "/corporate/business" },
-          { label: "Event Transfers", path: "/corporate/events" },
-          { label: "Airport Shuttles", path: "/corporate/airport" },
-        ],
-      },
-    ],
-  },
+  // {
+  //   key: "corporate",
+  //   label: "Corporate Accounts",
+  //   columns: [
+  //     {
+  //       heading: "Corporate Accounts",
+  //       items: [
+  //         { label: "Business Accounts", path: "/corporate/business" },
+  //         { label: "Event Transfers", path: "/corporate/events" },
+  //         { label: "Airport Shuttles", path: "/corporate/airport" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     key: "help",
     label: "Help & FAQs",
@@ -125,29 +113,26 @@ const MegaMenu = ({ columns, onItemClick }) => (
   <div className="absolute left-0 right-0 w-full">
     <div className="max-w-3xl mx-auto mt-6 p-3 bg-white rounded-2xl">
       <div
-        className={`grid gap-6 ${
-          columns.length === 1
+        className={`grid gap-6 ${columns.length === 1
             ? "grid-cols-1"
             : columns.length === 2
-            ? "grid-cols-1 md:grid-cols-2"
-            : columns.length === 3
-            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            : columns.length === 4
-            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-            : "grid-cols-1"
-        }`}
+              ? "grid-cols-1 md:grid-cols-2"
+              : columns.length === 3
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                : columns.length === 4
+                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                  : "grid-cols-1"
+          }`}
       >
         {columns.map((col, i) => (
           <div
             key={i}
-            className={`${
-              col.items.length === 0 ? "bg-[#3a2160]" : "bg-transparent"
-            } p-4 rounded-md`}
+            className={`${col.items.length === 0 ? "bg-[#3a2160]" : "bg-transparent"
+              } p-4 rounded-md`}
           >
             <h4
-              className={`font-bold text-lg pb-2 ${
-                col.items.length === 0 ? "text-white" : "text-black"
-              }`}
+              className={`font-bold text-lg pb-2 ${col.items.length === 0 ? "text-white" : "text-black"
+                }`}
             >
               {col.heading}
             </h4>
@@ -243,71 +228,50 @@ const Header = () => {
   return (
     <div className="fixed w-full top-0 left-0 z-50">
       {/* Top bar - Hidden on mobile */}
- <div className="bg-[#D8C7E8] text-gray-800  bg-gradient-to-r from-[#c8a8e5] to-[#D8C7E8] py-2.5 ">
-      <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
-        {/* Contact Information */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span className="font-bold">0420 966 387</span>
+      <div className="bg-[#4d2d7c] text-white   py-4 ">
+        <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
+          {/* Contact Information */}
+          <div className="flex flex-col sm:flex-row items-center gap-8">
+            <div className="flex items-center gap-2">
+              <Phone className="w-15 " />
+              <span className="font-semibold tracking-widest">0420 966 387</span>
+            </div>
+
+            <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
+
+            <div className="flex items-center gap-2">
+              <Mail className="w-10 " />
+              <span className=" tracking-widest font-semibold text-[14px] text-white">info@thecaptaintaxis.com.au</span>
+            </div>
           </div>
 
           <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
 
-          <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            <span className="font-bold">info@thecaptaintaxis.com.au</span>
+          {/* Promotional Text */}
+          <div className="flex-1 text-center lg:text-left">
+            <span className=" text-[16px]">
+              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+            </span>
           </div>
-        </div>
 
-        <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
 
-        {/* Promotional Text */}
-        <div className="flex-1 text-center lg:text-left">
-          <span className="">
-            Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-          </span>
-        </div>
-
-        {/* Download Section */}
-        <div className="flex items-center gap-3">
-          <button className="bg-[#4D2D7C] text-white px-4 py-1.5 rounded-[50px] hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2 text-sm font-medium">
-            <Download className="w-4 h-4" />
-            Download
-          </button>
-
-          <div className="flex items-center gap-3">
-            <a href="#" className="hover:opacity-80  transition-opacity">
-              <img src="assets/images/google-play-store-icon-logo-symbol-free-png.webp" alt="Google Play" className="w-6 h-6 rounded" />
-            </a>
-            <a href="#" className="hover:opacity-80 transition-opacity">
-              <img src="assets/images/logo-apple-icon-information-png-favpng-LgLa8kMeALfAyE0iKbRnAJtnE-removebg-preview.png" alt="App Store" className="w-6 h-6 rounded" />
-            </a>
-          </div>
         </div>
       </div>
-    </div>
       {/* Nav bar - Hidden on mobile */}
-      <div className="hidden md:block bg-gradient-to-r from-[#181035] via-[#4d2d7c] to-[#181035] text-white shadow-md">
+      <div className="hidden md:block bg-white  shadow-md">
         <div className=" mx-auto  md:px-8 lg:px-8 py-4">
-          <div className="flex w-full px-10  justify-between">
-            <img className="w-[100px]" src="assets/images/logo.png" alt="" />
+          <div className="flex w-full px-10 justify-between ">
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
+              <img className="w-[120px] mr-[75px]" src="assets/images/logo1.png" alt="" />
               <Button
-                type="text"
-                className="!text-white hover:!text-white hover:!bg-[#5d3d8c] !rounded-md !px-3 !h-9 !font-medium transition-colors duration-200"
+                type="button"
+                className="!text-black !text-[20px] hover:!text-black !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
                 onClick={() => router.push("/")}
               >
                 Home
               </Button>
-              <Button
-                type="text"
-                className="!text-white hover:!text-white hover:!bg-[#5d3d8c] !rounded-md !px-3 !h-9 !font-medium transition-colors duration-200"
-                onClick={() => router.push("/book-a-ride")}
-              >
-                Book a Ride
-              </Button>
+
 
               {menuData.map((menu) => (
                 <Dropdown
@@ -322,19 +286,20 @@ const Header = () => {
                   placement="bottomCenter"
                   overlayClassName="w-full"
                 >
-                  <button className="px-3 py-1.5 rounded-md hover:bg-[#5d3d8c] transition-colors duration-200 flex items-center gap-1">
+                  <button className="px-3 py-1.5 rounded-md cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-5">
                     {menu.label} <DownOutlined className="text-xs opacity-70" />
                   </button>
                 </Dropdown>
               ))}
             </div>
 
-            {/* Right side contact and social */}
-        <Button className="bg-white !text-[#4D2D7C] !font-bold !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
+            <div>
+
+              <Button className="!bg-[#4D2D7C] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
+            </div>
           </div>
         </div>
       </div>
-      {/* Mobile header */}
       <div className="md:hidden bg-[#4D2D7C] text-white px-4 py-3 flex justify-between items-center">
         <img
           onClick={() => router.push("/")}
@@ -349,7 +314,6 @@ const Header = () => {
           className="text-white border-none shadow-none"
         />
       </div>
-      {/* Mobile Drawer */}
       <Drawer
         title={
           <div className="flex items-center justify-end">
