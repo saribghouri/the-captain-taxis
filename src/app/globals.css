@@ -354,4 +354,13 @@ html {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
+.sections {
+  border-radius: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgba(77, 45, 124, 0.1);
+ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 

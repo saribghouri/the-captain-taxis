@@ -1,121 +1,199 @@
 "use client"
-import { Facebook, Instagram, Twitter, Phone, Mail } from "lucide-react"
+import Link from "next/link"
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Image } from "antd"
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-700 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-          <div className="lg:col-span-3">
-            <div className="mb-6">
+  <footer className="relative w-full overflow-hidden mt-[50px]">
+      {/* Background image with overlay */}
+      <div className="absolute  z-0  inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-purple-50/20">
+        <div className="absolute inset-0 bg-grey-900/50 z-10"></div>
+        <Image src="assets/images/hero-section-background.png" alt="City background" fill className="object-cover opacity-30" priority />
+      </div>
+
+      {/* Content container */}
+      <div className="relative z-20   px-16 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {/* Left section */}
+          <div className="md:col-span-4">
+            <div className="mb-4">
               <img
-                className="w-full max-w-[200px]"
                 src="assets/images/Logo1.png"
-                alt="The Captain Taxis Logo"
+                alt="The Captain Taxis"
+                width={300}
+                height={80}
+                className="mb-2"
               />
+              <p className="text-black text-xl font-semibold">All Your Rides. One Easy App.</p>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Book your trip in minute, <br></br>get full
-               control for much<br></br> longer.
-            </p>
+
+            <div className="mt-12">
+              <h2 className="text-3xl font-bold text-black">
+                Book Fast. <span className="text-[#4d2d7c]">Ride Easy.</span>
+              </h2>
+              <h2 className="text-3xl font-bold text-black mt-2">Download the App Now!</h2>
+
+              <p className="text-black mt-8">On the Apple Store & Google Play – Ready When You Are.</p>
+
+              <div className="flex flex-col sm:flex-row items-start gap-4 mt-6">
+              <a
+                href="#download-android"
+                className="group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <div className="bg-black text-white rounded-lg px-4 py-3 flex items-center shadow-lg group-hover:shadow-xl min-w-[160px] backdrop-blur-sm">
+                  <div className="mr-3">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs">GET IT ON</div>
+                    <div className="text-sm font-semibold">Google Play</div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="#download-ios"
+                className="group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <div className="bg-black text-white rounded-lg px-4 py-3 flex items-center shadow-lg group-hover:shadow-xl min-w-[160px] backdrop-blur-sm">
+                  <div className="mr-3">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs">DOWNLOAD ON THE</div>
+                    <div className="text-sm font-semibold">App Store</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+              <Link
+                href="#"
+                className="inline-block mt-8 bg-[#4d2d7c]  text-white font-bold py-3 px-12 rounded-md transition-colors"
+              >
+                Book Now
+              </Link>
+            </div>
           </div>
 
-          <div className="lg:col-span-3">
-            <h3 className="text-lg font-bold text-gray-800 mb-6 capitalize tracking-wide">CONTACTS</h3>
-            <div className="space-y-4">
+          {/* Middle section - Map */}
+          <div className="md:col-span-4 flex items-center justify-center">
+            <div className="rounded-lg overflow-hidden  w-full max-w-[350px]">
+              <img src="assets/images/map.png"  width={350} height={350} className="w-full" />
+            </div>
+          </div>
+
+          {/* Right section - Links and Contact */}
+          <div className="md:col-span-4">
+            <div className="grid grid-cols-3 gap-x-8 gap-y-4">
               <div>
-                <p className="text-gray-600 font-bold  transition-colors text-[15px]">541a Burwood Road,</p>
-                <p className="text-gray-600  font-bold  transition-colors text-[15px]">Belmore NSW 2192</p>
+                <h3 className="text-black text-xl font-bold mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Join as a Driver
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Vehicle
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Services
+                    </Link>
+                  </li>
+                </ul>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-[#4D2D7C]" />
-                <span className="text-gray-700 font-extrabold">0420 966 387</span>
+
+              <div>
+                <h3 className="text-black text-xl font-bold mb-4">Support Center</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Legal Policy/Terms
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-black hover:text-purple-300">
+                      Additional Links
+                    </Link>
+                  </li>
+                </ul>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-[#4D2D7C]" />
-                <a
-                  href="mailto:info@thecaptaintaxis.com.au"
-                  className="text-gray-700 font-extrabold hover:text-[#4D2D7C] transition-colors"
-                >
-                  info@thecaptaintaxis.com.au
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold text-gray-900 mb-6 capitalize tracking-wide">Quick Links</h3>
-            <ul className="space-y-3 font-bold">
-              {["Home", "Join as a Driver", "Vehicle", "Services"].map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-800 text-[15px] hover:text-[#4D2D7C] transition-colors duration-300">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support Center */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold text-gray-900 mb-6 capitalize tracking-wide">Support Center</h3>
-            <ul className="space-y-3 font-bold">
-              {["Legal Policy/Terms", "Contact Us", "About Us", "Additional Links"].map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-800 text-[15px] hover:text-[#4D2D7C] transition-colors duration-300">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Media and App Download */}
-          <div className="lg:col-span-2">
-            <div className="flex space-x-4 mb-6">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#4D2D7C] hover:text-white transition-all duration-300"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#4D2D7C] hover:text-white transition-all duration-300"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#4D2D7C] hover:text-white transition-all duration-300"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-[#4D2D7C] mb-3">Discover our app</h4>
-              <div className="space-y-2 flex items-center">
-                <a href="#" className="block">
-                  <img src="assets/images/app store.png" alt="Get it on Google Play" className="h-6  w-auto" />
-                </a>
-                <a href="#" className="block mt-[-8px]">
-                  <img src="assets/images/google play.png" alt="Download on App Store" className="h-8.5 rounded-[50px] w-auto" />
-                </a>
+              
+            <div className="">
+              <h3 className="text-black text-[30px] font-bold mb-4">CONTACTS</h3>
+              <div className="space-y-2">
+                <p className="text-black">
+                  541a Burwood Road,
+                  <br />
+                  Belmore NSW 2192
+                </p>
+                <p className="text-black flex items-center">
+                  <span className="mr-2">📞</span> 0420 966 387
+                </p>
+                <p className="text-black flex items-center">
+                  <span className="mr-2">✉️</span> info@thecaptaintaxis.com.au
+                </p>
               </div>
             </div>
+            </div>
+
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="text-center">
-            <p className="text-[#8053c4]  text-sm font-bold">
-              Copyright © {new Date().getFullYear()} The Captain Taxis | All rights
-            </p>
+        {/* Car image */}
+       
+
+        {/* Bottom section */}
+        <div className="mt-8 flex flex-col md:flex-row justify-between items-center border-t border-gray-600 pt-4">
+          <p className="text-black text-sm">Copyright © 2024 The Captain Taxis | All</p>
+
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+              <Facebook className="text-white w-5 h-5" />
+            </Link>
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+              <Instagram className="text-white w-5 h-5" />
+            </Link>
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+              <Twitter className="text-white w-5 h-5" />
+            </Link>
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+              <Linkedin className="text-white w-5 h-5" />
+            </Link>
           </div>
         </div>
       </div>

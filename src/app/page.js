@@ -13,6 +13,8 @@ import Footer from "@/components/footer";
 import CustomerBenefits from "@/components/customer-benefits";
 import HeroSection from "@/components/hero-section";
 import YourHelp from "@/components/your-help";
+import Pricing from "@/components/pricing";
+import WhereYouCanUse from "@/components/where-you-can";
 const App = () => {
   return (
     <div className="relative">
@@ -21,16 +23,16 @@ const App = () => {
       <HeroSection />
       <CustomerBenefits />
       <HowItWorks />
-
+      <Pricing />
       <ServicesCarousel />
+      <WhereYouCanUse />
+      {/* <DriveWithUs /> */}
 
-      <DriveWithUs />
+      {/* <Testimonials /> */}
 
-      <Testimonials />
+      {/* <AppPromotion /> */}
 
-      <AppPromotion />
-
-      <YourHelp />
+      {/* <YourHelp /> */}
 
       <Footer />
     </div>
