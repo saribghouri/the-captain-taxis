@@ -1,5 +1,8 @@
 "use client"
 
+import { Image } from "antd"
+import { DollarSign, MapPin } from "lucide-react"
+
 
 const ServicesSection = () => {
   const services = [
@@ -42,62 +45,71 @@ const ServicesSection = () => {
   ]
 
   return (
-    <section className="relative min-h-screen">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/images/backdound 3.png')",
-        }}
-      >
-       
-      </div>
-
-      <div className="relative z-10 px-6 py-16 md:px-12 md:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl  text-white mb-4">Our Services</h1>
-            <p className="text-xl text-white/90">We are Always There at Your Services</p>
+      <div className="relative w-full overflow-hidden bg-white">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          {/* Phone mockups */}
+          <div className="relative w-full md:w-1/2 h-[400px] md:h-[500px]">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+              <img
+                src="assets/images/Screenshot_2025-05-29_042337-removebg-preview.png"
+                alt="Ride app mockup"
+            
+                className="w-full max-w-[650px]"
+                priority
+              />
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8  mx-auto">
-            {services.map((service, index) => (
-              <ServiceCard key={index} service={service} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+          {/* Content */}
+          <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="text-black">Download The App-</span>
+              <br />
+              <span className="text-[#6b3fa0]">Your Ride Is Just A</span>
+              <br />
+              <span className="text-[#6b3fa0]">Tap Away</span>
+            </h2>
 
-const ServiceCard = ({ service }) => {
-  return (
-    <div className="rounded-2xl overflow-hidden shadow-xl group transition-all duration-300 hover:scale-105">
-      <div className="relative p-6 h-full  ant-modal-contents backdrop-blur-sm transition-all duration-300">
-        <div className="flex items-center gap-6">
-          <div className="">
-            <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-52 h-30 object-contain" />
-          </div>
+            <div className="flex flex-col md:flex-row gap-6 md:gap-12 mt-8">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full border-2 border-[#6b3fa0] flex items-center justify-center">
+                  <DollarSign className="w-6 h-6 text-[#6b3fa0]" />
+                </div>
+                <span className="text-xl font-medium">Transparent Pricing</span>
+              </div>
 
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 mb-2">
-              {service.title}
-            </h3>
-            <p className="text-gray-600 group-hover:text-white/80 transition-colors duration-300 text-sm mb-3 leading-relaxed">
-              {service.description}
-            </p>
-            <p className="text-lg font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">
-              {service.rate}
-            </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full border-2 border-[#6b3fa0] flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[#6b3fa0]" />
+                </div>
+                <span className="text-xl font-medium">Live Driver Tracking</span>
+              </div>
+            </div>
 
-            <button className="bg-[#2D1A4A]  text-[#ffffff] group-hover:text-[#2D1A4A] group-hover:bg-white border border-[#2D1A4A] group-hover:border-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-medium transition-all duration-300">
-              Book Ride Now
-            </button>
+            <div className="pt-6">
+              <button className="bg-[#6b3fa0] text-white font-medium px-8 py-3 rounded-md text-lg hover:bg-[#5a3286] transition-colors">
+                Book a Ride Now
+              </button>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 w-full h-16">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full h-full">
+          <path
+            fill="#ffffff"
+            fillOpacity="1"
+            d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
       </div>
     </div>
   )
 }
+
+
 
 export default ServicesSection

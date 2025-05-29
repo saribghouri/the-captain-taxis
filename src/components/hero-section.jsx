@@ -3,8 +3,8 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
-      <div className="bgr absolute inset-0 bg-gray-200">
-        {/* <div
+      <div className=" absolute bg inset-0 ">
+    <div
           className="absolute  inset-50  bg-cover bg-no-repea"
           style={{
             backgroundImage: 'url(/assets/images/backdound 3.png)',
@@ -15,22 +15,7 @@ const HeroSection = () => {
             clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)'
           }}
         >
-
-        </div>
-
-        <div
-          className="absolute inset-50 bg-cover bgr  bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(assets/images/background 4.svg)',
-             right: 0,
-            top: 0,
-            clipPath: 'polygon(35% 0, 100% 0, 100% 100%, 45% 100%)'
-          }}
-        ></div> */}
-      
-
-      {/* Content */}
-      <div className="relative z-10 min-h-screen justify-center flex items-center">
+<div className="relative z-10 min-h-screen justify-center flex items-center">
         <div className="w-full  mx-auto px-8 pt-[50px] lg:px-26">
           <div className="w-1/2 pr-8">
             <p className="text-black text-[40px]   mb-4 font-medium">
@@ -79,6 +64,21 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+        </div>
+
+        <div
+          className="absolute inset-50 bg-cover bgr  bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(assets/images/background 4.svg)',
+             right: 0,
+            top: 0,
+            clipPath: 'polygon(35% 0, 100% 0, 100% 100%, 45% 100%)'
+          }}
+        ></div> 
+      
+
+      {/* Content */}
+      
       </div>
     </div>
   );

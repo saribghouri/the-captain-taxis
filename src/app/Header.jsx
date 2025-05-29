@@ -241,7 +241,7 @@ const Header = () => {
 
             <div className="flex items-center gap-2">
               <Mail className="w-10 " />
-              <span className=" tracking-widest font-semibold text-[14px] text-white">info@thecaptaintaxis.com.au</span>
+              <span className=" tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
             </div>
           </div>
 
