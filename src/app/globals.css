@@ -13,7 +13,12 @@ html {
   padding: 0;
  
 }
-
+@font-face {
+  font-family: 'AERO';
+  src: url('/assets/font/Aero.ttf') format('ttf');
+  font-weight: 400; 
+  font-style: normal;
+}
 .full-width-nav-container {
   position: relative;
 }
@@ -24,21 +29,22 @@ html {
 
 .secttion-one {
   background-image: url("/assets/images/hero-section-background.png");
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
+  width: 1625px;
+ 
+  min-height: 1082px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+
   overflow-x: hidden;
 }
 .bg{
-  background-image: url("/assets/images/lClkfk.png");
+  background-image: url("/assets/images/BG-MAIN.jfif");
   width: 100%;
-  height: auto;
+height: 702px !important;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:contain;
  
   position: relative;
   overflow-x: hidden;
@@ -364,3 +370,9 @@ html {
  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.hd-font{
+  font-family:Verdana, Geneva, Tahoma, sans-serif !important;
+  font-weight: 800;
+}.font-falmily{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}

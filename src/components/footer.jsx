@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Background image with overlay */}
       <div className="absolute  z-0  inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-purple-50/20">
         <div className="absolute inset-0 bg-grey-900/50 z-10"></div>
-        <Image src="assets/images/hero-section-background.png" alt="City background" fill className="object-cover opacity-30" priority />
+        <Image src="assets/images/hero-section-background.png" alt="City background" fill className=" opacity-30" priority />
       </div>
 
       {/* Content container */}
@@ -93,15 +93,15 @@ const Footer = () => {
 
           {/* Middle section - Map */}
           <div className="md:col-span-4 flex items-center justify-center">
-            <div className="rounded-lg overflow-hidden  w-full max-w-[350px]">
-              <img src="assets/images/map.png"  width={350} height={350} className="w-full" />
+            <div className="rounded-lg overflow-hidden  w-full max-w-[450px]">
+              <img src="assets/images/map.png"  width={450} height={450} className="w-full" />
             </div>
           </div>
 
           {/* Right section - Links and Contact */}
-          <div className="md:col-span-4">
-            <div className="grid grid-cols-3 gap-x-8 gap-y-4">
-              <div>
+          <div className="md:col-span-4 ">
+            <div className="grid grid-cols-3 mr-[60px]  gap-x-0 gap-y-4">
+              <div className="w-[70%] ">
                 <h3 className="text-black text-xl font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
                   <li>
@@ -170,11 +170,13 @@ const Footer = () => {
               </div>
             </div>
             </div>
+<div className="mt-[40px]">
 
+       <img src="assets/images/car-footer.png" alt="" />
+</div>
           </div>
         </div>
 
-        {/* Car image */}
        
 
         {/* Bottom section */}

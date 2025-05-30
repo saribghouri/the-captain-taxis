@@ -82,7 +82,7 @@ const Testimonials = () => {
         </div>
 
         <div
-          className="relative"
+          className="relative "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -121,6 +121,10 @@ const Testimonials = () => {
                         <p className="text-gray-400 leading-relaxed">
                           {testimonial.quote}
                         </p>
+                        <div>
+                          <button className="bg-[#4D2D7C] text-white">Book A Airport Shuttle</button>
+                          <button>Download App The Caption Taxi</button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -129,7 +133,7 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <div className="flex justify-center mt-10 gap-4">
+          <div className="flex justify-center bg-red-400 mt-10 gap-4">
             <button
               onClick={goToPrev}
               className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
