@@ -4,11 +4,11 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="min-h-screen w-full mt-[-30px]  bg relative overflow-hidden ">
-      <div className="relative z-10 min-h-screen justify-center flex mt-[60px]">
+      <div className="relative z-10 min-h-screen justify-center flex mt-[120px]">
         <div className="w-full  lg:px-26">
           <div className="w-1/2 pr-8">
             {/* Main heading */}
-            <h1 className="text-[100px] w-full  hero-hd font-extrabold  mb-6 ">
+            <h1 className="text-[89px]  hero-hd font-extrabold  mb-6 ">
               <i className="text-black font">The </i>
               <i className="text-[#4d2d7c]">
                 Captain <i className="text-[#000000]">Taxi</i>
@@ -19,7 +19,7 @@ const HeroSection = () => {
               Your Ride, Your Way-Anytime
             </p>
             {/* Description */}
-            <p className="text-black leading-9 font-semibold text-[26px] mb-10 max-w-[70%]">
+            <p className="text-black leading-9 font-semibold mt-[45px] text-[26px] mb-10 max-w-[70%]">
               Book Your Ride In Seconds And Enjoy Peace Of<br></br> Mind With Our
               Dependable And Professional,<br /> Service.
             </p>
@@ -27,7 +27,7 @@ const HeroSection = () => {
             {/* App download buttons */}
             <div className="flex gap-4">
               {/* Google Play Button */}
-              <div className="bg-black  flex items-center pr-[5px]  rounded-[4px]  cursor-pointer  transition-colors">
+              <div className="bg-black  flex items-center pr-[6px] px-[20px]  rounded-[4px]  cursor-pointer  transition-colors">
                 <div className="mr-3">
                   <img
                     className="w-[25px] h-[25px]"
@@ -46,7 +46,7 @@ const HeroSection = () => {
               </div>
 
               {/* App Store Button */}
-              <div className="bg-black  flex items-center  pr-[5px] rounded-[4px]  4 py-1 cursor-pointer transition-colors">
+              <div className="bg-black  flex items-center  pr-[6px] px-[20px] rounded-[4px]  4 py- cursor-pointer transition-colors">
                 <div className="mr-3">
                   <svg className="w-8 h-8" viewBox="0 0 24 24">
                     <path
@@ -70,10 +70,10 @@ const HeroSection = () => {
                 Stay Your Journey
               </h1>
               <div className=" gap-4 flex ">
-                <Button className="!bg-[#4d2d7c] !font-bold !text-white !text-[22px] !px-[40px] !py-[25px]">
+                <Button className="!bg-[#4d2d7c] !rounded-[11px] !font-bold !text-white !text-[22px] !px-[40px] !py-[25px]">
                   Book A Ride
                 </Button>
-                <Button className="!text-[#5b3a8b] !font-bold !text-[22px] !px-[40px] !py-[25px]">
+                <Button className="!text-[#5b3a8b] ] !rounded-[11px]  !font-bold !text-[22px] !px-[40px] !py-[25px]">
                   Apply to Drive
                 </Button>
               </div>

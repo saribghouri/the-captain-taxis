@@ -52,7 +52,7 @@ width: 100%;
   background-repeat: no-repeat;
   background-size:contain;
   position: relative;
-  height: 90vh !important;
+
 }
 .bgr{
   background-image: url("/assets/images/background 4.svg");
