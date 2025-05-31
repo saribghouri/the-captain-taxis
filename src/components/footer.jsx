@@ -5,7 +5,7 @@ import { Image } from "antd"
 
 const Footer = () => {
   return (
-  <footer className="relative w-full overflow-hidden mt-[50px]">
+  <footer className="relative w-full overflow-hidden mt-[20px]">
       {/* Background image with overlay */}
       <div className="absolute  z-0  inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-purple-50/20">
         <div className="absolute inset-0 bg-grey-900/50 z-10"></div>

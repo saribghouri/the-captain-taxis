@@ -31,7 +31,7 @@ const App = () => {
       <WhereYouCanUse />
       {/* <DriveWithUs /> */}
 
-      {/* <Testimonials /> */}
+      <Testimonials />
 
       {/* <AppPromotion /> */}
 

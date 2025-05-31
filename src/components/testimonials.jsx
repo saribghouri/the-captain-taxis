@@ -1,172 +1,208 @@
-"use client";
-import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+"use client"
 
-const Testimonials = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [autoplay, setAutoplay] = useState(false);
-  const autoplayRef = useRef(null);
+import { useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "antd"
 
-  const testimonials = [
-    {
-      quote:
-        "The Captain Taxis provides the most reliable service I've experienced. Their drivers are always professional and punctual. I never worry about getting to my appointments on time Their drivers are always professional and punctual. I never worry about getting to my appointments on time.",
-      name: "Sarah Johnson",
-      location: "North Sydney",
-      image: "assets/images/men.jpg", 
-    },
-    {
-      quote:
-        "As someone who uses NDIS services, I appreciate how accommodating and understanding the drivers are. The vehicles are always clean and well-maintained. Highly recommended! The vehicles are always clean and well-maintained. Highly recommended!",
-      name: "Michael Thompson",
-      location: "Parramatta",
-      image: "assets/images/men.jpg", 
-    },
-    {
-      quote:
-        "I've been using The Captain Taxis for my business trips for over a year now. The fixed fares make expense reporting so much easier, and the service is consistently excellent. and the service is consistently excellent",
-      name: "Jennifer Lee",
-      location: "North Sydney",
-      image: "assets/images/men.jpg", 
-    },
-    {
-      quote:
-        "The app is so easy to use, and I love that I can track my driver's arrival. The TTSS subsidy integration is seamless, saving me both time and money on every trip.  saving me both time and money on every trip.",
-      name: "Robert Williams",
-      location: "Bondi",
-      image: "assets/images/men.jpg", 
-    },
-  ];
+const vehicleTypes = [
+  {
+    id: "standard-taxi",
+    name: "Standard Taxi",
+    image: "assets/fonts/Standard Taxi.svg",
+    title: "Catch A Ride In A",
+    subtitle: "Standard Taxi",
+    description:
+      "Quick and reliable transportation for your daily commute. Our standard taxi service provides comfortable rides with professional drivers who know the city inside and out.",
+    primaryButton: "Book A Standard Taxi",
+    secondaryButton: "Download App The Caption Taxi",
+    contentImage: "assets/images/2.png",
+  },
+  {
+    id: "suv",
+    name: "SUV",
+    image: "assets/fonts/SUV.svg",
+    title: "Catch A Ride In A",
+    subtitle: "SUV",
+    description:
+      "Experience premium comfort with our spacious SUV service. Perfect for families, groups, or when you need extra space for luggage. Enjoy a smooth, luxurious ride.",
+    primaryButton: "Book A SUV",
+    secondaryButton: "Download App The Caption Taxi",
+    contentImage: "assets/images/3.png",
+  },
+  {
+    id: "airport-shuttle",
+    name: "Airport Shuttle",
+    image: "assets/fonts/Airport Shuttle.svg",
+    title: "Catch A Ride In A",
+    subtitle: "Airport Shuttle",
+    description:
+      "Travel to and from the airport with ease and comfort. Our reliable airport shuttle service ensures you reach your destination on time—no stress, no delays. Sit back relax, and let us handle the journey.",
+    primaryButton: "Book A Airport Shuttle",
+    secondaryButton: "Download App The Caption Taxi",
+    contentImage: "assets/fonts/bus.png",
+  },
+  {
+    id: "cargo",
+    name: "Cargo",
+    image: "assets/fonts/Cargo.svg",
+    title: "Catch A Ride In A",
+    subtitle: "Cargo",
+    description:
+      "Need to transport goods or large items? Our cargo service provides reliable transportation for your freight needs. Professional drivers ensure safe and timely delivery.",
+    primaryButton: "Book A Cargo Vehicle",
+    secondaryButton: "Download App The Caption Taxi",
+    contentImage: "assets/images/5.png",
+  },
+]
 
-  useEffect(() => {
-    if (autoplay) {
-      autoplayRef.current = setInterval(() => {
-        setActiveSlide((prev) =>
-          prev === testimonials.length - 1 ? 0 : prev + 1
-        );
-      }, 5000);
+export default function TaxiServiceSection() {
+  const [currentIndex, setCurrentIndex] = useState(2) // Start with Airport Shuttle selected
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handleCardClick = (index) => {
+    if (index !== currentIndex && !isTransitioning) {
+      setIsTransitioning(true)
+      setCurrentIndex(index)
+      setTimeout(() => setIsTransitioning(false), 300)
     }
+  }
 
-    return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    };
-  }, [autoplay, testimonials.length]);
+  const handlePrevious = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true)
+      setCurrentIndex((prev) => (prev === 0 ? vehicleTypes.length - 1 : prev - 1))
+      setTimeout(() => setIsTransitioning(false), 300)
+    }
+  }
 
-  const goToPrev = () => {
-    setActiveSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
+  const handleNext = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true)
+      setCurrentIndex((prev) => (prev === vehicleTypes.length - 1 ? 0 : prev + 1))
+      setTimeout(() => setIsTransitioning(false), 300)
+    }
+  }
 
-  const goToNext = () => {
-    setActiveSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
-
-  const goToSlide = (index) => {
-    setActiveSlide(index);
-  };
-
-  const handleMouseEnter = () => setAutoplay(false);
-  const handleMouseLeave = () => setAutoplay(true);
+  const currentVehicle = vehicleTypes[currentIndex]
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl  text-[#4D2D7C] mb-4">
-            What Our Riders Say
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Don't just take our word for it - hear from our satisfied customers
-          </p>
-        </div>
+    <div className="w-full relative  py-8 ">
+      <div className="text-center mb-8 mt-[60px]">
 
-        <div
-          className="relative "
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="overflow-hidden">
-            <div className="flex flex-nowrap transition-transform duration-500 ease-in-out">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className={`w-full  min-h-[300px] flex-shrink-0 px-4 transition-opacity duration-500 ${
-                    index === activeSlide ? "opacity-100" : "opacity-0 absolute"
-                  }`}
-                  style={{
-                    transform:
-                      index === activeSlide
-                        ? "translateX(0)"
-                        : "translateX(-100%)",
-                  }}
-                >
-                  <div className="bg-white rounded-3xl shadow-md max-w-5xl h-full mx-auto overflow-hidden">
-                    <div className="flex flex-col md:flex-row w-full h-full items-center">
-                      <div className="w-full h-full  overflow-hidden md:w-[40%] flex items-center justify-center">
-                        <img
-                          src={testimonial.image || "assets/images/men.jpg"}
-                          alt={testimonial.name}
-                          className="w-52 h-52 object-cover rounded-full"
-                        />
-                      </div>
-                      <div className="md:w-[60%] p-8">
-                        <h3 className="text-2xl font-semibold text-[#4D2D7C] mb-2">
-                          {testimonial.name}
-                        </h3>
-                        <p className="text-gray-600 mb-4 flex items-center">
-                          <span className="inline-block w-2 h-2 rounded-full bg-[#f5a623] mr-2"></span>
-                          {testimonial.location}
-                        </p>
-                        <p className="text-gray-400 leading-relaxed">
-                          {testimonial.quote}
-                        </p>
-                        <div>
-                          <button className="bg-[#4D2D7C] text-white">Book A Airport Shuttle</button>
-                          <button>Download App The Caption Taxi</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <h1 className="text-[70px] font-bold">Our Vehicle <span className="text-[#4d2d7c] text-center ">Captain</span>  Fleet</h1>
+      </div>
+      <div className="max-w-[85%]  mx-auto">
+        {/* Vehicle Type Cards */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex gap-2 md:gap-4 flex-1 overflow-x-auto pb-2">
+            {vehicleTypes.map((vehicle, index) => (
+              <div
+                key={vehicle.id}
+                onClick={() => handleCardClick(index)}
+                className={`
+                  flex items-center justify-between gap-2 px-6 py-4 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
+                  ${index === currentIndex ? "bg-white shadow-md" : "bg-white"}
+                  min-w-[345px] 
+                `}
+              >
+                <span className="font-medium text-[22px] text-gray-800 whitespace-nowrap">{vehicle.name}</span>
+                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className="w-[112px] h-[38px] object-contain" />
+              </div>
+            ))}
           </div>
 
-          <div className="flex justify-center bg-red-400 mt-10 gap-4">
+          {/* Navigation Arrows */}
+          <div className="flex gap-4 ml-4">
             <button
-              onClick={goToPrev}
-              className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
-              aria-label="Previous testimonial"
+              onClick={handlePrevious}
+              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              disabled={isTransitioning}
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft className="w-7 h-7 text-black" />
             </button>
+            <button
+              onClick={handleNext}
+              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              disabled={isTransitioning}
+            >
+              <ChevronRight className="w-7 h-7 text-black" />
+            </button>
+          </div>
+        </div>
 
-            <div className="flex items-center gap-2">
-              {testimonials.map((_, index) => (
+        {/* Main Content */}
+        <div className="bg-white relative rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Left Content */}
+            <div
+              className={`transition-all duration-300 ${isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"}`}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 ">
+                {currentVehicle.title}
+              </h1>
+              <h2 className="text-4xl md:text-6xl  font-bold text-purple-900 mb-6 md:mb-8 leading-tight">
+                {currentVehicle.subtitle}
+              </h2>
+
+              <p className="text-base md:text-[30px] text-[##2B0B3D] max-w-[85%] mb-8 leading-relaxed">{currentVehicle.description}</p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeSlide === index ? "bg-[#4D2D7C] w-6" : "bg-gray-300"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+                  className="!bg-[#4d2d7c] !hover:bg-purple-900 !text-white !px-10 py-3 !text-[24px] !font-medium !rounded-lg"
+                  size="lg"
+                >
+                  {currentVehicle.primaryButton}
+                </button>
+                <button
+                  variant="outline"
+                  className="border border-[#4d2d7c] !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[24px] !font-medium !rounded-lg"
+                  size="lg"
+                >
+                  {currentVehicle.secondaryButton}
+                </button>
+              </div>
+
+              {/* Bottom Navigation Arrows */}
+              <div className="flex gap-4">
+                <button
+                  onClick={handlePrevious}
+              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  disabled={isTransitioning}
+                >
+              <ChevronLeft className="w-7 h-7 text-black" />
+                </button>
+                <button
+                  onClick={handleNext}
+              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  disabled={isTransitioning}
+                >
+              <ChevronRight className="w-7 h-7 text-black" />
+                </button>
+              </div>
             </div>
 
-            <button
-              onClick={goToNext}
-              className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#4D2D7C] hover:bg-[#4D2D7C] hover:text-white transition-all duration-300 shadow-sm"
-              aria-label="Next testimonial"
+            {/* Right Image */}
+            <div
+              className={`transition-all duration-300 ${isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"}`}
             >
-              <ChevronRight size={20} />
-            </button>
+              <div className="relative">
+                <img
+                  src={currentVehicle.contentImage || "/placeholder.svg"}
+                  alt={currentVehicle.subtitle}
+                  className="w-full h-auto rounded-4xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+        <div className=" z-10  mt-[-60px]">
+          <img
+            src="assets/fonts/2796af52-911d-43b9-b649-c6614aafacfd (1).jfif"
+            alt="Taxi Service"
+            className="w-full h-auto   object-cover"
+          />
+        </div>
     </div>
-  );
-};
-
-export default Testimonials;
+  )
+}
