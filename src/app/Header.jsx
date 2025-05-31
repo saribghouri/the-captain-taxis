@@ -263,7 +263,7 @@ const Header = () => {
           <div className="flex w-full px-10 justify-between ">
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
-              <img className="w-[120px] mr-[75px]" src="assets/images/logo1.png" alt="" />
+              <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />
               <Button
                 type="button"
                 className="!text-black !text-[20px] hover:!text-black !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
