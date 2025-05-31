@@ -304,7 +304,7 @@ const Header = () => {
         <img
           onClick={() => router.push("/")}
           className="w-[120px] cursor-pointer"
-          src="/assets/images/logo.png"
+          src="/assets/images/Logo1.png"
           alt="Logo"
         />
         <Button
