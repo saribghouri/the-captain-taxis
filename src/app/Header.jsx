@@ -271,6 +271,13 @@ const Header = () => {
               >
                 Home  
               </Button>
+              <Button
+                type="button"
+                className="!text-black !text-[20px] hover:!text-black !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
+                onClick={() => router.push("/book-a-ride")}
+              >
+                Home  
+              </Button>
 
 
               {menuData.map((menu) => (

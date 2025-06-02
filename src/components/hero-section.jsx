@@ -8,18 +8,18 @@ const HeroSection = () => {
         <div className="w-full  lg:px-26">
           <div className="w-1/2 pr-8">
             {/* Main heading */}
-            <h1 className="text-[89px]  hero-hd font-extrabold  mb-6 ">
+            <h1 className="text-[89px]  hero-hd font-extrabold   ">
               <i className="text-black font">The </i>
               <i className="text-[#4d2d7c]">
                 Captain <i className="text-[#000000]">Taxi</i>
               </i>
               <br />
             </h1>
-            <p className="text-black text-[40px]   mb-4 font-medium">
+            <p className="text-black text-[40px]   mb-4 font-semibold">
               Your Ride, Your Way-Anytime
             </p>
             {/* Description */}
-            <p className="text-black leading-9 font-semibold mt-[45px] text-[26px] mb-10 max-w-[70%]">
+            <p className="text-black leading-9 mt-[45px] text-[26px] mb-10 max-w-[70%]">
               Book Your Ride In Seconds And Enjoy Peace Of<br></br> Mind With Our
               Dependable And Professional,<br /> Service.
             </p>
