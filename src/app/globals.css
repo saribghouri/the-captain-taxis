@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  /* font-family: 'Poppins'sans-serif ; */
+  font-family: 'Poppins'sans-serif ;
 }
 body,
 html {
@@ -22,7 +22,7 @@ html {
 }
 
  .hero-hd{
-  font-family: 'Aero'  ;
+  font-family: 'Aero'!important  ;
   letter-spacing: 5px ;
 } 
 
