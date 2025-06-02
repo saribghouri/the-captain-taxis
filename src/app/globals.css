@@ -14,16 +14,16 @@ html {
  
 }
 @font-face {
-    font-family: 'Aero' !important;
-    font-style: italic !important;
-    font-weight: 500 !important;
-    src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff') !important;
+    font-family: 'Aero';
+    font-style: italic ;
+    font-weight: 500 ;
+    src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff') ;
     
 }
 
  .hero-hd{
-  font-family: 'Aero' !important ;
-  letter-spacing: 5px !important;
+  font-family: 'Aero'  ;
+  letter-spacing: 5px ;
 } 
 
 .full-width-nav-container {
