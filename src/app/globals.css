@@ -3,29 +3,27 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Poppins'sans-serif ;
 }
-body,
-html {
+
+body {
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
- 
 }
+
 @font-face {
-    font-family: 'Aero';
-    font-style: italic ;
-    font-weight: 500 ;
-    src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff') ;
-    
+  font-family: 'Aero';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff');
 }
 
- .hero-hd{
-  font-family: 'Aero'!important  ;
-  letter-spacing: 5px ;
-} 
-
+.hero-hd {
+  font-family: 'Aero', sans-serif;
+  letter-spacing: 5px;
+}
 .full-width-nav-container {
   position: relative;
 }
