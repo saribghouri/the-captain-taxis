@@ -3,12 +3,12 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/BG-MAIN.jfif')" }}>
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen w-full bg-contain  bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/BG-MAIN.jfif')" }}>
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-4 lg:px-2">
         <div className="w-full max-w-[90%] flex flex-col  lg:flex-row items-center">
           <div className="w-full lg:w-2/2 text-center lg:text-left">
             {/* Main heading */}
-            <h1 className="text-4xl sm:text-5xl hero-hd  md:text-6xl lg:text-7xl xl:text-[100px] font-extrabold leading-tight">
+            <h1 className="text-4xl sm:text-5xl hero-hd  md:text-6xl lg:text-6xl xl:text-[100px] font-extrabold leading-tight">
               <span className="text-black">The </span>
               <span className="text-[#4d2d7c]">
                 Captain <span className="text-black">Taxi</span>
@@ -53,8 +53,8 @@ const HeroSection = () => {
             </div>
 
             {/* Call to action */}
-            <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col gap-4 items-center lg:items-start">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#5b3a8b] font-bold font-sans">
+            <div className="mt-10 sm:mt-12 lg:mt-22 flex flex-col gap-4 items-center lg:items-start">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl autography text-[#5b3a8b] font-bold font-sans">
                 Start Your Journey
               </h2>
               <div className="flex flex-col sm:flex-row gap-4 mt-[30px]">

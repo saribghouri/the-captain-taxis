@@ -20,9 +20,18 @@ body {
   font-weight: 500;
   src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff');
 }
+@font-face {
+  font-family: 'Pastella Autography';
+ 
+  src: local('Pastella Autography'), url('https://fonts.cdnfonts.com/css/pastella-autography.woff') format('woff');
+}
 
 .hero-hd {
   font-family: 'Aero', sans-serif;
+  letter-spacing: 5px;
+}
+.autography {
+font-family: 'Pastella Autography';
   letter-spacing: 5px;
 }
 .full-width-nav-container {
