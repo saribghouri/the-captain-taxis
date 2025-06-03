@@ -8,13 +8,13 @@ const HeroSection = () => {
         <div className="w-full max-w-[90%] flex flex-col  lg:flex-row items-center">
           <div className="w-full lg:w-2/2 text-center lg:text-left">
             {/* Main heading */}
-            <h1 className="text-4xl sm:text-5xl hero-hd  md:text-[77px] lg:text-[100px] text-[100px] font-extrabold leading-tight">
+            <h1 className="text-4xl sm:text-5xl hero-hd  md:text-[77px] lg:text-[77px] xl:text-[100px] font-extrabold leading-tight">
               <span className="text-black">The </span>
               <span className="text-[#4d2d7c]">
                 Captain <span className="text-black">Taxi</span>
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black font-semibold mt-4 mb-6">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] text-black font-medium mt-4 mb-6">
               Your Ride, Your Way—Anytime
             </p>
             {/* Description */}
