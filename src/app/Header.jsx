@@ -266,17 +266,17 @@ const Header = () => {
               <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />
               <Button
                 type="button"
-                className="!text-black !text-[20px] hover:!text-black !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
+                className="!text-[#4b4b4b] !font-medium !text-[20px]  !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
                 onClick={() => router.push("/")}
               >
                 Home  
               </Button>
               <Button
                 type="button"
-                className="!text-black !text-[20px] hover:!text-black !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
+                className="!text-[#4b4b4b] !font-medium !text-[20px]  !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
                 onClick={() => router.push("/book-a-ride")}
               >
-                Home  
+                Book A Ride  
               </Button>
 
 
@@ -293,7 +293,7 @@ const Header = () => {
                   placement="bottomCenter"
                   overlayClassName="w-full"
                 >
-                  <button className="px-3 py-1.5 rounded-md cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-5">
+                  <button className="px-3 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-5">
                     {menu.label} <DownOutlined className="text-xs opacity-70" />
                   </button>
                 </Dropdown>
