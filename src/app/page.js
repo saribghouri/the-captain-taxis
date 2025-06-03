@@ -18,7 +18,7 @@ import WhereYouCanUse from "@/components/where-you-can";
 const App = () => {
   return (
     <div className="relative">
-      <div className="mb-[163px]">
+      <div className="mb-[100px]">
 
       <Header />
       </div>
