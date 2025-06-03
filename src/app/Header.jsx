@@ -80,20 +80,20 @@ const menuData = [
   //     },
   //   ],
   // },
-  {
-    key: "help",
-    label: "Help & FAQs",
-    columns: [
-      {
-        heading: "Help & FAQs",
-        items: [
-          { label: "Booking Help", path: "/help/booking" },
-          { label: "Payment Questions", path: "/help/payment" },
-          { label: "Accessibility Information", path: "/help/accessibility" },
-        ],
-      },
-    ],
-  },
+  // {
+  //   key: "help",
+  //   label: "Help & FAQs",
+  //   columns: [
+  //     {
+  //       heading: "Help & FAQs",
+  //       items: [
+  //         { label: "Booking Help", path: "/help/booking" },
+  //         { label: "Payment Questions", path: "/help/payment" },
+  //         { label: "Accessibility Information", path: "/help/accessibility" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     key: "contact",
     label: "Contact",
